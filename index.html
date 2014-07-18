@@ -158,13 +158,17 @@ html, body{
     font-family: Arial
 }
 body{
-    max-width: 1300px
+    max-width: 1300px;
+    background: url(photography.png);
+    background-repeat: repeat;
 }
         #wrapper
 {
     width: 100%;
         display: -webkit-flex;
     display: flex;
+    background: url(photography.png);
+    background-repeat: repeat;
     -webkit-align-items: center;
     align-items: center;
     position: relative;
@@ -178,7 +182,14 @@ nav{
     min-height: 50px;
     max-height: 50px;
     text-align: center;
-    background: DarkGreen;
+    background:#000000;
+  background:-moz-linear-gradient(top,#000000 0%,#45484d 100%);
+  background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#000000),color-stop(100%,#45484d));
+  background:-webkit-linear-gradient(top,#000000 0%,#45484d 100%);
+  background:-o-linear-gradient(top,#000000 0%,#45484d 100%);
+  background:-ms-linear-gradient(top,#000000 0%,#45484d 100%);
+  background:linear-gradient(top,#000000 0%,#45484d 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000',endColorstr='#45484d',GradientType=0 );
     width: 100%;
     display: -webkit-flex;
     display: flex;
@@ -186,6 +197,7 @@ nav{
     align-items: center;
     position: relative;
     justify-content: center;
+    font-family: Georgia;
     
 }
 nav ul{
@@ -197,10 +209,18 @@ nav ul{
     align-items: center;
     position: relative;
     justify-content: center;
-    background-color: DarkGreen;
+    background:#000000;
+  background:-moz-linear-gradient(top,#000000 0%,#45484d 100%);
+  background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#000000),color-stop(100%,#45484d));
+  background:-webkit-linear-gradient(top,#000000 0%,#45484d 100%);
+  background:-o-linear-gradient(top,#000000 0%,#45484d 100%);
+  background:-ms-linear-gradient(top,#000000 0%,#45484d 100%);
+  background:linear-gradient(top,#000000 0%,#45484d 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000',endColorstr='#45484d',GradientType=0 );
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
     width: 100%;
+    
 }
 nav ul li{
     list-style: none;
@@ -219,23 +239,53 @@ nav ul li:last-child{
 }
 
 header{
-    max-height: 100%;
-    max-width: 100%;
-    min-height: 300px;
-    background: LightBlue;
+    margin: 2% auto;
     width: 100%;
+    height: auto;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    text-align: center;
+    box-shadow: 0 8px 6px -6px black;
+    position: relative;
+    z-index: 4
+}
+header img{
+    
+    height: auto;
+    max-height: 300px;
+    max-width: 100%;
+    min-width: 100px;
+  min-height: 100px
+}
+h1{
     display: -webkit-flex;
     display: flex;
     -webkit-align-items: center;
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-family: Abel;
-    font-weight: 700;
-}
-h1{
     text-shadow: 1px 0px 20px white;
-    font-size: 2.5em
+    font-size: 2.5em;
+    font-family:"Impact";
+    font-weight: 300;
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 60%;
+    height: 30%;
+    background: rgba(235,247,255,0.7);
+    transition: all 0.7s ease-in-out;
+}
+h1:hover{
+    width: 100%;
+    height: 100%;
+    color: rgba(63,107,169,0.7)
 }
 #introSection{
     width: 100%;
@@ -245,19 +295,32 @@ h1{
     align-items: center;
     position: relative;
     justify-content: center;
-    background: url(photography.png);
-    background-repeat: repeat;
+    
     -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
 }
 .intro{
-    
-    border: 6px solid #ccc;
-    background: rgba(255,255,255,0);
-    margin: 2% auto;
-    padding: 5px;
-    width: 35%;
-    border-radius: 20px
+
+    margin: 0 10px;
+    width: 42%;
+    background:rgba(235,247,255,0.5);
+	 font: 100 1.0em/190% Georgia;
+  text-align:justify;
+  border: 6px solid #ccc;
+  border-radius:20px 20px 20px 20px;
+  padding:10px 15px 0 15px;
+}
+.intro:first-letter {
+  font:2.9em "Times New Roman","MS Serif","New York",serif;
+  color:#B22222;
+  float:left;
+  margin: -0.35em 0 -0.25em 0
+}
+.intro:first-letter,  x:-moz-any-link, x:default{
+  font:2.9em "Times New Roman","MS Serif","New York",serif;
+  color:#B22222;
+  float:left;
+  margin: -0.10em 0 -0.25em 0
 }
 #container
 {
@@ -735,7 +798,16 @@ transition:all 0.8s cubic-bezier(1,.01,.51,1.26);
                 <li>1/1</li>
             </ul>
         </nav>
-        <header><h1>The Definitive Roy Oswalt Collection</h1></header>
+        <header>
+            <h1>The Definitive Roy Oswalt Collection</h1>
+            <img src="00spx975.jpg" alt="Spx" />
+            <img src="01eliterec9.jpg" alt="recollection" />
+            <img src="10chiclegold.JPG" alt="Chicle" />
+            <img src="06specialfxblue.JPG" alt="blue" />
+            <img src="03lcmblack.JPG" alt="black" />
+            <img src="07bheritagered.JPG" alt="red" />
+        </header>
+        
         <section id="introSection">
             <article class="intro">Hello fellow collectors, my name is Chris. This site is dedicated to
             displaying my Roy Oswalt, Daniel Hudson, Tim Hudson, Dan Haren, and RC collections. I've
