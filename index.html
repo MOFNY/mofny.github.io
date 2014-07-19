@@ -149,7 +149,7 @@ $("#expand").click(function() {
     </script>
     <style>
         html{
-    height: 100%;
+    height: auto;
     font-size: 100%
 }
 html, body{
@@ -161,10 +161,13 @@ body{
     max-width: 1300px;
     background: url(photography.png);
     background-repeat: repeat;
+    max-height: 0
 }
         #wrapper
 {
-    width: 100%;
+    
+    margin: 0;
+    padding: 0;
         display: -webkit-flex;
     display: flex;
     background: url(photography.png);
@@ -174,13 +177,13 @@ body{
     position: relative;
     justify-content: center;
     background-color: LightBlue;
-    -webkit-flex-flow: column wrap;
-  flex-flow: column wrap;
+    -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
   position: relative;
+ 
 }
 nav{
-    min-height: 50px;
-    max-height: 50px;
+    
     text-align: center;
     background:#000000;
   background:-moz-linear-gradient(top,#000000 0%,#45484d 100%);
@@ -191,6 +194,7 @@ nav{
   background:linear-gradient(top,#000000 0%,#45484d 100%);
   filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000',endColorstr='#45484d',GradientType=0 );
     width: 100%;
+    height: 50px;
     display: -webkit-flex;
     display: flex;
     -webkit-align-items: center;
@@ -201,63 +205,81 @@ nav{
     
 }
 nav ul{
-    min-height: 50px;
-    max-height: 50px;
+
     display: -webkit-flex;
     display: flex;
     -webkit-align-items: center;
     align-items: center;
     position: relative;
     justify-content: center;
-    background:#000000;
-  background:-moz-linear-gradient(top,#000000 0%,#45484d 100%);
-  background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#000000),color-stop(100%,#45484d));
-  background:-webkit-linear-gradient(top,#000000 0%,#45484d 100%);
-  background:-o-linear-gradient(top,#000000 0%,#45484d 100%);
-  background:-ms-linear-gradient(top,#000000 0%,#45484d 100%);
-  background:linear-gradient(top,#000000 0%,#45484d 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000',endColorstr='#45484d',GradientType=0 );
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
     width: 100%;
-    
 }
 nav ul li{
     list-style: none;
     color: white;
-    font-size: 1.2em;
+    font-size: 1.55vw;
     border-right: 1px solid #ccc;
     padding-right: 20px;
-    margin-left: 20px
+    margin-left: 20px;
+    padding-bottom: 4px;/*must match padding bottom for the anchor*/
 }
 nav ul li:first-child{
     margin-left: -20px;
 }
 nav ul li:last-child{
     border-right: none;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+
+    border-bottom:1px solid white;
+    padding-bottom: 4px;
     
+  transition:all 0.8s ease-in-out;
+  -o-transition:all 0.8s ease-in-out;
+  -ms-transition:all 0.8s ease-in-out;
+  -moz-transition:all 0.8s ease-in-out;
+  -webkit-transition:all 0.8s ease-in-out;
+}
+nav a:visited {
+  color:white;
+}
+
+nav a:hover {
+  color:#B22222;
+  text-decoration:none;
+  border-bottom:15px solid transparent;
+  margin: 0;
+  transition:all 0.7s ease-in-out;
 }
 
 header{
-    margin: 2% auto;
-    width: 100%;
-    height: auto;
+    padding: 40px 0;
     display: -webkit-flex;
     display: flex;
     -webkit-align-items: flex-start;
     align-items: flex-start;
     text-align: center;
-    box-shadow: 0 8px 6px -6px black;
     position: relative;
-    z-index: 4
+    z-index: 4;
+    overflow: hidden;
+    background: rgba(205,237,255,0.3);
 }
+
 header img{
-    
     height: auto;
     max-height: 300px;
     max-width: 100%;
-    min-width: 100px;
-  min-height: 100px
+    min-width: 190px;
+    background:rgba(235,247,255,0.5);
+
+}
+header img:last-child{
+    border-width: 0 6px 0 6px;
 }
 h1{
     display: -webkit-flex;
@@ -266,27 +288,35 @@ h1{
     align-items: center;
     justify-content: center;
     text-align: center;
-    text-shadow: 1px 0px 20px white;
-    font-size: 2.5em;
+    text-shadow: 15px 20px 15px black;
+    font-size: 3.8vw;
     font-family:"Impact";
     font-weight: 300;
-    color: black;
+    color: #ccc;
     position: absolute;
+    z-index: 5000;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
-    width: 60%;
+    width: 65%;
     height: 30%;
-    background: rgba(235,247,255,0.7);
+    background: rgba(0,50,64,0.4);
     transition: all 0.7s ease-in-out;
+}
+h1:after{
+    border: 2px solid black
 }
 h1:hover{
     width: 100%;
     height: 100%;
-    color: rgba(63,107,169,0.7)
+    color: rgba(63,107,169,0.7);
+    background: rgba(235,247,255,0.7);
+    -webkit-filter: blur(2px);
+    
 }
+
 #introSection{
     width: 100%;
         display: -webkit-flex;
@@ -300,23 +330,26 @@ h1:hover{
   flex-flow: row wrap;
 }
 .intro{
-
-    margin: 0 10px;
-    width: 42%;
-    background:rgba(235,247,255,0.5);
-	 font: 100 1.0em/190% Georgia;
-  text-align:justify;
-  border: 6px solid #ccc;
-  border-radius:20px 20px 20px 20px;
-  padding:10px 15px 0 15px;
+    background:rgba(63,107,169,0.3);
+    
+	 font: 100 1.2em/200% Georgia;
+ padding: 0 20%;
+  margin: auto
 }
-.intro:first-letter {
+.intro:first-child{
+    background:rgba(63,107,169,0.3);
+    
+	 font: 100 1.2em/200% Georgia;
+ padding: 2% 20%;
+  margin: auto
+}
+.intro:first-child:first-letter {
   font:2.9em "Times New Roman","MS Serif","New York",serif;
   color:#B22222;
   float:left;
   margin: -0.35em 0 -0.25em 0
 }
-.intro:first-letter,  x:-moz-any-link, x:default{
+.intro:first-child:first-letter,  x:-moz-any-link, x:default{
   font:2.9em "Times New Roman","MS Serif","New York",serif;
   color:#B22222;
   float:left;
@@ -324,17 +357,19 @@ h1:hover{
 }
 #container
 {
-    width: 51%;
+    width: 100%;
         display: -webkit-flex;
     display: flex;
     -webkit-align-items: center;
     align-items: center;
     position: relative;
     justify-content: center;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0,100,0, 0.4);
     -webkit-flex-flow: row nowrap;
   flex-flow: row nowrap;
   position: relative;
+  padding-bottom: 20px;
+  padding-top: 20px
 }
 .imageGroup{
     transition: all 0.8s ease-in-out;
@@ -365,8 +400,8 @@ h1:hover{
 }
 
 #container > .imageGroup img{
-    max-width: 123px;
-    min-width: 123px
+    max-width: 291px;
+    min-width: 291px;
 }
 #container > .imageGroup ~ .imageGroup{
     display: -webkit-flex;
@@ -397,7 +432,8 @@ h1:hover{
     transform: translateX(150px);
 }
 #container > .imageGroup ~ .imageGroup img{
-    min-width: 137px
+    max-width: 291px;
+    min-width: 291px;
 }
 #container > .imageGroup ~ .imageGroup #singleImage {
     max-width: 295px;
@@ -513,14 +549,12 @@ h1:hover{
 .imageGroup img:hover:nth-of-type(2){
     z-index: 5;
     border: 6px solid rgba(63,107,169,0.7);
-    /*-webkit-animation: animateImage 1s ease-in-out;
+    -webkit-animation: animateImage 0.5s ease-in-out;
     -o-animation: animateImage 0.5s ease-in-out;
     animation: animateImage 0.5s ease-in-out;
     -webkit-animation-iteration-count: 1;
     -o-animation-iteration-count: 1;
-    animation-iteration-count: 1;*/
-    -webkit-transform: scale(2.0) !important;
-    -webkit-transform-origin:50% 100%;
+    animation-iteration-count: 1;
     transition: all 0.6s ease-in-out;
     
 }
@@ -783,6 +817,48 @@ z-index: 98;
 width: 250px;
 transition:all 0.8s cubic-bezier(1,.01,.51,1.26);
 }
+h3 {
+  font-size:2.3em;
+  font-family:Georgia,serif;
+  font-variant:small-caps;
+  font-weight:100;
+  color:#B22222;
+  display: inline-block;
+  border-bottom: 2px solid black;
+  padding:10px 0 0 0;
+  box-shadow:0 10px 8px -10px rgba(0,0,0,.9);
+  
+}
+.updateDate {
+  color:#BDB76B;
+  font-size:1.10em;
+  font-weight:500;
+  border-style:solid;
+  border-color:black;
+  border-width:0 0 2px 0;
+  padding-bottom:2px;
+  display: inline;
+  margin:0.5em;
+  box-shadow:0 10px 8px -10px rgba(0,0,0,.9);
+}
+
+@media only screen and (max-width : 1024px){
+    #container{
+        border: 2px solid black
+    }
+    #container > .imageGroup img{
+    
+    max-width: 191px;
+    min-width: 191px;
+    
+    height: auto;
+}
+#container > .imageGroup ~ .imageGroup img{
+    max-width: 191px;
+    min-width: 191px;
+}
+
+}
 
     </style>
 </head>
@@ -790,9 +866,9 @@ transition:all 0.8s cubic-bezier(1,.01,.51,1.26);
     <div id="wrapper">
         <nav>
             <ul>
-                <li>Home</li>
-                <li>Autographs</li>
-                <li>Game Used & Patches</li>
+                <li><a href="http://www.royoswalt44.com/index.html">Home</a></li>
+                <li><a href="http://www.royoswalt44.com/autographs.html">Autographs</a></li>
+                <li><a href="http://www.royoswalt44.com/game-used--patches.html">Game Used & Patches</a></li>
                 <li>Rookie Cards</li>
                 <li>Base, Inserts, Parallels</li>
                 <li>1/1</li>
@@ -801,7 +877,7 @@ transition:all 0.8s cubic-bezier(1,.01,.51,1.26);
         <header>
             <h1>The Definitive Roy Oswalt Collection</h1>
             <img src="00spx975.jpg" alt="Spx" />
-            <img src="01eliterec9.jpg" alt="recollection" />
+            <img src="01eliterec9.JPG" alt="recollection" />
             <img src="10chiclegold.JPG" alt="Chicle" />
             <img src="06specialfxblue.JPG" alt="blue" />
             <img src="03lcmblack.JPG" alt="black" />
@@ -815,28 +891,20 @@ transition:all 0.8s cubic-bezier(1,.01,.51,1.26);
             this is the greatest resource for collectors of Roy Oswalt. Please use the contact form to
             inquire about anything. This site functions optimally when viewed in Chrome, Firefox, or IE10.</article>
             
-            <article class="intro">Hello fellow collectors, my name is Chris. This site is dedicated to
-            displaying my Roy Oswalt, Daniel Hudson, Tim Hudson, Dan Haren, and RC collections. I've
-            collected Oswalt for over ten years, amassing 1,247 uniquely different cards. Put simply,
-            this is the greatest resource for collectors of Roy Oswalt. Please use the contact form to
-            inquire about anything. This site functions optimally when viewed in Chrome, Firefox, or IE10.</article>
             <div id="container">
             <div id="circleLeft">&#8678;</div>
         <div class="imageGroup newImageGroupClass2">
         
-        <img alt="2005 Bowman Chrome SuperFractors #121 BGS 9" height="190" src=
-        "https://farm8.staticflickr.com/7201/14063996145_b1e3a60939_o.jpg"
-        title="2005 Bowman Chrome SuperFractors #121 BGS 9" width=
-        "123">
-                <img alt="2008 Bowman Chrome Superfractors #107 BGS 9.5" height="190" src=
-                "https://farm8.staticflickr.com/7329/14060791161_a3f8188d04_o.jpg"
-                title="2008 Bowman Chrome Superfractors #107 BGS 9.5" width=
-                "122">
+        <img alt="2005 Bowman Chrome SuperFractors #121 BGS 9" src="https://farm3.staticflickr.com/2914/14498511348_8ddd7ea107_o.jpg"
+             width="291" height="448"
+        title="2005 Bowman Chrome SuperFractors #121 BGS 9" >
+                <img alt="2008 Bowman Chrome Superfractors #107 BGS 9.5" src="https://farm4.staticflickr.com/3859/14681964011_e93d84ebf6_o.jpg"
+                     width="288" height="448"
+                title="2008 Bowman Chrome Superfractors #107 BGS 9.5">
         
-            <img alt="2005 Finest SuperFractors #119 BGS 9.5" height="190" src=
-            "https://farm8.staticflickr.com/7380/14060794351_ca1040296f_o.jpg"
-            title="2005 Finest SuperFractors #119 BGS 9.5" width=
-            "123">
+            <img alt="2005 Finest SuperFractors #119 BGS 9.5" src="https://farm6.staticflickr.com/5567/14498695047_3bd5e184d8_o.jpg"
+                 width="290" height="448"
+            title="2005 Finest SuperFractors #119 BGS 9.5">
         
     </div>
     <div class="imageGroup">
@@ -882,10 +950,13 @@ transition:all 0.8s cubic-bezier(1,.01,.51,1.26);
 
     
     </div>
-    <ul id="totalsList"><a class="statsLink2 tooltip" href="http://www.royoswalt44.com/base-inserts-parallels.html" data-value="1876" data-title=""><li><span>Base/Inserts/Parallels: </span><div class="count" data-value="http://www.royoswalt44.com/base-inserts-parallels.html"> <img src="/files/theme/ajax-loader.gif" alt="loader" height="16" width="16" /></div></li></a><li class="circle">+</li><a class="statsLink2 tooltip" href="http://www.royoswalt44.com/autographs.html" data-value="522" data-title=""><li><span>Autographs: </span><div class="count" data-value="http://www.royoswalt44.com/autographs.html"><img src="/files/theme/ajax-loader.gif" alt="loader" height="16" width="16" /></div></li></a><li class="circle">+</li><a class="statsLink2 tooltip" href="http://www.royoswalt44.com/game-used--patches.html" data-value="710" data-title=""><li><span>GU: </span><div class="count" data-value="http://www.royoswalt44.com/game-used--patches.html"><img src="/files/theme/ajax-loader.gif" alt="loader" height="16" width="16" /></div></li></a><li class="circle">+</li><a class="statsLink2 tooltip" href="http://www.royoswalt44.com/11.html" data-value="1032" data-title=""><li><span>1/1: </span><div class="count" data-value="http://www.royoswalt44.com/11.html"><img src="/files/theme/ajax-loader.gif" alt="loader" height="16" width="16" /></div></li></a><li class="circle">+</li><a class="statsLink2 tooltip" tooltip href="http://www.royoswalt44.com/rookie-cards.html" data-value="10" data-title=""><li><span>Rookie Cards: </span><div class="count" data-value="http://www.royoswalt44.com/rookie-cards.html"><img src="/files/theme/ajax-loader.gif" alt="loader" height="16" width="16" /></div></li></a><li class="circle">=</li><a class="statsLink2 tooltip" href="http://www.royoswalt44.com/index.html" data-value="4150" data-title=""><li><span id="countLast">adding...</span></li></a></ul>
-    </div>
+            
+    <!--<ul id="totalsList"><a class="statsLink2 tooltip" href="http://www.royoswalt44.com/base-inserts-parallels.html" data-value="1876" data-title=""><li><span>Base/Inserts/Parallels: </span><div class="count" data-value="http://www.royoswalt44.com/base-inserts-parallels.html"> <img src="/files/theme/ajax-loader.gif" alt="loader" height="16" width="16" /></div></li></a><li class="circle">+</li><a class="statsLink2 tooltip" href="http://www.royoswalt44.com/autographs.html" data-value="522" data-title=""><li><span>Autographs: </span><div class="count" data-value="http://www.royoswalt44.com/autographs.html"><img src="/files/theme/ajax-loader.gif" alt="loader" height="16" width="16" /></div></li></a><li class="circle">+</li><a class="statsLink2 tooltip" href="http://www.royoswalt44.com/game-used--patches.html" data-value="710" data-title=""><li><span>GU: </span><div class="count" data-value="http://www.royoswalt44.com/game-used--patches.html"><img src="/files/theme/ajax-loader.gif" alt="loader" height="16" width="16" /></div></li></a><li class="circle">+</li><a class="statsLink2 tooltip" href="http://www.royoswalt44.com/11.html" data-value="1032" data-title=""><li><span>1/1: </span><div class="count" data-value="http://www.royoswalt44.com/11.html"><img src="/files/theme/ajax-loader.gif" alt="loader" height="16" width="16" /></div></li></a><li class="circle">+</li><a class="statsLink2 tooltip" tooltip href="http://www.royoswalt44.com/rookie-cards.html" data-value="10" data-title=""><li><span>Rookie Cards: </span><div class="count" data-value="http://www.royoswalt44.com/rookie-cards.html"><img src="/files/theme/ajax-loader.gif" alt="loader" height="16" width="16" /></div></li></a><li class="circle">=</li><a class="statsLink2 tooltip" href="http://www.royoswalt44.com/index.html" data-value="4150" data-title=""><li>
+    <span id="countLast">adding...</span></li></a></ul>-->
+    <article class="intro"><h3>Update Blog</h3><br /><div class="updateDate">July 6, 2014</div><p>As you can see I've made some design changes.  I created the image slider to the right.  So far it's looking great in Chrome and Firefox.</p><div class="updateDate">May 15, 2014</div><p>I have been working hard on a new player collection compilation themed website.  Basically I want to organize various player collections based on completion percentage.  It's also a good way to gain more site exposure.  If you like to join the <a href="http://cardcollectorscompilation.weebly.com/" target="_blank">Card Collector's Compilation</a>, please use the <a href="http://www.royoswalt44.com/appraisal-services.html">Contact Form</a> on the bottom of that page.</p><div class="updateDate">April 22, 2014</div><p>Big strides have been made in the mobile version for the site. A navigation system is present, and the home page is looking solid. I need to redesign my button system for my pages. This will take extra time.</p><div class="updateDate">April 19, 2014</div><p>I have begun, in earnest, a mobile version of this site. Please hang tight while I develop a rich viewing experience.</p><div class="updateDate">April 3, 2014</div><p>Two new 2000 SPX RCs were added. I've redesigned the <a href="http://www.royoswalt44.com/daniel-hudson.html">Daniel Hudson</a>, <a href="http://www.royoswalt44.com/dan-haren.html">Dan Haren</a>, & <a href="http://www.royoswalt44.com/tim-hudson.html">Tim Hudson</a> RC pages.</p><div class="updateDate">March 26, 2014</div><p>I've added two new 2005 Reflections parallels. My completion percentage for base, inserts, and parallels is slowly inching towards 50%. From an overall site standpoint: there is a new site icon. I'm also working on ways to improve overall site speed.</p><div class="updateDate">February 11, 2014</div><p>Well, it was inevitable, but it's still a sad day. Oswalt has announced his retirement. It's difficult to formulate how I feel about the player. I've tracked all his games since 2004. I doubt anyone has searched for his cards more than me. It's a shame he never got that championship. Here's to you sir. Go spend time with your family. I honestly hope Cooperstown calls your name!</p><div class="updateDate">February 11, 2014</div><p>Beautiful and necessary updates are being performed on most pages. Some image expanders might not work during this period. Thanks for your patience.</p><div class="updateDate">January 22, 2014</div><p>I'm renovating all my pages. They will all be similar to the base, inserts, and parallels page.</p><div class="updateDate">January 15, 2014</div><p>The <a href="http://www.royoswalt44.com/base-inserts-parallels.html">base, inserts, and parallels</a> page is nearing completion. It is now running in near flawless fashion. Please check it out and tell me what you think. The only element that needs work is the open all years button at the top.</p><div class="updateDate">January 4, 2014</div><p>I've added two new GU, two autographs, and ten parallels. My newest player collection&mdash;Jordan Zimmermann&mdash;will be added soon!</p><div class="updateDate">December 24, 2013</div><p>The <a href="http://www.royoswalt44.com/base-inserts-parallels.html">base, inserts, and parallels</a> page has gone through a major overhaul. It's now dynamically adding up the lists from the various years. Also, I am working on adding a lightbox for a gallery view for each year.</p><div class="updateDate">August 16, 2013</div><p>My IT internship is nearly complete, and in that time I have gained some wonderful ideas for this site. Some are simply &quot;under the hood&quot;changes. I hope to do some updates soon.</p><div class="updateDate">April 25, 2013</div><p>Well I don't have an update yet, but I will be adding new cards soon. In the meantime, support my newest Flash game. Just go to the Home tab and click Games. It's a work in progress.</p><div class="updateDate">January 15, 2013</div><p>My 9th Oswalt Superfractor has arrived. It's the 2011 Finest, making it my 4th Finest Superfractor since 2005.</p><div class="updateDate">January 13, 2013</div><p>I have added about 20 new cards to the base, inserts, and parallels section. I'm inching closer to the 50% mark for that section.</p><div class="updateDate">January 4, 2013</div><p>It's a brand new year and life is great! I'm in the process of adding some new cards. Today I added 3 new 2005 Prestigious Pros parallels including the lowest numbered: black /10.</p><div class="updateDate">December 22, 2012</div><p>Merry Christmas to all! I'll be out of town for a week, but I have 25 new Oswalt cards to add next year.</p><div class="updateDate">November 9, 2012</div><p>The Daniel Hudson RC section is receiving an overhaul. One of my most wanted cards--a 2009 Bowman Sterling Gold Refractor autograph--had been added. I'm also in the process of adding ten new Oswalt GU and two cards from my most wanted list.</p><div class="updateDate">October 18, 2012</div><p>Many new cards have been added including my 10th Superfractor, many base and parallels, and several GU and autos. For the first time since 2000 and 2001 Oswalt will not be featured in Finest, Topps Chrome, and Bowman Chrome. That's the end of an era for me.</p><div class="updateDate">October 7, 2012</div><p>The inserts section has moved up to 46% completion. This is without 2012 being compiled.</p><div class="updateDate">September 5, 2012</div><p>Well I'm back in school. I've made some nice purchases lately. Those scans are coming soon.</p><div class="updateDate">August 12, 2012</div><p>My first consignment was a rousing success. 50 auctions brought in nearly $500 before fees. I have a lot to ship tomorrow.</p><div class="updateDate">August 3, 2012</div><p><span style="color:blue">This is perhaps my most significant update of the year.</span> Tomorrow I'll be listing right around 40 auctions for my first consignment. They feature Topps from the 60s and 70s. You will see Aaron, Mantle, Mays, Clemente, and other HOFers. You can follow my auctions under <a href="http://www.ebay.com/sch/marinersfanfromny/m.html?item=261075077258&sspagename=STRK%3AMESELX%3AIT&rt=nc&_trksid=p3984.m1555.l2649&_trksid=p4340.l2562" title="My Ebay items for sale" id="appraisals">my items for sale</a>. On the Oswalt front, I'm working on a big trade with a fellow collector, and I'm also working on purchasing a significant Oswalt collection. Stay tuned for the details.</p><div class="updateDate">July 24, 2012</div><p>Well I'm back. I have some new cards to add in all sections. Oswalt has had an up and down return.</p><div class="updateDate">June 24, 2012</div><p>Four new cards have been added including two GU.</p><div class="updateDate">June 20, 2012</div><p>I have not updated the site in awhile. Oswalt will be starting for the Rangers on Friday!</p><div class="updateDate">May 29, 2012</div><p>Finally we will see Oswalt back in action as a Texas Ranger. He has signed a one-year contract with the team, and he should be ready for the big leagues in 3-4 weeks. All I can say is woohoo!</p><div class="updateDate">May 29, 2012</div><p>I am in the process of moving! It is a terrific one-bedroom apartment here in Canandaigua, NY. Hopefully I'll post some pictures of the new place! And, of course, pictures of my card space.</p><div class="updateDate">May 27, 2012</div><p>Nine new cards have been added to the base, inserts, parallels list.</p><div class="updateDate">May 18, 2012</div><p>Since establishing the <a href="http://www.royoswalt44.com/wants.html" class="inserts">wants section</a> of my site, I have acquired two cards out of 100. Scans are up for the <a href="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20inserts%20base%20SPs%20parallels/02tcblack.jpg" target="_blank" class="inserts">2002 Topps Chrome Black Refractors #69 6/50</a> and the <a href="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20inserts%20base%20SPs%20parallels/03exessentials.jpg" target="_blank" class="inserts">2003 E-X Essential Credentials Now #32 6/32</a>. Both are absolutely incredible cards.</p><div class="updateDate">May 14, 2012</div><p>Well school is nearly over. Expect some updates soon, including the addition of two amazing cards.</p><div class="updateDate">April 25, 2012</div><p>I'm working on a top 100 wantlist. Why? Because I'm a crazy person.</p><div class="updateDate">March 9, 2011.</div><p>My appraisal service business is available now. Please note that in 2010 I sold around 100 cards from my Roy Oswalt collection. I have made tremendous strides in my life, and the revenue generated from the sales has helped me progress as a person. I still add to my collection in a far less venerated degree,and I still plan on selling more of my collection in 2011. So this new site will be more of a museum of past and present owned cards. Any text in red will constitute a sold card.</p><div class="updateDate">February 25, 2011.</div><p>Coming soon will be a redesigned site for my Roy Oswalt collection. I will also be adding information on my appraisal service and galleries for my investment cards. Please be patient during the transition.</p>
+    </article>
         </section>
-        
+        </div>
     <!-- Insert your content here -->
 </body>
 </html>
