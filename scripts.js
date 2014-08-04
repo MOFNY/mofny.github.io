@@ -167,7 +167,7 @@ $('.cd-nav-trigger').on('click', function(){
 			var formatIndividualEndTitle = 100*(overallTotal) / totalForEndTitle;
 			$(title).last().attr("data-title", "Overall Stats: " + ReplaceNumberWithCommas(overallTotal) + "/" + ReplaceNumberWithCommas(totalForEndTitle) + " or " + parseFloat(formatIndividualEndTitle.toFixed(1)) + "%")
                         $(item).fadeOut(300,function(){
-			var span = $("<span>&nbsp;" + totalAll + "</span>").hide();
+			var span = $("<span class='newSpan'>&nbsp;" + totalAll + "</span>").hide();
 			$(item).replaceWith(span);
 			
                         span.fadeIn(400);
@@ -179,7 +179,7 @@ $('.cd-nav-trigger').on('click', function(){
 		})
                 .fail(function(data){
 			$(item).fadeOut(300, function(){
-			var span2 = $("<span>&nbsp;X</span>").hide();
+			var span2 = $("<span class='newSpan'>&nbsp;X</span>").hide();
 			$(this).replaceWith(span2);
 			span2.fadeIn(400);
 		    });

@@ -663,8 +663,7 @@ display: inline-block;
   animation: scaleout 1.5s infinite ease-in-out;
 }
 .newSpan{
-  transition:all 1.4s ease-in-out;
-  color: red
+  color:rgb(63,137,169);
 }
 @-webkit-keyframes scaleout {
   0% { -webkit-transform: scale(0.0) }
