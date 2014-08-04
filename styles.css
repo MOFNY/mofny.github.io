@@ -236,6 +236,18 @@ h2{
   flex-flow: row wrap;
   text-align: left
 }
+#pageSection{
+  width: 100%;
+      display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    position: relative;
+    justify-content: center;
+    -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  background:rgba(63,107,169,0.3);
+}
 #firstSection article:first-child{
     background:rgba(63,107,169,0.3);
 	 font: 100 1.2em/200% Georgia;
@@ -278,6 +290,15 @@ background:rgba(63,137,169,0.5);
   color:DarkGreen;
   margin: -0.10em 0 -0.25em 0
 }
+article p{
+  font-size: 1.1em;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+}
+article h4{
+  padding-bottom: 10px
+}
+
 .maroon{
   color:#B22222;
 }
@@ -1102,7 +1123,7 @@ ol img {
 h4{
   text-align: center;
   margin: auto;
-  font-size: 2em;
+  font-size: 1.8em;
   font-family: 'Oswald', sans-serif;
 }
 .openClose {
@@ -1343,13 +1364,13 @@ h4{
 }
 ol span {
   border:solid #B22222;
-  font-family:arial;
+  font-family: 'Oswald', sans-serif;
   font-weight:700;
-  font-size:1.0em;
+  font-size:1.25em;
   background:rgba(255,255,255,0);
   border: 4px solid #ccc;
   border-radius:15px;
-  padding:5px;
+  padding:8px;
 }
 
 .soldCards {
