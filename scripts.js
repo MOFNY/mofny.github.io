@@ -143,6 +143,7 @@ $('.cd-nav-trigger').on('click', function(){
 		
 		
 		var dataString = $(item).attr('data-value').toString();
+		
 		var theCompleteString = dataString;
 		var urlsAll = [theCompleteString];
 		var totalAll = 0;
@@ -166,7 +167,10 @@ $('.cd-nav-trigger').on('click', function(){
 			var formatIndividualEndTitle = 100*(overallTotal) / totalForEndTitle;
 			$(title).last().attr("data-title", "Overall Stats: " + ReplaceNumberWithCommas(overallTotal) + "/" + ReplaceNumberWithCommas(totalForEndTitle) + " or " + parseFloat(formatIndividualEndTitle.toFixed(1)) + "%")
                         $(item).fadeOut(300,function(){
-                        $(item).text(totalAll).fadeIn(400);
+			var span = $("<span>&nbsp;" + totalAll + "</span>")
+			$(item).replaceWith(span);
+			
+                        span.fadeIn(400);
                         countLast.text(ReplaceNumberWithCommas(overallTotal)).show();
                         });
 			
@@ -174,7 +178,11 @@ $('.cd-nav-trigger').on('click', function(){
 						
 		})
                 .fail(function(data){
-                  $(item).html("failed to load").show();
+			$(item).fadeOut(300, function(){
+			var span2 = $("<span>&nbsp;X</span>").hide();
+			$(this).replaceWith(span2);
+			span2.fadeIn(400);
+		    });
                 });
 		
 	});
