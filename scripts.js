@@ -167,7 +167,7 @@ $('.cd-nav-trigger').on('click', function(){
 			var formatIndividualEndTitle = 100*(overallTotal) / totalForEndTitle;
 			$(title).last().attr("data-title", "Overall Stats: " + ReplaceNumberWithCommas(overallTotal) + "/" + ReplaceNumberWithCommas(totalForEndTitle) + " or " + parseFloat(formatIndividualEndTitle.toFixed(1)) + "%")
                         $(item).fadeOut(300,function(){
-			var span = $("<span>&nbsp;" + totalAll + "</span>")
+			var span = $("<span>&nbsp;" + totalAll + "</span>").hide();
 			$(item).replaceWith(span);
 			
                         span.fadeIn(400);
