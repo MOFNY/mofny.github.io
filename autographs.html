@@ -402,13 +402,13 @@
             </li>
 	    
 	    <section><a href="#thumb">
-		<img data-original="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20autographs/toppstenauto.jpg" alt="Roy Oswalt Autograph" class="lazy tall thumbnailEndLeft" />
+		<img data-original="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20autographs/toppstenauto.jpg" alt="Roy Oswalt Autograph" class="lazy wide thumbnailEndLeft" />
 	    </a>
 	    <a href="#thumb">
-		<img data-original="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20autographs/02toppstenauto2.jpg" alt="Roy Oswalt Autograph" class="lazy tall thumbnail" />
+		<img data-original="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20autographs/02toppstenauto2.jpg" alt="Roy Oswalt Autograph" class="lazy wide thumbnail" />
 	    </a>
 	    <a href="#thumb">
-		<img data-original="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20autographs/02toppstenauto3.jpg" alt="Roy Oswalt Autograph" class="lazy tall thumbnailEndRight" />
+		<img data-original="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20autographs/02toppstenauto3.jpg" alt="Roy Oswalt Autograph" class="lazy wide thumbnailEndRight" />
 	    </a></section>
 	    
             <h4 id="totalAutograph2002" class="totalGroup">Total:</h4>
@@ -464,10 +464,10 @@
             </li>
 	    
             <section><a href="#thumb">
-                <img data-original="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20autographs/03eliteauto2.jpg" alt="Roy Oswalt Autograph" class="lazy tall thumbnail" />
+                <img data-original="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20autographs/03eliteauto2.jpg" alt="Roy Oswalt Autograph" class="lazy wide thumbnail" />
             </a>
             <a href="#thumb">
-                <img data-original="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20autographs/03eliteauto.jpg" alt="Roy Oswalt Autograph" class="lazy tall thumbnail" />
+                <img data-original="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20autographs/03eliteauto.jpg" alt="Roy Oswalt Autograph" class="lazy wide thumbnail" />
             </a></section>
 	    
             <li>
@@ -1268,10 +1268,10 @@
                 <span>2005 Reflections Fabric Patch Autograph #RO<span style="color:red">1</span> & 18/50</span>
             </li>
             <section><a href="#thumb">
-                <img data-original="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20autographs/05reflection50-2.jpg" alt="Roy Oswalt Autograph" class="lazy tall thumbnail" />
+                <img data-original="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20autographs/05reflection50-2.jpg" alt="Roy Oswalt Autograph" class="lazy wide thumbnail" />
             </a>
             <a href="#thumb">
-                <img data-original="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20autographs/05reflections50.jpg" alt="Roy Oswalt Autograph" class="lazy tall thumbnail" />
+                <img data-original="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20autographs/05reflections50.jpg" alt="Roy Oswalt Autograph" class="lazy wide thumbnail" />
             </a></section>
             <li>
                 <span>2005 SP Authentic Chirography #OS 4/15</span>
@@ -1688,7 +1688,7 @@
 	</div>
 	</section>
         </div>
-    <!-- Insert your content here -->
+
     <script type="text/javascript">
         function getScript(url,success){
         var script=document.createElement('script');
@@ -1706,7 +1706,15 @@
         head.appendChild(script);
       }
       getScript('http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',function(){
-         getScript('//cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js',function(){
+         getScript('http://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js',function(){
+	  $(function() {
+    $("img.lazy").lazyload({
+    effect : "fadeIn", 
+    effect_speed: 200
+});
+    });
+	  getScript('allJsMini2.js',function(){
+ });
 	 });
       });
     </script>

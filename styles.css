@@ -309,13 +309,16 @@ background:rgba(63,137,169,0.5);
 #pageContainer
 {
     width: 100%;
+    
         display: -webkit-flex;
     display: flex;
     -webkit-align-items: center;
     align-items: center;
     position: relative;
     justify-content: center;
-    background-color: rgba(0,100,0, 0.4);
+    -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+    background:rgba(63,137,169,0.5);
     padding: 0;
     margin: 0;
   position: relative;
@@ -1015,8 +1018,7 @@ p {
 }
 
 .revealButtons {
-  width:50%;
-  margin:0 auto;
+  width: 50%;
   font-size:2.5em;
   position:static;
   transition:all 1s ease-in-out;
@@ -1045,8 +1047,10 @@ button:active {
   box-shadow:0 0 10px rgba(63,107,169,0.7);
   outline:none;
 }
+
 ol {
   list-style-type: none;
+  width: 100%;
   display: flex;
   display: -webkit-flex;
   -webkit-align-items: center;
@@ -1054,7 +1058,6 @@ ol {
     justify-content: center;
     -webkit-flex-flow: column wrap;
   flex-flow: column wrap;
-  border: 1px solid black
 }
 ol section{
   display: flex;
@@ -1065,7 +1068,6 @@ ol section{
     -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
   width: 100%;
-  border: 1px solid black
 }
 ol img {
   position:relative;
@@ -1081,17 +1083,20 @@ ol img {
   box-shadow:0 0 12px 4px rgba(0,0,0,.3);
   padding:7px;
   transition:all 0.8s cubic-bezier(0.785,0.135,0.150,0.860);
-  height:auto;
-  margin: 20px auto
+  height:auto !important;
+  margin: 20px 5px 
 }
 
 .tall { /*for cards with greater heights then widths*/
-  width:130px;
+  width:130px !important;
   
 }
 
 .wide { /*for cards with greater widths then heights*/
-  width:190px;
+  width:190px !important;
+}
+.clear{
+  clear: both
 }
 h4{
   text-align: center;
@@ -1335,28 +1340,19 @@ h4{
   background-color:rgba(0,0,0,0.7);
   transition:all 0.9s ease-in-out;
 }
-.ownedCards {
+ol span {
   border:solid #B22222;
   font-family:arial;
   font-weight:700;
   font-size:1.0em;
-  background:rgba(235,247,255,0.3);
+  background:rgba(255,255,255,0);
   border: 4px solid #ccc;
   border-radius:15px;
-  padding:5px
+  padding:5px;
 }
 
 .soldCards {
   color:red;
-  border:solid #B22222;
-  font-family:arial;
-  font-weight:700;
-  clear:both;
-  font-size:1.0em;
-  background:rgba(235,247,255,0.3);
-  border: 4px solid #ccc;
-  border-radius:15px;
-  padding:5px
 }
 
 .alignTall {

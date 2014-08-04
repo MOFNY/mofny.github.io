@@ -133,7 +133,62 @@ $('.cd-nav-trigger').on('click', function(){
 		mainNavigation.off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend').toggleClass('is-visible');
 
 	});
+ 
+	var countClass = $(".count");
+	var countLast = $('#countLast');
+	var title = $(".statsLink2");
+	var overallTotal = 0;
+	
+	$.each(countClass, function(i, item) {
+		
+		
+		var dataString = $(item).attr('data-value').toString();
+		var theCompleteString = dataString;
+		var urlsAll = [theCompleteString];
+		var totalAll = 0;
+		$.ajaxSetup({
+    timeout: 8000 //Time in milliseconds
 });
+		$.get(urlsAll).done(function(data) {
+			totalAll += $(data).find(".yearGroup").find("li").length - $(data).find(".yearGroup").find(".red").length;
+			
+			//var random = Math.round(Math.random()* totalAll);
+			//console.log(type);
+			//Don't include the cards that I don't own
+			//var randomness = hidden.find('li').not('li:has(.red)').eq(random).text();
+			//console.log(randomness);
+			var totalForTitle = $(title[i]).attr('data-value');
+			var totalForEndTitle = $(title).last().attr('data-value');
+			var formatIndividualTitle = 100*(totalAll) / totalForTitle;
+			$(title[i]).attr("data-title", "Completion Stats: " + totalAll + "/" + ReplaceNumberWithCommas(totalForTitle)
+					 + " or " + parseFloat(formatIndividualTitle.toFixed(1)) + "%" /*+ "<br /><hr />" + "Cards include: " + randomness*/);
+			overallTotal += totalAll;
+			var formatIndividualEndTitle = 100*(overallTotal) / totalForEndTitle;
+			$(title).last().attr("data-title", "Overall Stats: " + ReplaceNumberWithCommas(overallTotal) + "/" + ReplaceNumberWithCommas(totalForEndTitle) + " or " + parseFloat(formatIndividualEndTitle.toFixed(1)) + "%")
+                        $(item).fadeOut(300,function(){
+                        $(item).text(totalAll).fadeIn(400);
+                        countLast.text(ReplaceNumberWithCommas(overallTotal)).show();
+                        });
+			
+			console.log("loaded " + totalAll);
+						
+		})
+                .fail(function(data){
+                  $(item).html("failed to load").show();
+                });
+		
+	});
+        function ReplaceNumberWithCommas(yourNumber) {
+    //Seperates the components of the number
+    var n= yourNumber.toString().split(".");
+    //Comma-fies the first part
+    n[0] = n[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    //Combines the two sections
+    return n.join(".");
+}
+
+});
+
  /*var mainNavigation = document.querySelectorAll("#cd-main-nav ul");
 var trigger = document.getElementById('menuButton');
 trigger.addEventListener('click', toggleMenu)
