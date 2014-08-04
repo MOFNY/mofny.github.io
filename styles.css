@@ -650,12 +650,13 @@ background:rgba(63,137,169,0.5);
 -ms-transform:rotate(720deg); 
 -webkit-transform:rotate(720deg); 
 }
-.spinner {
+.count {
   width: 30px;
   height: 50px;
   background-color:rgb(63,137,169);
   width: 40px;
   height: 40px;
+
   border-radius: 100%;  
   -webkit-animation: scaleout 1.5s infinite ease-in-out;
   animation: scaleout 1.5s infinite ease-in-out;
@@ -677,10 +678,6 @@ background:rgba(63,137,169,0.5);
     -webkit-transform: scale(1.0);
     opacity: 0;
   }
-}
-.count{
-  display: inline-block;
-  position: relative
 }
 
 #totalsList a{
