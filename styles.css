@@ -656,10 +656,15 @@ background:rgba(63,137,169,0.5);
   background-color:rgb(63,137,169);
   width: 40px;
   height: 40px;
-
+display: inline-block;
+  position: relative;
   border-radius: 100%;  
   -webkit-animation: scaleout 1.5s infinite ease-in-out;
   animation: scaleout 1.5s infinite ease-in-out;
+}
+.newSpan{
+  transition:all 1.4s ease-in-out;
+  color: red
 }
 @-webkit-keyframes scaleout {
   0% { -webkit-transform: scale(0.0) }
