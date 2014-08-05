@@ -337,15 +337,7 @@ article h4{
 #pageContainer
 {
     width: 100%;
-    
-        display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: center;
-    align-items: center;
-    position: relative;
-    justify-content: center;
-    -webkit-flex-flow: column wrap;
-  flex-flow: column wrap;
+    border: 1px solid black;
     background:rgba(63,137,169,0.1);
     padding: 0;
     margin: 0;
@@ -1045,7 +1037,9 @@ p {
   position:relative;
   z-index:1;
 }
-
+.hideGroup{
+  
+}
 .revealButtons {
   width: 50%;
   font-size:2.5em;
@@ -1112,8 +1106,8 @@ ol img {
   box-shadow:0 0 12px 4px rgba(0,0,0,.3);
   padding:7px;
   transition:all 0.8s cubic-bezier(0.785,0.135,0.150,0.860);
-  height:auto !important;
-  margin: 20px 5px 
+  height:auto;
+  margin: 30px 5px 
 }
 
 .tall { /*for cards with greater heights then widths*/
@@ -1469,6 +1463,7 @@ ol span {
   transform-origin:50% 50%;
   z-index:50;
   padding:3px;
+  margin-top: -33px
 }
 
 .thumbnailEndLeft:hover {
