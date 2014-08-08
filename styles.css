@@ -707,6 +707,7 @@ display: inline-block;
 }
 .newSpan{
   color:rgb(63,137,169);
+  font-size: 1.0em !important
 }
 @-webkit-keyframes scaleout {
   0% { -webkit-transform: scale(0.0) }
