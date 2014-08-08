@@ -8,6 +8,7 @@
     <meta name='keywords' content='2001, 2002, 2003, 2004, 2005, 2007, 2008, 2009, 2010, 2011, 2012, roy oswalt, base, inserts, parallels, bowman, chrome, topps, upper deck, fleer, leaf, gold, red, blue, refractor, phillies, astros, houston, black, green, finest, diamond kings, donruss, flair' />
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+    <link href='http://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
     
@@ -513,7 +514,6 @@
 				<li>2004 Finest #7</li>
 				<li><a class="fancybox inserts" rel="gallery2004" title="2004 Finest Gold Refractors #7 11/50" href="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20inserts%20base%20SPs%20parallels/04finestgold.jpg">2004 Finest Gold Refractors #7 11/50</a></li>
 				<li><a class="fancybox inserts" rel="gallery2004" title="2004 Finest Refractors #7" href="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20inserts%20base%20SPs%20parallels/04finestref.jpg">2004 Finest Refractors #7</a>
-			</p>
 			<li><a class="fancybox inserts" rel="gallery2004" title="2004 Finest Uncirculated Gold Xfractors #7 18/139" href="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20inserts%20base%20SPs%20parallels/04finestgoldx.jpg">2004 Finest Uncirculated Gold Xfractors #7 18/139</a></li>
 			<li>2004 Fleer Authentix #54 Own 3</li>
 			<li><a class="fancybox inserts" rel="gallery2004" title="2004 Fleer Authentix Club Box #54 20/25" href="http://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20inserts%20base%20SPs%20parallels/authentix25.jpg">2004 Fleer Authentix Club Box #54 20/25</a></li>
@@ -1489,6 +1489,29 @@
         head.appendChild(script);
       }
       getScript('http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',function(){
+	getScript('http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js',function(){
+	getScript('http://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js',function(){
+            $(".fancybox").fancybox({
+		openEffect	: 'elastic',
+		closeEffect	: 'elastic',
+		afterShow: function() {
+        $(".fancybox-title").wrapInner('<div />').show();
+        
+        $(".fancybox-wrap").hover(function() {
+            $(".fancybox-title").show("slow");
+        }, function() {
+
+
+            $(".fancybox-title").hide("slow");
+        });
+    },
+    
+    helpers : {
+        title: {
+            type: 'over'
+        }
+    }
+	    });
          getScript('http://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js',function(){
 	  $(function() {
     $("img.lazy").lazyload({
@@ -1497,9 +1520,13 @@
 });
     });
 	  getScript('allJsMini2.js',function(){
+	    
  });
+	  
 	 });
       });
+	});
+	});
     </script>
 </body>
 </html>

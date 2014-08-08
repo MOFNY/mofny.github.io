@@ -672,6 +672,14 @@ article h4{
 #totalsList img{
   margin-bottom: -3px;
 }
+#totalsList span{
+  border:none;
+  font-family: 'Oswald', sans-serif;
+  font-weight:700;
+  font-size:1.20em;
+  border-radius: none;
+  padding: 0
+}
 .circle {
   background: rgba(0,50,64,0) !important;
   font-size: 1.5em;
@@ -1053,7 +1061,7 @@ p {
   z-index:1;
 }
 .hideGroup{
-  
+  display: none
 }
 .revealButtons {
   width: 50%;
@@ -1223,6 +1231,22 @@ ol{
 
 .imgFloatWide {
   margin-left:-100px;
+}
+.fancybox-title-over-wrap {
+  width:100%;
+  padding:0;
+  text-align:center;
+  font-size:1em;
+  font-family:Georgia;
+}
+
+.fancybox-title-over-wrap > div {
+  padding:10px;
+}
+
+.fancybox-skin {
+  background:-webkit-linear-gradient(top,#ffffff 2%,#bdb76b 50%,#ffffff 98%);
+  background:-moz-linear-gradient(top,#ffffff 2%,#bdb76b 50%,#ffffff 98%);
 }
 
 
