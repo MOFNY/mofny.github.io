@@ -13,6 +13,7 @@
 <body>
     
     <div id="wrapper">
+	<div class="arrow-up2"></div>
         <div id="cd-nav">
 		<a href="#0" class="cd-nav-trigger" id="menuButton">Menu<span></span></a>
 		<div id="cd-main-nav">
@@ -1467,67 +1468,60 @@
 <div class="arrow-up">
 </div>
 </div>
-<br/>
 	    </div>
 	</div>
 	</section>
         </div>
 
     <script type="text/javascript">
-        function getScript(url,success){
-        var script=document.createElement('script');
-        script.src=url;
-        var head=document.getElementsByTagName('head')[0],
-            done=false;
-        script.onload=script.onreadystatechange = function(){
-          if ( !done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete') ) {
-            done=true;
+        function getScript(url, success) {
+    var script = document.createElement('script');
+    script.src = url;
+    var head = document.getElementsByTagName('head')[0],
+        done = false;
+    script.onload = script.onreadystatechange = function() {
+        if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {
+            done = true;
             success();
             script.onload = script.onreadystatechange = null;
             head.removeChild(script);
-          }
-        };
-        head.appendChild(script);
-      }
-      getScript('http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',function(){
-	getScript('http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js',function(){
-	getScript('http://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js',function(){
-            $(".fancybox").fancybox({
-		openEffect	: 'elastic',
-		closeEffect	: 'elastic',
-		afterShow: function() {
-        $(".fancybox-title").wrapInner('<div />').show();
-        
-        $(".fancybox-wrap").hover(function() {
-            $(".fancybox-title").show("slow");
-        }, function() {
-
-
-            $(".fancybox-title").hide("slow");
-        });
-    },
-    
-    helpers : {
-        title: {
-            type: 'over'
         }
-    }
-	    });
-         getScript('http://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js',function(){
-	  $(function() {
-    $("img.lazy").lazyload({
-    effect : "fadeIn", 
-    effect_speed: 200
-});
+    };
+    head.appendChild(script);
+}
+getScript('http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', function() {
+    getScript('http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js', function() {
+        getScript('http://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js', function() {
+            $(".fancybox").fancybox({
+                openEffect: 'elastic',
+                closeEffect: 'elastic',
+                afterShow: function() {
+                    $(".fancybox-title").wrapInner('<div />').show();
+                    $(".fancybox-wrap").hover(function() {
+                        $(".fancybox-title").show("slow");
+                    }, function() {
+                        $(".fancybox-title").hide("slow");
+                    });
+                },
+                helpers: {
+                    title: {
+                        type: 'over'
+                    }
+                }
+            });
+            getScript('http://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js', function() {
+                $(function() {
+                    $("img.lazy").lazyload({
+                        effect: "fadeIn",
+                        effect_speed: 200
+                    });
+                });
+                getScript('allJsMini2.js', function() {
+                });
+            });
+        });
     });
-	  getScript('allJsMini2.js',function(){
-	    
- });
-	  
-	 });
-      });
-	});
-	});
+});
     </script>
 </body>
 </html>
