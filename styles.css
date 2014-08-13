@@ -398,7 +398,7 @@ article h4{
   border: 6px solid #ccc;
   /*box-shadow:0 0 12px 3px rgba(0,0,0,.5);*/
   border-radius:15px;
-  padding:10px 20px 20px 2.35em;
+  padding:10px 0 20px 20px;
   margin:20px auto;
 }
 .imageGroup{
@@ -1200,9 +1200,6 @@ ol li{
 }
 
 .imgFloat img:hover {
-  -moz-box-shadow:0 0 12px 1px rgba(0,0,0,.7);
-  -webkit-box-shadow:0 0 12px 1px rgba(0,0,0,.7);
-  -goog-ms-box-shadow:0 0 12px 1px rgba(0,0,0,.7);
   box-shadow:0 0 12px 1px rgba(0,0,0,.7);
   -webkit-transform:scale(2,2);
   transform:scale(2,2);
@@ -1213,6 +1210,8 @@ ol li{
 .inserts {
   text-decoration:none;
   transition:all 0.3s ease-in-out;
+  border-radius: 5px;
+  box-shadow:none
 }
 
 .inserts:link {
@@ -1226,20 +1225,11 @@ ol li{
 
 .inserts:hover {
   text-decoration:none;
-  border-style:solid;
-  border-width:2px;
-  border-color:black;
-  border-right-color:#B22222;
-  border-left-color:#B22222;
-  padding:1px;
-  margin-left:-3px;
-  margin-right:-3px;
-  background-color:#E0F0F6;
-  -moz-box-shadow:0 0 12px 3px rgba(0,0,0,.5);
-  -webkit-box-shadow:0 0 12px 3px rgba(0,0,0,.5);
-  -goog-ms-box-shadow:0 0 12px 3px rgba(0,0,0,.5);
-  box-shadow:0 0 12px 3px rgba(0,0,0,.5);
-  transition:all 0.3s ease-in-out;
+  background:rgba(63,137,169,0.4);
+  box-shadow:0 10px 8px -10px rgba(0,0,0,.9);
+  border-radius: 5px;
+  padding: 8px;
+  color: DarkGreen
 }
 
 .overlap {
