@@ -5,7 +5,7 @@ ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input {
 *, *:before, *:after {
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
  }
-        html{
+html{
     height: auto;
     font-size: 100%;
 }
@@ -20,7 +20,7 @@ body{
     max-height: 0;
     position: relative
 }
-        #wrapper
+#wrapper
 {
     
     margin: 0;
@@ -37,7 +37,51 @@ body{
     -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
   position: relative;
- 
+}
+.arrow-up2 {
+  width:0;
+  height:0;
+  border-left:20px solid transparent;
+  border-right:20px solid transparent;
+  display:block;
+  border-bottom:20px solid #B22222;
+  opacity:0.7;
+  position: fixed;
+  right: 1%;
+  bottom: 5%;
+  transition:all 0.5s ease-in-out;
+  background:transparent;
+  z-index: 99999
+}
+.arrow-up2:hover {
+  width:0;
+  height:0;
+  border-left:20px solid transparent;
+  border-right:20px solid transparent;
+  display:block;
+  border-bottom:20px solid rgba(63,107,169,1);
+  transition:all 0.5s ease-in-out;
+  cursor:pointer;
+  opacity:1;
+  background:transparent;
+  -webkit-transform:scale(1.5,1.5);
+  transform:scale(1.5,1.5);
+  -webkit-transform-origin:50% 50%;
+  transform-origin:50% 50%;
+}
+.arrow-up2:active {
+  width:0;
+  height:0;
+  border-left:20px solid transparent;
+  border-right:20px solid transparent;
+  display:block;
+  border-bottom:20px solid rgba(63,107,169,1);
+  transition:all 0.5s ease-in-out;
+  cursor:pointer;
+  opacity:1;
+  background:transparent;
+  transition:all 0.2s ease-in-out;
+  transform: scale(0.8) translateY(5px);
 }
 nav{
     
@@ -353,8 +397,6 @@ article h4{
   clear:both;
   border: 6px solid #ccc;
   /*box-shadow:0 0 12px 3px rgba(0,0,0,.5);*/
-  -moz-border-radius:15px;
-  -webkit-border-radius:15px;
   border-radius:15px;
   padding:10px 20px 20px 2.35em;
   margin:20px auto;
@@ -489,9 +531,6 @@ article h4{
 }
 .thumbnail:hover {
   background:rgba(63,107,169,0.7);
-  -moz-box-shadow:0 0 6px 2px rgba(0,0,0,.8);
-  -webkit-box-shadow:0 0 6px 2px rgba(0,0,0,.8);
-  -goog-ms-box-shadow:0 0 6px 2px rgba(0,0,0,.8);
   box-shadow:0 0 6px 2px rgba(0,0,0,.8);
   -webkit-transform:scale(3,3);
   transform:scale(3,3);
