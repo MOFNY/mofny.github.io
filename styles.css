@@ -1,4 +1,4 @@
-ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input {
+ol,ul,li,h1,h2,h3,h4,h5,h6,section,article,pre,form,body,html,p,blockquote,fieldset,input {
   margin:0;
   padding:0;
 }
@@ -1140,6 +1140,7 @@ ul {
     justify-content: center;
     -webkit-flex-flow: column wrap;
   flex-flow: column wrap;
+  border: 1px solid black
 }
 ul section{
   display: flex;
@@ -1168,9 +1169,7 @@ ul img {
   height:auto;
   margin: 30px 5px 
 }
-ol{
-  
-}
+
 ol li{
   font-family: 'Karma', sans-serif;
   list-style-position: inside;
@@ -1554,82 +1553,6 @@ ul span .red2{
 }
 .soldCards {
   color:red;
-}
-
-.alignTall {
-  
-  margin:0 133px 20px -180px;
-  width:130px;
-  height:auto;
-}
-
-.alignTall2 {
-  
-  margin:0 55px 20px -20px;
-  width:130px;
-  height:auto;
-}
-
-.alignTall3 {
-  
-  margin:0 12px 16px -60px;
-  
-  transition: all 0.5s ease-in-out
-}
-
-
-.alignTall4 {
-  
-  margin:0 143px 20px -210px;
-  width:130px;
-  height:auto;
-}
-
-.alignTall5 {
-  
-  margin:0 125px 20px -75px;
-  width:130px;
-  height:auto;
-}
-
-.alignTall6 {
-  
-  margin:0 290px 20px -180px;
-  width:130px;
-  height:auto;
-}
-
-.alignTall7 {
-  
-  margin:0 237px 20px -138px;
-  width:190px;
-  height:auto;
-}
-
-.alignTall8 {
-  
-  margin:0 180px 20px -85px;
-  width:130px;
-  height:auto;
-}
-
-.alignTall9 {
-  
-  margin:0 20px 0 0;
-}
-
-.alignTall10 {
-  
-  margin:0 155px 20px -120px;
-  width:190px;
-  height:auto;
-}
-
-.alignTall11 {
-  
-  margin:0 25px 20px -10px;
-  width:130px;
-  height:auto;
 }
 
 .thumbnail:hover {
