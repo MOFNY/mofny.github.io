@@ -1140,7 +1140,6 @@ ul {
     justify-content: center;
     -webkit-flex-flow: column wrap;
   flex-flow: column wrap;
-  border: 1px solid black
 }
 ul section{
   display: flex;
