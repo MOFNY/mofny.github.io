@@ -1095,17 +1095,13 @@ p {
     -moz-animation: cd-bounce-in 0.3s linear;
     animation: cd-bounce-in 0.3s linear;
   }
-  .floatCloseBar {
-  position:relative;
-  z-index:1;
-}
+  
 .hideGroup{
   display: none
 }
 .revealButtons {
   width: 50%;
   font-size:2.2em;
-  position:static;
   transition:all 1s ease-in-out;
   text-align:center;
   outline:none;
@@ -1113,6 +1109,7 @@ p {
   font-family: 'Oswald', sans-serif;
   margin-bottom:10px;
   overflow:hidden;
+  position: relative
 }
 
 .revealButtons:hover {
@@ -1319,7 +1316,7 @@ h4{
   content:"Open \2192";
   transition:all 0.6s ease-in-out;
   position: absolute;
-  left: 330px
+  left: 160px
 }
 .openClose:active:before {
   content:"Opening ";
@@ -1356,23 +1353,19 @@ h4{
 .openClose3:hover:before {
   content:"Open/Close ";
   position:absolute;
-  left:300px;
+  left:160px;
   transition:all 0.6s ease-in-out;
 }
 
 .float {
   position:relative;
-  opacity:.9;
-  width:10%;
   color:blue;
   font-size:1.6em;
   border-color:rgba(63,107,169,0.7);
-  transition:all 1s ease-in-out;
 }
 
 .float:hover {
   opacity:1;
-  width:22%;
   padding-left:110px;
   overflow:hidden;
   border:6px solid #B22222;
@@ -1382,8 +1375,18 @@ h4{
   color:transparent;
 }
 
-.closeBar,
 #allCloseBar {
+  text-align:center;
+  margin:0 auto;
+  clear:both;
+  overflow:hidden;
+  width:100%;
+  position: fixed;
+  top: 0;
+  height: 0;
+  z-index: 1;
+}
+.closeBar{
   text-align:center;
   margin:0 auto;
   clear:both;
@@ -1391,6 +1394,8 @@ h4{
   overflow:hidden;
   width:100%;
   padding-bottom:10px;
+  position: relative;
+  z-index: 500
 }
 
 .arrow-down {
