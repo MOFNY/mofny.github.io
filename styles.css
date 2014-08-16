@@ -1212,7 +1212,7 @@ ol li{
   text-decoration:none;
   transition:all 0.3s ease-in-out;
   border-radius: 5px;
-  box-shadow:none
+  box-shadow:none;
 }
 
 .inserts:link {
@@ -1230,7 +1230,7 @@ ol li{
   box-shadow:0 10px 8px -10px rgba(0,0,0,.9);
   border-radius: 5px;
   padding: 8px;
-  color: DarkGreen
+  color: DarkGreen;
 }
 
 .overlap {
@@ -1569,7 +1569,7 @@ ul span .red2{
   transform:scale(3,3);
   -webkit-transform-origin:50% 50%;
   transform-origin:50% 50%;
-  z-index:50;
+  z-index:1000;
   padding:3px;
   margin-top: -33px
 }
