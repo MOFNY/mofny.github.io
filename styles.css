@@ -856,7 +856,7 @@ p {
   width: 100%;
   max-width: 200px;
   right: 2%;
-  top: -11px;
+  top: 5px;
   border-radius: 0.25em;
   background:#000000;
   background:-moz-linear-gradient(top,#000000 0%,#45484d 100%);
@@ -865,7 +865,6 @@ p {
   background:-o-linear-gradient(top,#000000 0%,#45484d 100%);
   background:-ms-linear-gradient(top,#000000 0%,#45484d 100%);
   background:linear-gradient(top,#000000 0%,#45484d 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000',endColorstr='#45484d',GradientType=0 );
   visibility: hidden;
   /* remove overflow:hidden if you want to create a drop-down menu - but then remember to fix/eliminate the list items animation */
   overflow: hidden;
@@ -884,13 +883,20 @@ p {
   -o-transform-origin: 100% 0;
   transform-origin: 100% 0;
   -webkit-transition: -webkit-transform 0.3s, visibility 0s 0.3s;
-  -moz-transition: -moz-transform 0.3s, visibility 0s 0.3s;
   transition: transform 0.3s, visibility 0s 0.3s;
 }
 #cd-nav ul li {
   /* Force Hardware Acceleration in WebKit */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  width: 100%
+}
+
+#cd-nav a{
+  text-decoration: none;
+}
+#cd-nav a:hover{
+  color: blue;
 }
 #cd-nav ul.is-visible {
   visibility: visible;
