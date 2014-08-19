@@ -707,9 +707,6 @@ article h4{
   padding-right: 15px;
   background: rgba(245,225,225,0.7);
 }
-#totalsList img{
-  margin-bottom: -3px;
-}
 #totalsList span{
   border:none;
   font-family: 'Oswald', sans-serif;
@@ -1685,6 +1682,101 @@ ul span .red2{
 }
 }
 @media only screen and (max-width : 480px){
+  #totalsList{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    justify-content: space-between; /*same as applying margin: auto on the li*/
+    background: rgba(0,50,64,0.4);
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    width: 100%;
+    position: relative;
+    z-index: 200;
+    margin: -30px 0 0 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1em
+}
+#totalsList li{
+   display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+  transition:all 1.4s ease-in-out;
+  text-decoration:none;
+  color: black;
+  max-height: 30px;
+  min-height: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: rgba(245,225,225,0.7);
+}
+#totalsList span{
+  border:none;
+  font-family: 'Oswald', sans-serif;
+  font-weight:700;
+  font-size:1.20em;
+  border-radius: none;
+  padding: 0
+}
+#firstSection{
+  width: 100%;
+        display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    position: relative;
+    justify-content: center;
+    -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+  text-align: left
+}
+#firstSection article:first-child{
+    background:rgba(63,107,169,0.3);
+	 font: 100 1.0em/200% Georgia;
+ padding: 20px 2% 10px 2%;
+ width: 100%;
+ -webkit-flex: 1;         
+  -ms-flex: 1;        
+  flex: 1;
+}
+#firstSection article:nth-child(2){
+   
+background:rgba(63,137,169,0.5);
+	 font: 100 1.0em/200% Georgia;
+ padding: 20px 2% 10px 2%;
+ width: 100%;
+ -webkit-flex: 1;         
+  -ms-flex: 1;        
+  flex: 1;
+}
+#firstSection article:first-child:first-letter {
+  font:3.0em "Times New Roman","MS Serif","New York",serif;
+  color:#B22222;
+  float:left;
+  margin: -0.35em 0 -0.25em 0
+}
+#firstSection article:first-child:first-letter,  x:-moz-any-link, x:default{
+  font:3.0em "Times New Roman","MS Serif","New York",serif;
+  color:#B22222;
+  float:left;
+  margin: -0.10em 0 -0.25em 0
+}
+#firstSection article:nth-child(2):first-letter {
+  font:2.9em "Times New Roman","MS Serif","New York",serif;
+  color:DarkGreen;
+  float:left;
+  margin: -0.35em 0 -0.25em 0
+}
+#firstSection article:nth-child(2):first-letter,  x:-moz-any-link, x:default{
+  font:2.9em "Times New Roman","MS Serif","New York",serif;
+  color:DarkGreen;
+  margin: -0.10em 0 -0.25em 0
+}
   .intro:first-child{
     background:rgba(63,107,169,0.3);
     
