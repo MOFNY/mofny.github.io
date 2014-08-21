@@ -8,6 +8,7 @@ ol,ul,li,h1,h2,h3,h4,h5,h6,section,article,pre,form,body,html,p,blockquote,field
 html{
     height: auto;
     font-size: 100%;
+    width: 100%
 }
 html, body{
     margin: 0 auto;
@@ -1176,6 +1177,10 @@ ol li{
   font-family: 'Karma', sans-serif;
   list-style-position: inside;
   font-size: 1.25em;
+  line-height: 150%
+}
+ol li, x:-moz-any-link, x:default{
+  line-height: 145%
 }
 .red2{
   color: red
@@ -1283,7 +1288,6 @@ ol li{
   background:-webkit-linear-gradient(top,#ffffff 2%,#bdb76b 50%,#ffffff 98%) !important;
   background:-moz-linear-gradient(top,#ffffff 2%,#bdb76b 50%,#ffffff 98%) !important;
 }
-
 
 .tall { /*for cards with greater heights then widths*/
   width:130px !important;
