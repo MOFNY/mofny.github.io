@@ -583,11 +583,8 @@ article h4{
   padding: 0
 }
 #countLast {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: center;
-  align-items: center;
-  justify-content: center;
+  width: 45px;
+  text-align: center
 }
 .circle {
   background: rgba(0,50,64,0) !important;
