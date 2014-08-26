@@ -592,16 +592,13 @@ article h4{
 }
 .circle:hover {
   transform:rotate(720deg);
--ms-transform:rotate(720deg); 
--webkit-transform:rotate(720deg); 
+  -webkit-transform:rotate(720deg); 
 }
 .count {
-  width: 30px;
-  height: 50px;
   background-color:rgb(63,137,169);
-  width: 40px;
-  height: 40px;
-display: inline-block;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
   position: relative;
   border-radius: 100%;  
   -webkit-animation: scaleout 1.5s infinite ease-in-out;
@@ -609,16 +606,24 @@ display: inline-block;
 }
 .newSpan{
   color:rgb(63,137,169);
-  font-size: 1.0em !important
+  font-size: 1.0em !important;
+  width: 30px;
+  height: 30px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+ 
 }
 @-webkit-keyframes scaleout {
-  0% { -webkit-transform: scale(0.0) }
+  0% {
+    -webkit-transform: scale(0.0)
+  }
   100% {
     -webkit-transform: scale(1.0);
     opacity: 0;
   }
 }
-
 @keyframes scaleout {
   0% { 
     transform: scale(0.0);
