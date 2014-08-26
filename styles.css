@@ -254,7 +254,6 @@ article p{
 article h4{
   padding-bottom: 10px
 }
-
 .maroon{
   color:#B22222;
 }
@@ -268,7 +267,6 @@ article h4{
   text-align: left;
   font: inherit
 }
-
 #container{
   width: 100%;
   display: -webkit-flex;
@@ -1024,16 +1022,13 @@ ol li, x:-moz-any-link, x:default{
   border-radius: 5px;
   box-shadow:none;
 }
-
 .inserts:link {
   text-decoration:none;
   color:blue;
 }
-
 .inserts:visited {
   color:purple;
 }
-
 .inserts:hover {
   text-decoration:none;
   background:rgba(63,137,169,0.4);
@@ -1042,35 +1037,24 @@ ol li, x:-moz-any-link, x:default{
   padding: 8px;
   color: DarkGreen;
 }
-
-.overlap {
-  white-space:nowrap;
-  width:34.2em;
-  text-overflow:ellipsis;
-  overflow:hidden;
-  list-style-position:inside;
-  margin-left:-22px;
+.overlap, .overlap2 {
+  white-space: nowrap;
+  width: 34.2em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  list-style-position: inside;
+  margin-left: -22px;
 }
-
 .overlap2 {
-  white-space:nowrap;
-  width:34.2em;
-  text-overflow:ellipsis;
-  overflow:hidden;
-  list-style-position:inside;
-  margin-left:-31px;
+  margin-left: -31px;
 }
-
-.overlap:hover,
-.overlap2:hover {
-  z-index:2;
-  width:73%;
+.overlap:hover, .overlap2:hover {
+  z-index: 2;
+  width: 73%;
 }
-
 .gap {
   margin-left:5px;
 }
-
 .imgFloatWide {
   margin-left:-100px;
 }
@@ -1082,27 +1066,21 @@ ol li, x:-moz-any-link, x:default{
   height: auto
 }
 .fancybox-title-over-wrap {
-  width:100% !important;
-  padding:0 !important;
-  text-align:center !important;
-  font-size:1em !important;
-  font-family:Georgia !important;
+  width: 100% !important;
+  padding: 0 !important;
+  text-align: center !important;
+  font: 1em Georgia !important;
 }
-
 .fancybox-title-over-wrap > div {
   padding:7px !important;
 }
-
 .fancybox-skin {
   background:-webkit-linear-gradient(top,#ffffff 2%,#bdb76b 50%,#ffffff 98%) !important;
   background:-moz-linear-gradient(top,#ffffff 2%,#bdb76b 50%,#ffffff 98%) !important;
 }
-
 .tall { /*for cards with greater heights then widths*/
   width:130px !important;
-  
 }
-
 .wide { /*for cards with greater widths then heights*/
   width:190px !important;
 }
@@ -1112,22 +1090,15 @@ ol li, x:-moz-any-link, x:default{
 h4{
   text-align: center;
   margin: auto;
-  font-size: 1.8em;
-  font-family: 'Oswald', sans-serif;
+  font: 1.8em 'Oswald', sans-serif;
 }
-.openClose {
-  
-}
-
 .openClose:hover {
   padding-left:300px;
 }
-
-.openClose:before {
+.openClose:before, .openClose2:before, .openClose3:before {
   content:"";
   transition:all 0.6s ease-in-out;
 }
-
 .openClose:hover:before {
   content:"Open \2192";
   transition:all 0.6s ease-in-out;
@@ -1138,48 +1109,32 @@ h4{
   content:"Opening ";
   transition:all 0.3s ease-in-out;
 }
-
-.openClose2:before {
-  content:"";
-  transition:all 0.6s ease-in-out;
-}
-
 .openClose2:hover:before {
   content:"Close ";
   position:absolute;
   left:10px;
   color:blue;
 }
-
 .openClose3 {
   transition:all 0.6s ease-in-out;
 }
-
-.openClose3:before {
-  content:"";
-  transition:all 0.6s ease-in-out;
-}
-
 .openClose3:hover {
   content:"Open/Close ";
   padding-left:185px;
   transition:all 0.6s ease-in-out;
 }
-
 .openClose3:hover:before {
   content:"Open/Close ";
   position:absolute;
   left:160px;
   transition:all 0.6s ease-in-out;
 }
-
 .float {
   position:relative;
   color:blue;
   font-size:1.6em;
   border-color:rgba(63,107,169,0.7);
 }
-
 .float:hover {
   opacity:1;
   padding-left:110px;
@@ -1190,7 +1145,6 @@ h4{
   font-size:2.7em;
   color:transparent;
 }
-
 #allCloseBar {
   text-align:center;
   margin:0 auto;
@@ -1213,7 +1167,6 @@ h4{
   position: relative;
   z-index: 500
 }
-
 .arrow-down {
   display:none;
   width:0;
@@ -1224,19 +1177,14 @@ h4{
   border-top:20px solid #B22222;
   transition:all 0.5s ease-in-out;
   position:absolute;
+  background:transparent;
 }
-
 .arrow-down:hover {
-  width:0;
-  height:0;
-  border-left:20px solid transparent;
-  border-right:20px solid transparent;
   display:block;
   border-top:20px solid rgba(63,107,169,1);
   transition:all 0.5s ease-in-out;
   cursor:pointer;
   opacity:1;
-  background:transparent;
 }
 
 .arrow-up {
@@ -1258,18 +1206,15 @@ h4{
   opacity:1;
   cursor: pointer
 }
-
 .overallTotalGroup
 {
   display: block;
   transition:all 0.9s ease-in-out;
 }
-
 .overallInsertsTotal, .overallInsertsTotal2:hover {
   width:50%;
   transition:all 0.8s ease-in-out;
 }
-
 .overallInsertsTotal:hover, .overallInsertsTotal2:hover {
   cursor:pointer;
   color:blue;
@@ -1282,7 +1227,6 @@ h4{
   background-color:rgba(0,0,0,0);
   content:'';
 }
-
 .overallInsertsTotal:hover:before {
   content:"How did I get these numbers?";
   position:absolute;
