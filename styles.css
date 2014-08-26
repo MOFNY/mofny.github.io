@@ -582,6 +582,9 @@ article h4{
   border-radius: none;
   padding: 0
 }
+#countLast{
+  width: 60px
+}
 .circle {
   background: rgba(0,50,64,0) !important;
   font-size: 1.5em;
@@ -613,7 +616,7 @@ article h4{
   display: flex;
   -webkit-align-items: center;
   align-items: center;
- 
+  justify-content: center;
 }
 @-webkit-keyframes scaleout {
   0% {

@@ -140,10 +140,9 @@ $(function() {
                     $(item).replaceWith(span);
 
                     span.fadeIn(400);
-		    $("#totalsList").find("li").last().removeClass("count");
                     countLast.text(ReplaceNumberWithCommas(overallTotal)).show();
                 });
-		
+
                 console.log("loaded " + totalAll);
 
             })
