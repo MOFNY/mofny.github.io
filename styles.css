@@ -576,14 +576,18 @@ article h4{
   padding-right: 15px;
   background: rgba(245,225,225,0.7);
 }
-#totalsList span{
+#totalsList span {
   border:none;
   font: inherit;
   border-radius: none;
   padding: 0
 }
-#countLast{
-  width: 60px
+#countLast {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  justify-content: center;
 }
 .circle {
   background: rgba(0,50,64,0) !important;
