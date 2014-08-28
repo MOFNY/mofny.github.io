@@ -909,13 +909,11 @@ p {
 }
 .revealButtons {
   width: 50%;
-  transition: all 1s ease-in-out;
-  text-align: center;
+  transition: all 0.8s ease-in-out;
   outline: none;
   border: 6px inset #B22222;
   font: 2.2em 'Oswald', sans-serif;
   margin-bottom: 10px;
-  overflow: hidden;
   position: relative
 }
 .revealButtons:hover {
@@ -1132,7 +1130,7 @@ h4{
 .float {
   position:relative;
   color:blue;
-  font-size:1.6em;
+  font-size:1.4em;
   border-color:rgba(63,107,169,0.7);
 }
 .float:hover {
