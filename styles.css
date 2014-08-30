@@ -914,6 +914,7 @@ p {
   border: 6px inset #B22222;
   font: 2.2em 'Oswald', sans-serif;
   margin-bottom: 10px;
+  overflow: hidden;
   position: relative
 }
 .revealButtons:hover {
