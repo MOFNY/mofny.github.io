@@ -245,10 +245,17 @@ input {
   margin: 10px auto
 }
 input[type=submit] {
-  display: inline
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  font: 1.3em 'Oswald', sans-serif;
+  background: DarkGreen;
+  border: 0
+}
+input[type=submit]:hover {
+  cursor: pointer
 }
 textarea{
-  width: 200px;
   height: 100px;
   display: block
 }
