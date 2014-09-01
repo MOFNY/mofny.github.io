@@ -3,7 +3,9 @@ ol,ul,li,h1,h2,h3,h4,h5,h6,section,article,pre,form,body,html,p,blockquote,field
   padding: 0;
 }
 *, *:before, *:after {
-  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 html {
   height: auto;
@@ -202,27 +204,53 @@ footer {
   width: 100%;
   display: -webkit-flex;
   display: flex;
-  -webkit-align-items: stretch;
-  align-items: stretch;
   position: relative;
-  justify-content: center;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  background-color: #222c3a;
+  min-height: 310px;
+  
 }
 footer article {
-  border: 1px solid black;
   -webkit-flex: 1;         
   -ms-flex: 1;        
   flex: 1;
   display: -webkit-flex;
   display: flex;
-  -webkit-align-items: stretch;
-  align-items: stretch;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
   position: relative;
-  justify-content: center;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
+  justify-content: flex-start;
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+  padding: 20px; 
+}
+h3 {
+  color: #7accc8;
+  font: 1.3em 'Oswald', sans-serif;
+}
+footer p {
+  color: #FFF;
+  font: 100 1.0em/200% Georgia !important;
+  text-align: left;
+  border: 1px solid red;
+  margin: auto
+}
+input {
+  display: block;
   margin: 10px auto
+}
+input[type=submit] {
+  display: inline
+}
+textarea{
+  width: 200px;
+  height: 100px;
+  display: block
 }
 #firstSection, #pageSection{
   width: 100%;
@@ -287,6 +315,7 @@ article h4{
   background: rgba(63,107,169,0.3);   
   font: 100 1.2em/200% Georgia;
   padding: 0 20%;
+  padding:0 20% 20px 20%;
   margin: auto
 }
 .intro p{
@@ -711,7 +740,7 @@ a.tooltip:hover:after {
   transform: scale(1);
   transition:all 0.8s cubic-bezier(1,.01,.51,1.26);
 }
-h3 {
+h2 {
   font: small-caps 100 2.3em Georgia,serif;
   color: #B22222;
   display: inline-block;
@@ -720,6 +749,7 @@ h3 {
   margin: 10px auto;
   box-shadow: 0 10px 8px -10px rgba(0,0,0,.9);
 }
+
 p {
   padding: 10px 0;
 }
