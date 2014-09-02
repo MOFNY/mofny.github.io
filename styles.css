@@ -205,8 +205,8 @@ footer {
   display: -webkit-flex;
   display: flex;
   position: relative;
-  -webkit-align-items: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: stretch;
+  align-items: stretch;
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
   justify-content: flex-start;
@@ -253,7 +253,7 @@ em {
 }
 em:after {
   content: ':';
-  font-size: 1.1em
+  font-size: 1.2em
 }
 input {
   display: block;
@@ -1428,6 +1428,18 @@ ul span .red2{
   .intro:first-child{
     padding: 20px 5%;
     font-size: 3.5vw
+}
+footer {
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  background-color: #222c3a;
 }
 
  #container > .imageGroup img{
