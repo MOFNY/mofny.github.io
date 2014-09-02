@@ -210,10 +210,7 @@ footer {
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
   justify-content: flex-start;
-  align-content: stretch;
   background-color: #222c3a;
-  min-height: 310px;
-  
 }
 footer article {
   -webkit-flex: 1;         
@@ -221,37 +218,46 @@ footer article {
   flex: 1;
   display: -webkit-flex;
   display: flex;
-  -webkit-align-items: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: stretch;
+  align-items: stretch;
   position: relative;
   justify-content: flex-start;
-  -webkit-flex-flow: column wrap;
-  flex-flow: column wrap;
-  padding: 20px;
+  -webkit-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  padding: 20px
 }
 h3 {
   color: #7accc8;
-  font: 1.3em 'Oswald', sans-serif;
+  font: 1.6em 'Oswald', sans-serif;
 }
 footer p {
   color: #FFF;
-  font: 100 1.0em/200% Georgia !important;
-  text-align: left;
-  margin: auto
+  font: 100 0.9em/180% Georgia !important;
+  text-align: left !important;
 }
-#footerLink {
-  color: #7accc8;
+.footerLink {
+  color: #7accc8 !important;
   padding-bottom: 2px;
   border-bottom: 1px solid #7accc8;
   text-decoration: none;
-  transition: border 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
-#footerLink:hover {
+.footerLink:hover {
   border-bottom: 0 solid transparent;
+}
+.footeLink:visited {
+  color: #7accc8;
+}
+em {
+  color: #BDB76B;
+}
+em:after {
+  content: ':';
+  font-size: 1.1em
 }
 input {
   display: block;
-  margin: 10px auto;
+  margin: 20px auto;
   width: 100%;
   font-size: 1.2em;
   padding: 2px;
@@ -275,6 +281,7 @@ input[type=submit]:hover {
 textarea{
   height: 50px;
   width: 100%;
+  max-width: 100%;
   display: block;
   font-size: 1.2em;
   padding: 2px;
