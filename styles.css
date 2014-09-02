@@ -227,7 +227,7 @@ footer article {
   justify-content: flex-start;
   -webkit-flex-flow: column wrap;
   flex-flow: column wrap;
-  padding: 20px; 
+  padding: 20px;
 }
 h3 {
   color: #7accc8;
@@ -237,27 +237,52 @@ footer p {
   color: #FFF;
   font: 100 1.0em/200% Georgia !important;
   text-align: left;
-  border: 1px solid red;
   margin: auto
+}
+#footerLink {
+  color: #7accc8;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #7accc8;
+  text-decoration: none;
+  transition: border 0.3s ease-in-out;
+}
+#footerLink:hover {
+  border-bottom: 0 solid transparent;
 }
 input {
   display: block;
-  margin: 10px auto
+  margin: 10px auto;
+  width: 100%;
+  font-size: 1.2em;
+  padding: 2px;
+  outline: 0;
+  transition: border 0.3s ease-in-out;
 }
 input[type=submit] {
   display: inline-block;
-  width: 100px;
-  height: 50px;
+  width: 70px;
   font: 1.3em 'Oswald', sans-serif;
-  background: DarkGreen;
-  border: 0
+  background: #7accc8;
+  border: 0;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
 }
 input[type=submit]:hover {
-  cursor: pointer
+  cursor: pointer;
+  -webkit-transform: scaleY(1.2);
+  transform: scaleY(1.2);
 }
 textarea{
-  height: 100px;
-  display: block
+  height: 50px;
+  width: 100%;
+  display: block;
+  font-size: 1.2em;
+  padding: 2px;
+  outline: 0;
+  transition: border 0.3s ease-in-out;
+}
+input:focus, textarea:focus {
+  border: 2px solid DarkGreen;
 }
 #firstSection, #pageSection{
   width: 100%;
@@ -1089,7 +1114,7 @@ ol li, x:-moz-any-link, x:default{
   color:blue;
 }
 .inserts:visited {
-  color:purple;
+  color:blue;
 }
 .inserts:hover {
   text-decoration:none;
