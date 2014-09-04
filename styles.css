@@ -1,4 +1,4 @@
-ol,ul,li,h1,h2,h3,h4,h5,h6,section,article,pre,form,body,html,p,blockquote,fieldset,input {
+ol,ul,li,h1,h2,h3,h4,h5,h6,section,article,pre,form,body,html,#wrapper,p,blockquote,fieldset,input {
   margin: 0;
   padding: 0;
 }
@@ -21,19 +21,13 @@ body {
   position: relative
 }
 #wrapper {
-  margin: 0;
-  padding: 0;
   display: -webkit-flex;
   display: flex;
   background: url(photography.png) repeat;
-  -webkit-align-items: center;
-  align-items: center;
   position: relative;
-  justify-content: center;
   background-color: LightBlue;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
-  position: relative;
+  -webkit-flex-flow: column;
+  flex-flow: column;
 }
 .arrow-up2 {
   width: 0;
@@ -73,21 +67,14 @@ nav {
   height: 50px;
   display: -webkit-flex;
   display: flex;
-  -webkit-align-items: center;
-  align-items: center;
   position: relative;
-  justify-content: center;
-  font: 300 1.65vw 'Oswald', serif;
+  font: 300 1.4em 'Oswald', serif;
 }
 nav ul {
   display: -webkit-flex;
   display: flex;
-  -webkit-align-items: center;
-  align-items: center;
-  position: relative;
-  justify-content: center;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
+  -webkit-flex-flow: row nowrap;
+  flex-flow: row nowrap;
   width: 100%;
 }
 nav ul li {
@@ -106,8 +93,8 @@ nav ul li:last-child {
 nav a {
   color: white;
   text-decoration: none;
-  border-bottom: 1px solid white; 
-  transition: all 0.8s ease-in-out;
+  border-bottom: 1px solid #ccc;
+  transition:all 0.8s ease-in-out;
 }
 nav a:visited, a:visited {
   color: white;
@@ -118,15 +105,17 @@ nav a:hover {
   text-decoration:none;
   border-bottom:15px solid transparent;
   margin: 0;
-  transition:all 0.7s ease-in-out;
 }
-#above {
-  min-height: 40px;
+#above, #below {
+  min-height: 50px;
   width: 100%;
   background: rgba(0,50,64,0.4);
-  margin: 0 0 -40px 0;
+  margin: 0 0 -50px 0;
   position: relative;
   z-index: 500
+}
+#below {
+  margin: -50px 0 0 0;
 }
 header {
   padding: 0;
@@ -765,7 +754,7 @@ article h4{
   height: 60px;
   width: 360px;
   background: rgba(0,0,0,.8);
-  border-radius: 5px;
+  border-radius: 15px;
   color: #fff;
   font-size: 1.0em
 }
@@ -775,7 +764,7 @@ a.tooltip:hover:after {
   z-index: 98;
   -webkit-transform: scale(1);
   transform: scale(1);
-  transition:all 0.8s cubic-bezier(1,.01,.51,1.26);
+  transition:all 0.8s cubic-bezier(1,.01,.51,1.36);
 }
 h2 {
   font: small-caps 100 2.3em Georgia,serif;
@@ -1385,6 +1374,29 @@ ul span .red2{
 }
 
 @media only screen and (max-width : 1024px){
+nav {
+  text-align: center;
+  background: #000000;
+  background: -moz-linear-gradient(top,#000000 0%,#45484d 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#000000),color-stop(100%,#45484d));
+  background: -webkit-linear-gradient(top,#000000 0%,#45484d 100%);
+  background: -ms-linear-gradient(top,#000000 0%,#45484d 100%);
+  background: linear-gradient(top,#000000 0%,#45484d 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000',endColorstr='#45484d',GradientType=0 );
+  width: 100%;
+  height: 50px;
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+  font: 300 1.1em 'Oswald', serif;
+}
+nav ul li {
+  list-style: none;
+  color: white;
+  border-right: 1px solid #ccc;
+  padding-right: 10px;
+  margin-left: 10px;
+}
     .intro{
     background:rgba(63,107,169,0.3);   
 	 font: 100 1.2em/200% Georgia;
