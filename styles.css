@@ -649,7 +649,7 @@ article h4{
   z-index: 200;
   margin: -50px 0 0 0;
   padding: 0;
-  font: 1.20em 'Oswald', sans-serif;
+  font: 1.25em 'Oswald', sans-serif;
 }
 #totalsList li{
   display: -webkit-flex;
@@ -665,7 +665,7 @@ article h4{
   min-height: 50px;
   padding-left: 15px;
   padding-right: 15px;
-  background: rgba(245,225,225,0.7);
+  background: rgba(245,225,225,0.75);
 }
 #totalsList span {
   border:none;
@@ -701,7 +701,6 @@ article h4{
 }
 .newSpan{
   color:rgb(63,137,169);
-  font-size: 1.0em !important;
   width: 30px;
   height: 30px;
   display: -webkit-flex;
@@ -715,7 +714,7 @@ article h4{
     -webkit-transform: scale(0.0)
   }
   100% {
-    -webkit-transform: scale(1.0);
+    -webkit-transform: scale(1.5);
     opacity: 0;
   }
 }
@@ -726,7 +725,7 @@ article h4{
   }
   100% {
     transform: scale(1.0);
-    -webkit-transform: scale(1.0);
+    -webkit-transform: scale(1.5);
     opacity: 0;
   }
 }
@@ -764,7 +763,7 @@ article h4{
   -webkit-transform: scale(0);
   transform: scale(0);
   height: 60px;
-  width: 350px;
+  width: 360px;
   background: rgba(0,0,0,.8);
   border-radius: 5px;
   color: #fff;
