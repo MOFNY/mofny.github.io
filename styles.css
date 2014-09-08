@@ -1080,8 +1080,16 @@ ol li{
   width: 98%;
   padding-right: 15px
 }
-ol li, x:-moz-any-link, x:default{
-  line-height: 145%
+/*Fixes Firefox bug where all numbers are zero*/
+ol, x:-moz-any-link, x:default{
+  counter-reset: section;
+  list-style-type: none;
+  list-style-position: inside;
+}
+ol li:before, x:-moz-any-link, x:default{
+  line-height: 145%;
+  counter-increment: section;        
+  content: counters(section,"") ". ";
 }
 .red {
   color: red
