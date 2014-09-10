@@ -620,7 +620,7 @@ article h4{
   align-items: center;
   justify-content: center;
   list-style: none;
-  transition:all 1.2s ease-in-out;
+  transition:all 0.5s ease-in-out;
   text-decoration:none;
   color: black;
   min-height: 50px;
@@ -1486,6 +1486,36 @@ nav ul li {
   border-right: 1px solid #ccc;
   padding-right: 10px;
   margin-left: 10px;
+}
+#totalsList {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  justify-content: space-between; /*same as applying margin: auto on the li*/
+  background: rgba(0,50,64,0.4);
+  -webkit-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  width: 100%;
+  position: relative;
+  z-index: 200;
+  padding: 0;
+  font: 1.9vw 'Oswald', sans-serif;
+}
+#totalsList li{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  transition:all 0.5s ease-in-out;
+  text-decoration:none;
+  color: black;
+  min-height: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: rgba(245,225,225,0.75);
 }
     .intro{
     background:rgba(63,107,169,0.3);   
