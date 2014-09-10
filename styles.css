@@ -1,4 +1,4 @@
-ol,ul,li,h1,h2,h3,h4,h5,h6,section,article,pre,form,body,html,#wrapper,.totalGroup,p,blockquote,fieldset,input {
+ol,ul,li,h1,h2,h3,h4,h5,h6,header,section,article,pre,form,body,html,#wrapper,.totalGroup,p,blockquote,fieldset,input {
   margin: 0;
   padding: 0;
 }
@@ -109,29 +109,28 @@ nav a:hover {
   min-height: 50px;
   width: 100%;
   background: rgba(0,50,64,0.4);
-  margin: 0 0 -50px 0;
   position: relative;
-  z-index: 500
+  z-index: 500;
+  
 }
-#below {
-  margin: -50px 0 0 0;
-}
-header {
-  padding: 0;
+header, #home {
+  background: rgba(0,50,64,0.2) url('background.jpg') no-repeat 0 50px / 100% auto;
+  background-attachment: fixed;
   display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  justify-content: space-between;
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
   width: 100%;
   text-align: center;
   position: relative;
   z-index: 4;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 100% auto;
-  background-image: url('background.jpg');
-  min-height: 350px;
-  height: 100%
+  height: 28vw;
+  max-height: 370px;
 }
+
 header a {
     text-decoration: none;
     color: #ccc;
@@ -146,25 +145,12 @@ header a:hover{
   color: blue;
 }
 h1{
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: center;
-  align-items: center;
-  justify-content: center;
   text-shadow: 15px 20px 15px black;
   font: 3.8vw 'Oswald', sans-serif;;
   color: #ccc;
-  position: absolute;
-  /*top: 40px;*/ /*Must match header padding to be perfectly centered*/
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
   width: 75%;
-  height: 25%;
   background: rgba(0,50,64,0.4);
-  transition: all 1.5s ease-in-out;
+  transition: all 1.2s ease-in-out;
   -webkit-backface-visibility: hidden;
 }
 
@@ -323,7 +309,8 @@ input:focus, textarea:focus {
 }
 #pageSection article{
   background:rgba(63,107,169,0.5);
-  width: 100%
+  width: 100%;
+  padding: 0 5px 0 5px
 }
 article p{
   text-align: center;
@@ -618,14 +605,13 @@ article h4{
   align-items: center;
   justify-content: space-between; /*same as applying margin: auto on the li*/
   background: rgba(0,50,64,0.4);
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
+  -webkit-flex-flow: row nowrap;
+  flex-flow: row nowrap;
   width: 100%;
   position: relative;
   z-index: 200;
-  margin: -50px 0 0 0;
   padding: 0;
-  font: 1.25em 'Oswald', sans-serif;
+  font: 1.6vw 'Oswald', sans-serif;
 }
 #totalsList li{
   display: -webkit-flex;
@@ -634,17 +620,16 @@ article h4{
   align-items: center;
   justify-content: center;
   list-style: none;
-  transition:all 1.4s ease-in-out;
+  transition:all 1.2s ease-in-out;
   text-decoration:none;
   color: black;
-  max-height: 50px;
   min-height: 50px;
   padding-left: 15px;
   padding-right: 15px;
   background: rgba(245,225,225,0.75);
 }
 #totalsList span {
-  border:none;
+  border: none;
   font: inherit;
   border-radius: none;
   padding: 0
@@ -1567,19 +1552,73 @@ ol li{
   nav{
     display: none
   }
-  h1{
+header {
+  background: rgba(0,50,64,0.4) url('background.jpg') no-repeat center top / cover;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  justify-content: center;
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 4;
+  overflow: hidden;
+  min-height: 170px;
+  height: 120%;
+}
+#home {
+  min-height: 270px;
+  height: 160%;
+}
+#totalsList {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  justify-content: space-between; /*same as applying margin: auto on the li*/
+  background: rgba(0,50,64,0.4);
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  width: 100%;
+  position: relative;
+  z-index: 200;
+  padding: 0;
+  font: 1.2em 'Oswald', sans-serif;
+}
+h1{
     width: 100%;
-    font-size: 5.8vw;    
+    background: rgba(0,50,64,0.4);
+  transition: all 0.7s ease-in-out;
+  display: block;
+  font-size: 2.1em;
+  }
+  #above, #below {
+    display: none
   }
   .intro{
     background:rgba(63,107,169,0.3);  
-    font: 100 1.2em/200% Georgia;
+    font: 100 1.05em/200% Georgia;
     padding: 0 10%;
     margin: auto
 }
   .intro:first-child{
     padding: 20px 5%;
     font-size: 3.5vw
+}
+#firstSection article:first-child, #firstSection article:nth-child(2){  
+  font: 100 1.0em/190% Georgia;
+  padding: 20px 2% 10px 2%;
+  background:rgba(63,107,169,0.3);
+  width: 50%;
+  -webkit-flex: 1;         
+  -ms-flex: 1;        
+  flex: 1;
+}
+#firstSection article:nth-child(2){ 
+  background:rgba(63,137,169,0.5);
 }
 footer {
   width: 100%;
@@ -1715,7 +1754,7 @@ ol li{
   min-height: 350px
 }
 .right li:first-child {
-  font: 2.0em 'Oswald', sans-serif;
+  font: 1.8em 'Oswald', sans-serif;
   color: #ccc;
   margin-bottom: 20px;
   margin-top: 10px
@@ -1737,6 +1776,11 @@ ol li{
 }
 }
 @media only screen and (max-width : 480px){
+
+#home {
+  height: 450px;
+  max-height: 580px;
+}
   #totalsList{
     display: -webkit-flex;
     display: flex;
@@ -1761,7 +1805,7 @@ ol li{
     align-items: center;
     justify-content: center;
     list-style: none;
-  transition:all 1.4s ease-in-out;
+  transition: none;
   text-decoration:none;
   color: black;
   max-height: 30px;
