@@ -1868,7 +1868,7 @@ ol li{
 }
 #totalsList li:nth-child(even) {
   max-width: 100%;
-  font-size: 1.1em
+  font-size: 1.1em !important
 }
 #totalsList span{
   border:none;
