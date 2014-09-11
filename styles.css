@@ -1873,8 +1873,8 @@ ol li{
 #totalsList span{
   border:none;
   font-family: 'Oswald', sans-serif;
-  font-weight:700;
-  font-size:1.20em;
+  font-weight: 400;
+  font-size: 1.1em;
   border-radius: none;
   padding: 0
 }
