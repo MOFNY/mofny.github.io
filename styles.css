@@ -723,9 +723,9 @@ article h4{
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-align-content: center;
+    -webkit-align-content: stretch;
     -ms-flex-line-pack: stretch;
-    align-content: center;
+    align-content: stretch;
     -webkit-box-align: center;
     -moz-box-align: center;
     -webkit-align-items: center;
@@ -747,7 +747,8 @@ article h4{
   padding: 0
 }
 #countLast {
-  
+  max-width: 100%;
+  align-self: center
 }
 #totalsList li:nth-child(even), #totalsList li:nth-child(even):hover {
   background: rgba(0,50,64,0);
