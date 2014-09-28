@@ -747,7 +747,6 @@ article h4{
   padding: 0
 }
 #countLast {
-  width: 45px;
   text-align: center
 }
 #totalsList li:nth-child(even), #totalsList li:nth-child(even):hover {
