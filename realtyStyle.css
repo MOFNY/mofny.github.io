@@ -141,7 +141,7 @@ a:nth-child(5) {
 .hero {
   height: 39vw;
   min-height: 39vw;
-  background-color: black;
+  background-color: #fff;
   background: rgba(0,50,64,0.2) url('adk.jpg') no-repeat 0 -50px / 100% auto;
   background-attachment: fixed;
   font-family: 'Oswald', sans-serif;
