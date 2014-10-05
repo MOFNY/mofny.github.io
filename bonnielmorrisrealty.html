@@ -133,10 +133,20 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
     <script type="text/javascript">
       $( document ).ready( function (){
-        $("section:nth-of-type(2) img.lazy").lazyload({
-            effect: "fadeIn",
-            effect_speed: 200
-        });
+        $("section").each(function() {
+    var tthis = $(this);
+    $(this).find('img').lazyload({
+        container: tthis
+    });
+});
+
+$("section").scroll(function() {
+    var tthis = $(this);
+    $(this).find('img').lazyload({
+        container: tthis
+    });
+
+});
       })
     </script>
   </body>
