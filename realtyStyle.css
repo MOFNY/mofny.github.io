@@ -13,6 +13,9 @@ html, body {
 body {
   max-width: 1300px;
   position: relative;
+  background: url('/images/adk.jpg') no-repeat 0 -50px / 100% auto;
+  background-attachment: fixed;
+  z-index: 5000
 }
 .wrapper {
   display: -webkit-box;
@@ -48,7 +51,7 @@ header {
   width: 100%;
   height: 45vw;
   min-height: 45vw;
-  background: #fff
+  background-color: rgba(0,0,0,0);
 }
 nav {
   display: flex;
@@ -140,9 +143,7 @@ a:nth-child(5) {
 .hero {
   height: 39vw;
   min-height: 39vw;
-  background-color: #fff;
-  background: rgba(0,50,64,0.2) url('adk.jpg') no-repeat 0 -50px / 100% auto;
-  background-attachment: fixed;
+  background-color: rgba(0,0,0,0);
   font-family: 'Oswald', sans-serif;
   display: -webkit-box;
   display: -moz-box;
@@ -187,13 +188,14 @@ h2 {
 }
 h3 {
   font: 1.7em 'PT Serif', serif;
+  font-weight 500;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row nowrap;
   width: 100%;
   padding-top: 10px;
-  padding-bottom: 10px;
+  color: #575C49;
 }
 h3::after, h3::before {
   content: '';
@@ -214,15 +216,21 @@ button {
   -o-animation-iteration-count: 1;
   animation-iteration-count: 1;
   transition: all 0.6s ease-in-out;
+  display: block
+}
+i {
+  transition: all 0.6s ease-in-out;
 }
 button:hover {
   cursor: pointer;
   background-color: rgba(0,0,0,0.9);
 }
+button:hover i {
+  color: #003D5C
+}
 section {
   width: 100%;
   background-color: #fff;
-  height: 100%;
   display: -webkit-flex;
     display: flex;
     -webkit-align-items: stretch;
@@ -235,7 +243,7 @@ section {
   text-align: left;
   overflow: hidden;
 }
-section:nth-of-type(2), section:nth-of-type(3) {
+section:nth-of-type(3), section:nth-of-type(5) {
   display: -ms-flexbox;
 -ms-flex-direction: column;
 -ms-flex-wrap: wrap;
@@ -246,6 +254,19 @@ height: 87.5vw; /*in order to change the number of columns, increase or decrease
 width: 99%;
 position: relative;
 z-index: 0;
+}
+section:nth-of-type(2) i, section:nth-of-type(4) i {
+  color: #003D5C;
+  position: absolute;
+  margin-left: 15px;
+  margin-top: 10px
+}
+section:nth-of-type(4) h3 {
+  padding-top: 0
+}
+section:nth-of-type(4) i {
+  margin-top: 0;
+  color: #91BF8A;
 }
 figure {
   padding: .2%;
@@ -372,9 +393,7 @@ article {
   border-top: 1px solid #ccc;
   display: -webkit-flex;
     display: flex;
-    -webkit-align-items: center;
-    align-items: center;
-    align-content: center;
+    
     position: relative;
     -webkit-flex-flow: column nowrap;
     flex-flow: column nowrap;
@@ -384,8 +403,13 @@ article p {
   text-align: left;
   font: 1.1em 'Droid Sans', sans-serif;
   line-height: 160%;
-  padding-left: 10px;
-  padding-right: 10px
+  padding: 10px;
+}
+article i {
+  color: #003D5C;
+  margin-left: 15px;
+  margin-top: 10px;
+  position: absolute;
 }
 strong {
   font-size: 1.15em
