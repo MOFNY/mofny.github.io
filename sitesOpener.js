@@ -13,6 +13,7 @@ $(document).ready(function() {
         $(f, s).bind("animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd", function() {
 
         $(f, s).fadeOut("slow", function() {
+            //this is to control the two layouts.
             if ($(".list1").is(":visible")) {
                 i.hide()
             }
@@ -29,9 +30,11 @@ $(document).ready(function() {
             var difference = (screenWidth - $(t[e]).innerWidth()) / 2;
             var difference2 = screenWidth - popUpWidth;
             var difference3 = screenWidth - (difference + difference2);
+            //add additional padding between the modal and li
             var pad = 5;
             var totalMargin = difference3 + pad;
             $(o[e]).stop().css({opacity: 1, zIndex: 3, transform: "scale(1)"});
+            //if the difference is a negative number there is no need to move the li
             if (difference3 <= 0) {
                 $(d[e]).css({transform: "translateX(" + (0) + "px)"})
             }
@@ -49,6 +52,7 @@ $(document).ready(function() {
             $(i[n]).slideToggle("500", "linear", "true");
         })
     }), $(window).resize(function() {
+        //this is to control the two layouts.
         if ($(".list1").is(":visible")) {
                 i.hide()
             }
@@ -58,6 +62,4 @@ $(document).ready(function() {
         $('div.reddit').html("Reddit is my favorite site for trending web development discussion. I comment in all the popular subreddits including web_design, webdev, and design_critiques. I have also dabbled with the expansive API. Check out my latest Reddit comment: " + 
             '"<em>' + data.data.children[0].data.body + '</em>"' + '<br />' + '<a href="http://www.reddit.com/user/MOFNY/" target="_blank">Proceed to Site</a>')
     });
-    
-    
 });

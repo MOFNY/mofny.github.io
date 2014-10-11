@@ -171,15 +171,15 @@ a:visited {
 .list1 li:nth-child(1) a:hover {
   color: #b26100; }
 
-.list1 li:nth-child(7) i, .list2 li:nth-child(7) a {
+.list1 li:nth-child(8) i, .list2 li:nth-child(8) a {
   padding-left: 10px;
   padding-right: 10px; }
 
-.list1 li:nth-child(7) i:hover {
+.list1 li:nth-child(8) i:hover {
   color: #b26100;
   transition: all 0.5s ease-in-out; }
 
-.list1 li:nth-child(8), .list2 li:nth-child(8) {
+.list1 li:nth-child(9), .list2 li:nth-child(9) {
   color: #006e2e;
   font-size: 1.6em;
   word-spacing: 4px;
