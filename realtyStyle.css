@@ -13,7 +13,7 @@ html, body {
 body {
   max-width: 1300px;
   position: relative;
-  background: url('/images/adk.jpg') no-repeat 0 -50px / 100% auto;
+  background: url('adk.jpg') no-repeat 0 -50px / 100% auto;
   background-attachment: fixed;
   z-index: 5000
 }
