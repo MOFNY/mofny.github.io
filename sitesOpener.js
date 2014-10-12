@@ -4,7 +4,6 @@ $(document).ready(function() {
         e = $(".closeBar"),
         b = $("button"),
         i = $(".close"),
-        a = $("h1"),
         f = $(".circle"),
         s = $(".shadowing"),
         d = document.querySelectorAll(".box li"),
@@ -41,11 +40,11 @@ $(document).ready(function() {
             else {
                 $(d[e]).css({transform: "translateX(" + (totalMargin) + "px)"})
             }
-            c.addClass("bodyOnHover"), a.addClass("onHover")
+            c.addClass("bodyOnHover")
         }, function() {
             $(o[e]).stop().removeClass("spanWrapperOnHover"),
             $(d[e]).css({transform: "translateX(0)"}),
-            c.removeClass("bodyOnHover"), a.removeClass("onHover")
+            c.removeClass("bodyOnHover")
         })
     }), $.each(b, function(n) {
         $(this).click(function() {
