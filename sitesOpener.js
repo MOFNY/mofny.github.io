@@ -33,7 +33,7 @@ $(document).ready(function() {
             //add additional padding between the modal and li
             var pad = 5;
             var totalMargin = difference3 + pad;
-            $(o[e]).stop().css({opacity: 1, zIndex: 3, transform: "scale(1)"});
+            $(o[e]).stop().css({transition: "all 0.8s ease-in-out"}).addClass("spanWrapperOnHover");
             //if the difference is a negative number there is no need to move the li
             if (difference3 <= 0) {
                 $(d[e]).css({transform: "translateX(" + (0) + "px)"})
@@ -43,7 +43,7 @@ $(document).ready(function() {
             }
             c.addClass("bodyOnHover"), a.addClass("onHover")
         }, function() {
-            $(o[e]).stop().css({opacity: 0, zIndex: 1, transform: "scale(0.7)"}),
+            $(o[e]).stop().removeClass("spanWrapperOnHover"),
             $(d[e]).css({transform: "translateX(0)"}),
             c.removeClass("bodyOnHover"), a.removeClass("onHover")
         })
