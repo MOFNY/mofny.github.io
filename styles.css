@@ -16,7 +16,8 @@ html, body {
 body {
   max-width: 1300px;
   background: url(photography.png) repeat;
-  position: relative
+  position: relative;
+  margin: 0 auto
 }
 #wrapper {
   display: -webkit-flex;
@@ -214,7 +215,7 @@ header a:hover{
 }
 h1{
   text-shadow: 15px 20px 15px black;
-  font: 3.8vw 'Oswald', sans-serif;;
+  font: 3.8vw 'Oswald', sans-serif;
   color: #ccc;
   width: 75%;
   background: rgba(0,50,64,0.4);
