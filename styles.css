@@ -208,10 +208,10 @@ h1:hover{
 #totalsList {
   display: flex;
   flex-flow: row nowrap;
-  
+  justify-content: space-between;
   display: -webkit-flex;
   -webkit-flex-flow: row nowrap;
-
+  -webkit-justify-content: space-between;
   background: rgba(0,50,64,0.4);
   position: relative;
   z-index: 200;
@@ -273,7 +273,7 @@ h1:hover{
   transition: all 2s ease-in-out
 }
 .expand {
-  max-width: 10%;
+  max-width: 100%;
 }
 #countLast {
   padding-right: 10px
