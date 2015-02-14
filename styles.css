@@ -281,6 +281,9 @@ h1:hover{
 #countLast {
   padding-right: 10px
 }
+.move-count-last {
+  transform: translateY(100%)
+}
 #introSection{
   width: 100%;
   display: -webkit-flex;

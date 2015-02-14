@@ -145,7 +145,11 @@ $(function() {
 		var spinner = $('.spinner');
 		//spinner.fadeOut(300);
 		$(item).text(totalAll).addClass('expand');
-		countLast.text(ReplaceNumberWithCommas(overallTotal)).show();
+		$(item).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',   
+		function(e) {
+			countLast.text(ReplaceNumberWithCommas(overallTotal)).addClass('move-count-last');
+		});
+		
 
                 console.log("loaded " + totalAll);
 
