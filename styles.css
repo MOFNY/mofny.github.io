@@ -232,7 +232,8 @@ h1:hover{
   padding: 10px 5px 10px 10px;
   background: rgba(245,225,225,0.75);
   font: 1.6vw 'Oswald', sans-serif;
-  position: relative
+  position: relative;
+  overflow: hidden
 }
 #totalsList span {
   border: none;
@@ -286,8 +287,6 @@ h1:hover{
   padding-right: 10px;
   transform: translateX(-200%);
   transition: transform 1s ease-in-out !important;
-  position: relative;
-  z-index: -1
 }
 .move-count-last-after {
   transform: translateX(0) !important
