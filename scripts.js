@@ -147,9 +147,12 @@ $(function() {
 		//spinner.fadeOut(300);
 		$(item).text(totalAll).addClass('expand');
 		countLastBefore.addClass('move-count-last-before');
-		setTimeout(function(){ countLastBefore.remove() }, 500);
-			
+		setTimeout(function(){
+			countLastBefore.remove();
 			countLastAfter.text(ReplaceNumberWithCommas(overallTotal)).addClass('move-count-last-after');
+		}, 500);
+			
+			
 
                 console.log("loaded " + totalAll);
 
