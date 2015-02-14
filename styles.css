@@ -247,6 +247,7 @@ h1:hover{
   color: white;
   display: inherit;
   padding: 0;
+  margin-right: auto
 }
 #totalsList li:nth-child(even):hover {
   transform:rotate(720deg);
@@ -266,7 +267,7 @@ h1:hover{
 }
 .count {
   color: rgb(63,137,169);
-  padding: 0 5px;
+  padding: 0 5px !important;
   max-width: 0;
   white-space: nowrap;
   overflow: hidden;
