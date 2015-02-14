@@ -279,10 +279,11 @@ h1:hover{
   padding-right: 5px !important
 }
 #countLast {
-  padding-right: 10px
+  padding-right: 10px;
+  transition: transform 1s ease-in-out !important
 }
 .move-count-last {
-  transform: translateY(100%)
+  transform: translateX(200%)
 }
 #introSection{
   width: 100%;
