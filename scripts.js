@@ -148,8 +148,12 @@ $(function() {
 		$(item).text(totalAll).addClass('expand');
 		$(item).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',   
 		function(e) {
-			countLastAfter.text(ReplaceNumberWithCommas(overallTotal)).addClass('move-count-last-after');
+			
 			countLastBefore.addClass('move-count-last-before');
+			setTimeout(function(){
+				countLastBefore.remove();
+				countLastAfter.text(ReplaceNumberWithCommas(overallTotal)).addClass('move-count-last-after');
+			}, 1000);
 		});
 		
 
