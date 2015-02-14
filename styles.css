@@ -240,14 +240,14 @@ h1:hover{
   border-radius: none;
   padding: 0
 }
-/*#totalsList li:nth-child(even), #totalsList li:nth-child(even):hover {
+#totalsList li:nth-child(3n), #totalsList li:nth-child(3n):hover {
   background: rgba(0,50,64,0);
   font-size: 1.8em;
   font-family: Arial;
   color: white;
   display: inherit;
   padding: 0;
-}*/
+}
 #totalsList li:nth-child(even):hover {
   transform:rotate(720deg);
   -webkit-transform:rotate(720deg); 
