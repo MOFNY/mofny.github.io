@@ -118,7 +118,7 @@ $(function() {
         var urlsAll = [theCompleteString];
         var totalAll = 0;
         $.ajaxSetup({
-            timeout: 1000 
+            timeout: 8000 
         });
         $.get(urlsAll).done(function(data) {
                 totalAll += $(data).find(".yearGroup").find("li").length - $(data).find(".yearGroup").find(".red").length;
