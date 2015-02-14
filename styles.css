@@ -254,10 +254,11 @@ h1:hover{
 }
 .spinner {
   background-color:rgb(63,137,169);
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   display: inline-block;
   position: absolute;
+  top: 	5px;
   right: 10px;
   border-radius: 100%;  
   -webkit-animation: scaleout 1.5s infinite ease-in-out;
