@@ -216,7 +216,7 @@ h1:hover{
   position: relative;
   z-index: 200;
   padding: 0;
-  
+  overflow: hidden;
   width: 100%;
 }
 #totalsList li {
