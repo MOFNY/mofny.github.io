@@ -143,7 +143,7 @@ $(function() {
                     countLast.text(ReplaceNumberWithCommas(overallTotal)).show();
                 });*/
 		var spinner = $('.spinner');
-		spinner.fadeOut(300);
+		//spinner.fadeOut(300);
 		$(item).text(totalAll).addClass('expand');
 		countLast.text(ReplaceNumberWithCommas(overallTotal)).show();
 
