@@ -286,7 +286,8 @@ h1:hover{
   padding-right: 10px;
   transform: translateX(-200%);
   transition: transform 1s ease-in-out !important;
-  overflow: hidden !important
+  position: relative;
+  z-index: -1
 }
 .move-count-last-after {
   transform: translateX(0) !important
