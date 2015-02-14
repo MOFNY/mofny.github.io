@@ -275,7 +275,7 @@ h1:hover{
   margin-right: auto;
 }
 .expand {
-  max-width: 50%;
+  max-width: 30px;
 }
 #countLast {
   padding-right: 10px
