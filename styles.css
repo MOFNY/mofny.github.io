@@ -254,20 +254,19 @@ h1:hover{
 }
 .spinner {
   background-color:rgb(63,137,169);
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   display: inline-block;
   position: absolute;
-  top: 	5px;
-  right: 10px;
+  top: 	calc(50% - 40px);
+  left: calc(50% - 40px);
   border-radius: 100%;  
   -webkit-animation: scaleout 1.5s infinite ease-in-out;
   animation: scaleout 1.5s infinite ease-in-out;
 }
 .count {
   color:rgb(63,137,169);
-  width: 50px;
-  padding-left: 5px
+  padding: 0 5px
 }
 #countLast {
   padding-right: 10px
