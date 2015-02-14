@@ -271,7 +271,7 @@ h1:hover{
   max-width: 0;
   white-space: nowrap;
   overflow: hidden;
-  transition: max-width 2s, padding 2s ease-in-out !important;
+  transition: max-width 2s, padding 0.5s ease-in-out !important;
   margin-right: auto;
 }
 .expand {
