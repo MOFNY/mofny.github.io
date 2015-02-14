@@ -18,7 +18,8 @@ var imageGroupImage2 = document.querySelectorAll(".imageGroup img:nth-of-type(2)
 //var imageGroupImage3 = $(".imageGroup").find("img:nth-of-type(3)");
 var imageGroupImage3 = document.querySelectorAll(".imageGroup img:nth-of-type(3)");
 var countClass = $(".count");
-var countLast = $('#countLast');
+var countLastBefore = $('#countLastBefore');
+var countLastAfter = $('#countLastAfter');
 var title = $(".statsLink2");
 var overallTotal = 0;
 
@@ -147,7 +148,8 @@ $(function() {
 		$(item).text(totalAll).addClass('expand');
 		$(item).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',   
 		function(e) {
-			countLast.text(ReplaceNumberWithCommas(overallTotal)).addClass('move-count-last');
+			countLastAfter.text(ReplaceNumberWithCommas(overallTotal)).addClass('move-count-last-after');
+			countLastBefore.addClass('move-count-last-before');
 		});
 		
 

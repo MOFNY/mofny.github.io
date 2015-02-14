@@ -278,11 +278,19 @@ h1:hover{
   max-width: 60px;
   padding-right: 5px !important
 }
-#countLast {
+#countLastBefore {
   padding-right: 10px;
   transition: transform 1s ease-in-out !important
 }
-.move-count-last {
+#countLastAfter {
+  padding-right: 10px;
+  transform: translateX(-200%);
+  transition: transform 1s ease-in-out !important
+}
+.move-count-last-after {
+  transform: translateX(0)
+}
+.move-count-last-before {
   transform: translateX(200%)
 }
 #introSection{
