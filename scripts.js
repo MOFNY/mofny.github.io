@@ -150,7 +150,7 @@ $(function() {
 		setTimeout(function(){
 			countLastBefore.remove();
 			countLastAfter.text(ReplaceNumberWithCommas(overallTotal)).addClass('move-count-last-after');
-		}, 500);
+		}, 800);
 			
 			
 
