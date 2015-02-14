@@ -146,16 +146,10 @@ $(function() {
 		var spinner = $('.spinner');
 		//spinner.fadeOut(300);
 		$(item).text(totalAll).addClass('expand');
-		$(item).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',   
-		function(e) {
+		countLastBefore.addClass('move-count-last-before');
+		setTimeout(function(){ countLastBefore.remove() }, 500);
 			
-			countLastBefore.addClass('move-count-last-before');
-			setTimeout(function(){
-				countLastBefore.remove();
-				countLastAfter.text(ReplaceNumberWithCommas(overallTotal)).addClass('move-count-last-after');
-			}, 1000);
-		});
-		
+			countLastAfter.text(ReplaceNumberWithCommas(overallTotal)).addClass('move-count-last-after');
 
                 console.log("loaded " + totalAll);
 
