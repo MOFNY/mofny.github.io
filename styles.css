@@ -288,7 +288,7 @@ h1:hover{
   transition: transform 1s ease-in-out !important
 }
 .move-count-last-after {
-  transform: translateX(0)
+  transform: translateX(0) !important
 }
 .move-count-last-before {
   transform: translateX(200%)
