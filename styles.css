@@ -266,7 +266,7 @@ h1:hover{
 }
 .count {
   color: rgb(63,137,169);
-  padding: 0;
+  padding: 0 5px;
   max-width: 0;
   white-space: nowrap;
   overflow: hidden;
@@ -274,7 +274,6 @@ h1:hover{
 }
 .expand {
   max-width: 100%;
-  padding: 0 5px
 }
 #countLast {
   padding-right: 10px
