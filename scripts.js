@@ -144,7 +144,7 @@ $(function() {
                 });*/
 		var spinner = $('.spinner');
 		spinner.fadeOut(300);
-		$(item).text(totalAll);
+		$(item).text(totalAll).addClass('expand');
 		countLast.text(ReplaceNumberWithCommas(overallTotal)).show();
 
                 console.log("loaded " + totalAll);
