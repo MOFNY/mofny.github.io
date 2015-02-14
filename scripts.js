@@ -118,7 +118,7 @@ $(function() {
         var urlsAll = [theCompleteString];
         var totalAll = 0;
         $.ajaxSetup({
-            timeout: 8000 //Time in milliseconds
+            timeout: 1000 
         });
         $.get(urlsAll).done(function(data) {
                 totalAll += $(data).find(".yearGroup").find("li").length - $(data).find(".yearGroup").find(".red").length;
@@ -135,23 +135,27 @@ $(function() {
                 overallTotal += totalAll;
                 var formatIndividualEndTitle = 100 * (overallTotal) / totalForEndTitle;
                 $(title).last().attr("data-title", "Overall Stats: " + ReplaceNumberWithCommas(overallTotal) + "/" + ReplaceNumberWithCommas(totalForEndTitle) + " or " + parseFloat(formatIndividualEndTitle.toFixed(1)) + "%")
-                $(item).fadeOut(300, function() {
+                /*$(item).fadeOut(300, function() {
                     var span = $("<span class='newSpan'>&nbsp;" + totalAll + "</span>").hide();
                     $(item).replaceWith(span);
 
                     span.fadeIn(400);
                     countLast.text(ReplaceNumberWithCommas(overallTotal)).show();
-                });
+                });*/
+		var spinner = $('.spinner');
+		spinner.fadeOut(300);
+		$(item).text(totalAll);
+		countLast.text(ReplaceNumberWithCommas(overallTotal)).show();
 
                 console.log("loaded " + totalAll);
 
             })
             .fail(function(data) {
-                $(item).fadeOut(300, function() {
+                /*$(item).fadeOut(300, function() {
                     var span2 = $("<span class='newSpan'>&nbsp;X</span>").hide();
                     $(this).replaceWith(span2);
                     span2.fadeIn(400);
-                });
+                });*/
             });
 
     });
