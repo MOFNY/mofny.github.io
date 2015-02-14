@@ -285,7 +285,8 @@ h1:hover{
 #countLastAfter {
   padding-right: 10px;
   transform: translateX(-200%);
-  transition: transform 1s ease-in-out !important
+  transition: transform 1s ease-in-out !important;
+  overflow: hidden !important
 }
 .move-count-last-after {
   transform: translateX(0) !important
