@@ -246,7 +246,7 @@ h1:hover{
   font-family: Arial;
   color: white;
   display: inherit;
-  padding: 0 15px;
+  padding: 0;
 }
 #totalsList li:nth-child(even):hover {
   transform:rotate(720deg);
