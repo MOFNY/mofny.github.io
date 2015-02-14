@@ -273,7 +273,7 @@ h1:hover{
   transition: all 2s ease-in-out
 }
 .expand {
-  max-width: 100%;
+  max-width: 10%;
 }
 #countLast {
   padding-right: 10px
