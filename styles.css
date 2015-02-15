@@ -1139,7 +1139,7 @@ ul img, .imgColumn img {
 .ulStyle {
   width: 100%;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   display: -webkit-flex;
   -webkit-flex-flow: column wrap
 }
