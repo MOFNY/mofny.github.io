@@ -14,11 +14,11 @@ $(document).ready(function() {
         $(f, s).fadeOut("slow", function() {
             //this is to control the two layouts.
             if ($(".list1").is(":visible")) {
-                i.hide()
+                i.hide();
             }
             $(".box, .shadowingAfter").fadeIn("slow")
         }), $(".hover").bind("touchstart touchend", function(n) {
-            n.preventDefault(), $(this).toggleClass("hover_effect")
+            n.preventDefault(), $(this).toggleClass("hover_effect");
         })
     }),
     $.each(n, function(e) {
@@ -30,7 +30,7 @@ $(document).ready(function() {
             var difference2 = screenWidth - popUpWidth;
             var difference3 = screenWidth - (difference + difference2);
             //add additional padding between the modal and li
-            var pad = 5;
+            var pad = 15;
             var totalMargin = difference3 + pad;
             $(o[e]).stop().css({transition: "all 0.8s ease-in-out"}).addClass("spanWrapperOnHover");
             //if the difference is a negative number there is no need to move the li

@@ -428,12 +428,18 @@ text-align: center;
   -webkit-justify-content: space-around;
   flex-flow: column wrap;
   -webkit-flex-flow: column wrap;
-  width: 50%
+  width: 50%;
+  padding: 0 10px
 }
-.paragraph-section > p {
-  width: 90%;
-  font: 1em/1.5 'Droid Sans', sans-serif;
-  color: rgb(100,100,100)
+.paragraph-section > p, .featured-info > p {
+  width: 100%;
+  font: 1em/1.6 'Droid Sans', sans-serif;
+  color: rgb(100,100,100);
+  margin-bottom: 10px
+}
+.paragraph-section-header {
+  margin: 15px 0;
+  text-align: left
 }
 .image-section {
   display: flex;
@@ -501,8 +507,19 @@ strong {
 .lazyOwl {
   max-width: 100%;
   height: auto;
+  max-height: 422px;
   display: inline-block;
-  text-align: center
+  text-align: center;
+  cursor: -webkit-grab;
+  cursor: grab
+}
+.featured-info {
+  width: 65%;
+  padding: 20px 40px
+}
+.featured-breakdown {
+  width: 35%;
+  padding: 20px 20px 40px 0
 }
 footer {
   width: 100%;
