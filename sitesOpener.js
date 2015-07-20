@@ -57,8 +57,8 @@ $(document).ready(function() {
             }
     })
     $.getJSON("http://www.reddit.com/user/MOFNY/comments.json?&sort=new", function(data) {
-        $('.reddit').html("Reddit is my favorite site for trending web development discussion.  I comment in all the popular subreddit's including web_design, webdev, and design_critiques. I've critiqued well over 100 sites for amatuer and professional developers and designers.  I also share my Codepen and volunteer work on Reddit.  Check out my latest Reddit comment: <i class='fa fa-quote-left'></i><em>" + data.data.children[0].data.body + "</em>")
-        $('.reddit').html("Reddit is my favorite site for trending web development discussion. I comment in all the popular subreddits including web_design, webdev, and design_critiques. I have also dabbled with the expansive API. Check out my latest Reddit comment: " + 
+        $('span.reddit').html("Reddit is my favorite site for trending web development discussion.  I comment in all the popular subreddit's including web_design, webdev, and design_critiques. I've critiqued well over 100 sites for amatuer and professional developers and designers.  I also share my Codepen and volunteer work on Reddit.  Check out my latest Reddit comment: <br /><br /><i class='fa fa-quote-left'></i><em>" + data.data.children[0].data.body + "</em>")
+        $('div.reddit').html("Reddit is my favorite site for trending web development discussion. I comment in all the popular subreddits including web_design, webdev, and design_critiques. I have also dabbled with the expansive API. Check out my latest Reddit comment: " + 
             '"<em>' + data.data.children[0].data.body + '</em>"' + '<br />' + '<a href="http://www.reddit.com/user/MOFNY/" target="_blank">Proceed to Site</a>')
     });
 });
