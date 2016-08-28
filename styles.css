@@ -1288,10 +1288,6 @@ ol li:before, x:-moz-any-link, x:default{
 .fancybox-title-over-wrap > div {
   padding:7px !important;
 }
-.fancybox-skin {
-  background:-webkit-linear-gradient(top,#ffffff 2%,#bdb76b 50%,#ffffff 98%) !important;
-  background:-moz-linear-gradient(top,#ffffff 2%,#bdb76b 50%,#ffffff 98%) !important;
-}
 .tall { /*for cards with greater heights then widths*/
   width:130px !important;
 }
