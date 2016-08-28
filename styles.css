@@ -1135,13 +1135,9 @@ ul img, .imgColumn img {
   transition: all 0.8s cubic-bezier(0.785,0.135,0.150,0.860);
 }
 .ulStyle {
-  width: 100%;
-  display: flex;
-  flex-flow: column wrap;
-  display: -webkit-flex;
-  -webkit-flex-flow: column wrap
+  text-align: center;
 }
-.ulStyle img{
+.ulStyle img {
   height:auto;
   margin: 20px 5px
 }
@@ -1476,9 +1472,7 @@ h4{
   border: 4px solid #ccc;
   border-radius:15px;
   padding:8px;
-  text-align: center;
-  width: auto;
-  margin: 0 auto
+  display: inline-block;
 }
 ul span .red2{
   border: none;
