@@ -1122,17 +1122,10 @@ ul h4{
 }
 ul img, .imgColumn img {
   position: relative;
+  border: 2px solid rgb(121, 193, 234);
   z-index: 0;
-  background: #ffffff;
-  background: -moz-linear-gradient(top,#ffffff 2%,#bdb76b 50%,#ffffff 98%);
-  background: -webkit-gradient(linear,left top,left bottom,color-stop(2%,#ffffff),color-stop(50%,#bdb76b),color-stop(98%,#ffffff));
-  background: -webkit-linear-gradient(top,#ffffff 2%,#bdb76b 50%,#ffffff 98%);
-  background: -ms-linear-gradient(top,#ffffff 2%,#bdb76b 50%,#ffffff 98%);
-  background: linear-gradient(top,#ffffff 2%,#bdb76b 50%,#ffffff 98%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff',endColorstr='#ffffff',GradientType=0 );
-  box-shadow: 0 0 6px 2px rgba(0,0,0,.3);
   padding: 5px;
-  transition: all 0.8s cubic-bezier(0.785,0.135,0.150,0.860);
+  transition: all 0.5s cubic-bezier(0.785,0.135,0.150,0.860);
 }
 .ulStyle {
   text-align: center;
@@ -1226,8 +1219,8 @@ ol li:before, x:-moz-any-link, x:default{
   padding: 0;
 }
 .imgColumn img {
-  width:180px;
-  transition:all 0.7s cubic-bezier(0.785,0.135,0.150,0.860);
+  width: 180px;
+  transition: all 0.3s cubic-bezier(0.785,0.135,0.150,0.860);
   position: relative;
   z-index: 1;
   cursor: pointer;
@@ -1237,11 +1230,11 @@ ol li:before, x:-moz-any-link, x:default{
 }
 .imgColumn img:hover {
   box-shadow:0 0 12px 1px rgba(0,0,0,.7);
-  -webkit-transform:scale(2,2);
-  transform:scale(2,2);
-  -webkit-transform-origin:80% 30%;
-  transform-origin:80% 30%;
-  background:rgba(63,107,169,0.7);
+  -webkit-transform: scale(2,2);
+  transform: scale(2,2);
+  -webkit-transform-origin: 80% 30%;
+  transform-origin: 80% 30%;
+  background: rgba(63,107,169,0.7);
   z-index: 900
 }
 .inserts {
