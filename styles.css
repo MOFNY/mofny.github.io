@@ -912,9 +912,7 @@ p {
 
 #cd-nav a{
   text-decoration: none;
-}
-#cd-nav a:hover{
-  color: blue;
+  color: white;
 }
 #cd-nav ul.is-visible {
   visibility: visible;
