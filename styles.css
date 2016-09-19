@@ -67,7 +67,7 @@ nav ul li:last-child {
 }
 nav a {
   display: block;
-  padding: 0.5em;
+  padding: 0.5em 0;
   color: white;
   text-decoration: none;
   transition: background 0.3s ease-in-out;
@@ -603,10 +603,8 @@ article h4{
   z-index: 5;
   border: 6px solid rgba(63,107,169,0.7);
   -webkit-animation: animateImage 0.5s ease-in-out;
-  -o-animation: animateImage 0.5s ease-in-out;
   animation: animateImage 0.5s ease-in-out;
   -webkit-animation-iteration-count: 1;
-  -o-animation-iteration-count: 1;
   animation-iteration-count: 1;
   transition: all 0.6s ease-in-out;   
 }
@@ -635,10 +633,8 @@ article h4{
   z-index: 5;
   border: 6px solid rgba(63,107,169,0.7);
   -webkit-animation: animateLastImage 0.5s ease-in-out;
-  -o-animation: animateLastImage 0.5s ease-in-out;
   animation: animateLastImage 0.5s ease-in-out;
   -webkit-animation-iteration-count: 1;
-  -o-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
 
@@ -853,17 +849,16 @@ p {
 }
 .cd-nav-trigger {
   position: fixed;
-  top: 5px;
-  right: 2%;
+  top: 10px;
+  right: 10px;
   width: 44px;
   height: 44px;
   background: black;
   border-radius: 0.25em;
-  /* image replacement */
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  z-index: 20000;
+  z-index: 1;
 }
 .cd-nav-trigger span {
   /* the span element is used to create the menu icon */
@@ -1487,37 +1482,23 @@ ul span .red2{
 .right li:last-child {
   margin-bottom: 40px
 }
-
-@media only screen and (max-width : 1024px){
+@media only screen and (max-width : 1024px) {
 nav {
-  text-align: center;
-  background: #000000;
-  background: -moz-linear-gradient(top,#000000 0%,#45484d 100%);
-  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#000000),color-stop(100%,#45484d));
-  background: -webkit-linear-gradient(top,#000000 0%,#45484d 100%);
-  background: -ms-linear-gradient(top,#000000 0%,#45484d 100%);
-  background: linear-gradient(top,#000000 0%,#45484d 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000',endColorstr='#45484d',GradientType=0 );
-  width: 100%;
-  height: 50px;
-  display: -webkit-flex;
-  display: flex;
-  position: relative;
-  font: 300 1.1em 'Oswald', serif;
+  font-size: 1em;
 }
 nav ul li {
-  list-style: none;
-  color: white;
-  border-right: 1px solid #ccc;
-  padding-right: 10px;
-  margin-left: 10px;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+nav a {
+
 }
 #totalsList {
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
   align-items: center;
-  justify-content: space-between; /*same as applying margin: auto on the li*/
+  justify-content: space-between;
   background: rgba(0,50,64,0.4);
   -webkit-flex-flow: row nowrap;
   flex-flow: row nowrap;
@@ -1526,7 +1507,7 @@ nav ul li {
   z-index: 200;
   padding: 0;
 }
-#totalsList li{
+#totalsList li {
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
@@ -1602,25 +1583,16 @@ ol li{
   width: 220px !important
 }
 }
-@media only screen and (max-width : 768px){
+@media only screen and (max-width : 768px) {
+  .cd-nav-trigger {
+    z-index: 100;
+  }
   nav{
     display: none
   }
-header {
+#home {
   background: rgba(0,50,64,0.4) url('background.jpg') no-repeat center top / cover;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: stretch;
-  align-items: stretch;
-  justify-content: center;
-  -webkit-flex-flow: column wrap;
-  flex-flow: column wrap;
-  width: 100%;
-  text-align: center;
-  position: relative;
-  z-index: 4;
-  overflow: hidden;
-  min-height: 220px;
+  height: 40vw;
 }
 #totalsList {
   display: -webkit-flex;
@@ -1662,11 +1634,8 @@ header {
   pointer-events: none
 }
 h1 {
-  width: 100%;
-  background: rgba(0,50,64,0.4);
-  transition: all 0.7s ease-in-out;
-  display: block;
-  font-size: 2.1em;
+  margin: auto;
+  font-size: 1.5em;
 }
 #above, #below {
   display: none
@@ -1686,8 +1655,7 @@ h1 {
   padding: 20px 2% 10px 2%;
   background:rgba(63,107,169,0.3);
   width: 50%;
-  -webkit-flex: 1;         
-  -ms-flex: 1;        
+  -webkit-flex: 1;    
   flex: 1;
 }
 #firstSection article:nth-child(2){ 
@@ -1718,7 +1686,7 @@ footer {
     min-width: 137px;
 }
 .p {
-  width:100%;
+  width: 100%;
   background:rgba(235,247,255,0.3);
   border: 6px solid #ccc;
   /*box-shadow:0 0 12px 3px rgba(0,0,0,.5);*/
@@ -1762,8 +1730,8 @@ ol li{
   padding: 0
 }
 .imgColumn img {
-  width:180px;
-  transition:all 0.7s cubic-bezier(0.785,0.135,0.150,0.860);
+  width: 180px;
+  transition: all 0.7s cubic-bezier(0.785,0.135,0.150,0.860);
   opacity: 0.1;
 }
 .imgColumn a {
@@ -1851,25 +1819,13 @@ ol li{
 @media only screen and (max-width : 480px){
 
 #home {
-  height: 450px;
-  max-height: 580px;
+  min-height: 310px;
 }
-  #totalsList{
-    display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: stretch;
-    align-items: stretch;
-    justify-content: space-between; /*same as applying margin: auto on the li*/
-    background: rgba(0,50,64,0.4);
-    -webkit-flex-flow: column wrap;
-    flex-flow: column wrap;
-    width: 100%;
-    position: relative;
-    z-index: 200;
-    margin: -30px 0 0 0;
-    padding: 0;
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.1em
+h1 {
+  font-size: 1.1em;
+}
+#totalsList{
+  display: none;
 }
 #totalsList li{
    display: -webkit-flex;
