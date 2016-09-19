@@ -1516,10 +1516,10 @@ ol li{
 }
 @media only screen and (max-width : 768px) {
   .cd-nav-trigger {
-    z-index: 100;
+    z-index: 1000;
   }
   #cd-nav ul {
-    z-index: 99;
+    z-index: 999;
   }
   nav {
     display: none
