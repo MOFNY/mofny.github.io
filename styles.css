@@ -350,14 +350,14 @@ input:focus, textarea:focus {
   color: DarkGreen;
   margin: -0.10em 0 -0.25em 0
 }
-#pageSection article{
-  background:rgba(63,107,169,0.5);
+#pageSection article {
   width: 100%;
-  padding: 0 5px 0 5px
+  padding: 0 5px 0 5px;
+  color: rgb(41, 83, 54);
 }
 article p {
   text-align: center;
-  font: 1.1em 'Oswald', sans-serif;
+  font: 1.1em 'Karma';
 }
 article h4 {
   padding-bottom: 10px
@@ -704,7 +704,7 @@ p {
   top: 10px;
   border-radius: 0.25em;
   font: 300 1.1em/80% 'Oswald', serif;
-  background:#000;
+  background: rgb(32, 98, 135);
   visibility: hidden;
   overflow: hidden;
   z-index: 1;
@@ -745,7 +745,7 @@ p {
   right: 10px;
   width: 44px;
   height: 44px;
-  background: black;
+  background: rgb(32, 98, 135);
   border-radius: 0.25em;
   overflow: hidden;
   text-indent: 100%;
