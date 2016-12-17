@@ -236,16 +236,15 @@ h1 > a {
   color: rgb(41, 83, 54);
 }
 .updates__article {
-  font-family: Georgia, 'Times New Roman', Times, serif !important;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .updates__date {
   color:rgb(127, 49, 125);
   font-size: 1.1em;
   line-height: 1;
-  color: rgb(44, 44, 76);
 }
 .updates__article .updates__content {
-  font-size: 1.2em;
+  font: 1.2em Georgia, sans-serif;
   line-height: 1.5;
 }
 footer {
