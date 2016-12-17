@@ -26,6 +26,10 @@ body {
 a, a:visited {
   text-decoration: none;
 }
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
 .arrow-up2 {
   width: 0;
   height: 0;
@@ -281,7 +285,6 @@ input {
   width: 100%;
   font-size: 1.2em;
   padding: 2px;
-  outline: 0;
   transition: border 0.3s ease-in-out;
 }
 input[type=submit] {
@@ -305,7 +308,6 @@ textarea {
   display: block;
   font-size: 1.2em;
   padding: 2px;
-  outline: 0;
   transition: border 0.3s ease-in-out;
 }
 input:focus, textarea:focus {
@@ -751,6 +753,7 @@ p {
   text-indent: 100%;
   white-space: nowrap;
   z-index: 3;
+  border: none;
 }
 .cd-nav-trigger span {
   /* the span element is used to create the menu icon */
@@ -834,10 +837,8 @@ p {
 .revealButtons {
   width: 50%;
   transition: all 0.8s ease-in-out;
-  outline: none;
-  border: 6px inset #B22222;
+  border: 6px solid rgb(32, 98, 135);
   font: 2.2em 'Oswald', sans-serif;
-  margin-bottom: 10px;
   overflow: hidden;
   position: relative;
   color: rgb(44, 44, 76);
@@ -851,7 +852,6 @@ p {
 .revealButtons:active {
   border-color: rgba(163,107,169,0.7);
   box-shadow: 0 0 10px rgba(63,107,169,0.7);
-  outline: none;
 }
 ul section {
   display: -webkit-flex;
@@ -868,7 +868,7 @@ ul section {
   align-items: center;
   width: 100%;
 }
-ul h4{
+ul h4 {
   margin-bottom: 20px
 }
 ul img, .imgColumn img {
@@ -1080,13 +1080,11 @@ h4 {
   height: 0;
   z-index: 1;
 }
-.closeBar{
+.closeBar {
   text-align: center;
-  margin: 0 auto;
-  display: block;
+  margin: 0 auto 10px auto;
   overflow: hidden;
   width: 100%;
-  padding-bottom: 10px;
 }
 .arrow-down {
   display: none;
