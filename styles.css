@@ -969,7 +969,7 @@ ol li:before, x:-moz-any-link, x:default {
   position: relative
 }
 .inserts:visited {
-  color:blue;
+  color: inherit;
 }
 .inserts:hover {
   text-decoration:none;
@@ -1494,6 +1494,11 @@ ol li {
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
+}
+.left {
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 1em;
 }
 .right {
   padding: 0 10px 0 10px;
