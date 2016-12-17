@@ -705,7 +705,7 @@ p {
   border-radius: 0.25em;
   font: 300 1.1em/80% 'Oswald', serif;
   background: rgb(32, 98, 135);
-  opacity: 0;
+  visibility: hidden;
   overflow: hidden;
   z-index: 2;
   -webkit-backface-visibility: hidden;
@@ -941,7 +941,7 @@ ol li:before, x:-moz-any-link, x:default {
 }
 .imgColumn img {
   width: 180px;
-  transition: all 0.3s cubic-bezier(0.785,0.135,0.150,0.860);
+  transition: transform 0.3s cubic-bezier(0.785,0.135,0.150,0.860);
   position: relative;
   cursor: pointer;
 }
@@ -955,6 +955,7 @@ ol li:before, x:-moz-any-link, x:default {
   -webkit-transform-origin: 80% 30%;
   transform-origin: 80% 30%;
   background: rgba(63,107,169,0.7);
+  z-index: 4;
 }
 .inserts {
   transition: all 0.3s ease-in-out;
