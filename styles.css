@@ -1232,8 +1232,7 @@ ul span .red2{
   width: 90%;
   height: auto;
   padding: 10px;
-  border: 6px solid DarkGreen;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.3);
   border-radius: 15px
 }
 .right {
@@ -1489,7 +1488,6 @@ ol li {
 }
 /*for the 404 page*/
 .main-container {
-  height: 100%;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
@@ -1498,7 +1496,10 @@ ol li {
 .left {
   -webkit-align-items: center;
   align-items: center;
-  padding: 1em;
+  padding: 0.5em;
+}
+.left-img {
+  width: 100%;
 }
 .right {
   padding: 0 10px 0 10px;
