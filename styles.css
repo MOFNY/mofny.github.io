@@ -962,10 +962,11 @@ ol li:before, x:-moz-any-link, x:default {
   transition: all 0.3s ease-in-out;
   border-radius: 5px;
   box-shadow: none;
-  position: relative
+  position: relative;
+  color: rgb(32, 98, 135);
 }
 .inserts:visited {
-  color: rgb(32, 98, 135);
+  color: rgb(79, 150, 190);
 }
 .inserts:hover {
   text-decoration:none;
