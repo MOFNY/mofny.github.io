@@ -245,7 +245,9 @@ h1 > a {
 }
 .updates__article .updates__content {
   font: 1.2em Georgia, sans-serif;
-  line-height: 1.5;
+  line-height: 1.7;
+  text-align: left;
+  padding-bottom: 0;
 }
 footer {
   width: 100%;
@@ -257,7 +259,8 @@ footer {
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
   justify-content: flex-start;
-  background-color: #222c3a;
+  background: #222c3a;
+  margin-top: 20px;
 }
 footer article {
   -webkit-flex: 1;               
