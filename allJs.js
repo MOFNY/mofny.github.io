@@ -123,7 +123,7 @@ $.each(buttonArray, function(i, item) {
 			if ($(groupArray[i-1]).height() > 0)
 			{
 				//This will stop any animations if the user scrolls.
-				closeBar.css({zIndex: "501", height: "80px"});
+				closeBar.css({zIndex: "1", height: "80px"});
 				disableAnimation();
 				hideInfo.hide("slow");
 				$(overall).off( "click" );
