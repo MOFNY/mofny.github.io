@@ -684,15 +684,15 @@ p {
 }
 .updateDate {
   color:#BDB76B;
-  font-size:1.10em;
-  font-weight:500;
-  border-style:solid;
-  border-color:black;
-  border-width:0 0 2px 0;
-  padding-bottom:2px;
+  font-size: 1.1em;
+  font-weight: 500;
+  border-style: solid;
+  border-color: black;
+  border-width: 0 0 2px 0;
+  padding-bottom: 2px;
   display: inline;
-  margin:0.5em;
-  box-shadow:0 10px 8px -10px rgba(0,0,0,.9);
+  margin: 0.5em;
+  box-shadow: 0 10px 8px -10px rgba(0,0,0,.9);
 }
 #cd-nav ul {
   /* mobile first */
@@ -705,9 +705,9 @@ p {
   border-radius: 0.25em;
   font: 300 1.1em/80% 'Oswald', serif;
   background: rgb(32, 98, 135);
-  visibility: hidden;
+  opacity: 0;
   overflow: hidden;
-  z-index: 1;
+  z-index: 2;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transform: scale(0);
@@ -750,7 +750,7 @@ p {
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  z-index: 2;
+  z-index: 3;
 }
 .cd-nav-trigger span {
   /* the span element is used to create the menu icon */
@@ -943,7 +943,6 @@ ol li:before, x:-moz-any-link, x:default {
   width: 180px;
   transition: all 0.3s cubic-bezier(0.785,0.135,0.150,0.860);
   position: relative;
-  z-index: 1;
   cursor: pointer;
 }
 .imgColumn li:first-child {
@@ -956,7 +955,6 @@ ol li:before, x:-moz-any-link, x:default {
   -webkit-transform-origin: 80% 30%;
   transform-origin: 80% 30%;
   background: rgba(63,107,169,0.7);
-  z-index: 900
 }
 .inserts {
   transition: all 0.3s ease-in-out;
@@ -969,7 +967,6 @@ ol li:before, x:-moz-any-link, x:default {
   color: rgb(79, 150, 190);
 }
 .inserts:hover {
-  text-decoration:none;
   background: rgba(63,137,169,0.4);
   box-shadow: 0 10px 8px -10px rgba(0,0,0,.9);
   padding: 8px;
@@ -1127,11 +1124,6 @@ h4 {
   opacity: 1;
   cursor: pointer
 }
-.overallTotalGroup
-{
-  display: block;
-  transition:all 0.9s ease-in-out;
-}
 .overallInsertsTotal, .overallInsertsTotal2:hover {
   width:50%;
   transition:all 0.8s ease-in-out;
@@ -1158,7 +1150,7 @@ h4 {
 }
 .overallInsertsTotal2:hover:before {
   content: attr(data-content) 'Please close all lists to view content';
-  position:absolute;
+  position: absolute;
   top: 280px;
   color: white;
   width: 40%;
