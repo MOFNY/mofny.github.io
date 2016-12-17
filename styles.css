@@ -941,7 +941,7 @@ ol li:before, x:-moz-any-link, x:default {
 }
 .imgColumn img {
   width: 180px;
-  transition: transform 0.3s cubic-bezier(0.785,0.135,0.150,0.860);
+  transition: all 0.3s cubic-bezier(0.785,0.135,0.150,0.860);
   position: relative;
   cursor: pointer;
 }
@@ -1336,12 +1336,6 @@ ol li {
 }
 }
 @media only screen and (max-width : 768px) {
-  .cd-nav-trigger {
-    z-index: 1000;
-  }
-  #cd-nav ul {
-    z-index: 999;
-  }
   nav {
     display: none
   }
