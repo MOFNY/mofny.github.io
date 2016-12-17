@@ -1237,6 +1237,7 @@ ul span .red2{
   border-radius: 15px
 }
 .right {
+  list-style: none;
   background: rgba(63,107,169,0.7);
   padding: 0 10px 0 10px;
   flex-flow: column nowrap;
@@ -1245,22 +1246,19 @@ ul span .red2{
   justify-content: center;
   position: relative;
   text-align: center;
-}
-.right > ul {
-  list-style: none;
   font-family: 'Oswald', sans-serif;
 }
-.right li:first-child {
+.right > li:first-child {
   font-size: 2.4em;
   color: #ccc;
   margin-bottom: 20px;
 }
-.right li:nth-child(2){
+.right > li:nth-child(2){
   font-size: 2em;
   color: #000;
   margin-bottom: 20px
 }
-.right li:nth-child(n+3) {
+.right > li:nth-child(n+3) {
   font-size: 1.5em;
   margin-bottom: 10px;
 }
@@ -1497,38 +1495,22 @@ ol li {
   -webkit-flex-direction: column;
   flex-direction: column;
 }
-.left {
-  background: rgba(63,107,169,0.5);
-  -webkit-flex: 1;
-  flex: 1;
-  display:flex;
-  display: -webkit-flex;
-  flex-direction: column nowrap;
-  -webkit-flex-direction: column nowrap;
-  justify-content: center;
-  -webkit-align-items: center;
-  align-items: center;
-  position:relative;
-  text-align: center;
-  margin: 0;
-  min-height: 200px
-}
 .right {
   padding: 0 10px 0 10px;
 }
-.right li:first-child {
+.right > li:first-child {
   font-size: 1.8em;
   margin-top: 10px
 }
-.right li:nth-child(2) {
+.right > li:nth-child(2) {
   font-size: 1.5em;
   margin-bottom: 10px
 }
-.right li:nth-child(n+3) {
+.right > li:nth-child(n+3) {
   font-size: 1.2em;
   margin-bottom: 5px;
 }
-.right li:last-child {
+.right > li:last-child {
   margin-bottom: 10px
 }
 }
@@ -1638,9 +1620,5 @@ ol li {
 }
 .totalGroup {
   font-size: 1.2em;
-}
-.right {
-  background: rgba(63,107,169,0.7);
-  padding: 0 10px 0 10px;
 }
 }
