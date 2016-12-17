@@ -368,16 +368,6 @@ article h4 {
 .maroon {
   color:#B22222;
 }
-.intro {
-  background: rgba(63,107,169,0.3);   
-  font: 100 1.2em/200% Georgia;
-  padding: 0 20% 20px 20%;
-  margin: auto
-}
-.intro p {
-  text-align: left;
-  font: inherit
-}
 #container{
   width: 100%;
   display: -webkit-flex;
@@ -673,29 +663,8 @@ a.tooltip:hover:after {
   transform: scale(1);
   transition:all 0.8s cubic-bezier(1,.01,.51,1.36);
 }
-h2 {
-  font: small-caps 100 2.3em Georgia,serif;
-  color: #B22222;
-  display: inline-block;
-  border-bottom: 2px solid black;
-  padding: 10px 0 0 0;
-  margin: 10px auto;
-  box-shadow: 0 10px 8px -10px rgba(0,0,0,.9);
-}
 p {
   padding: 10px 0;
-}
-.updateDate {
-  color:#BDB76B;
-  font-size: 1.1em;
-  font-weight: 500;
-  border-style: solid;
-  border-color: black;
-  border-width: 0 0 2px 0;
-  padding-bottom: 2px;
-  display: inline;
-  margin: 0.5em;
-  box-shadow: 0 10px 8px -10px rgba(0,0,0,.9);
 }
 #cd-nav ul {
   /* mobile first */
@@ -1286,14 +1255,29 @@ nav ul li {
   padding-right: 10px;
   background: rgba(245,225,225,0.75);
 }
-.intro {
-  background:rgba(63,107,169,0.3);   
-  font: 100 1.2em/200% Georgia;
-  padding: 0 15%;
-  margin: auto
+.updates {
+  background:rgba(63,107,169,0.3);
 }
-.intro:first-child {
-  padding: 20px 15%;
+.updates__title {
+  font: 200 2.3em Oswald, sans-serif;
+  color: rgb(41, 83, 54);
+  padding: 10px 0 0 0;
+  margin: 10px auto;
+  width: 75%;
+}
+.updates__article {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  width: 60%;
+}
+.updates__date {
+  color:#BDB76B;
+  font-size: 1.1em;
+  line-height: 1;
+  color: rgb(44, 44, 76);
+}
+.updates__content {
+  font-size: 1.2em;
+  line-height: 1.5;
 }
 #container{
   border: 2px solid black
@@ -1386,16 +1370,6 @@ ol li {
   #above, #below {
     display: none
   }
-  .intro{
-    background:rgba(63,107,169,0.3);  
-    font: 100 1.05em/200% Georgia;
-    padding: 0 10%;
-    margin: auto
-}
-.intro:first-child {
-  padding: 20px 5%;
-  font-size: 3.5vw
-}
 #firstSection article:first-child, #firstSection article:nth-child(2){  
   font: 100 1.0em/190% Georgia;
   padding: 20px 2% 10px 2%;
@@ -1588,18 +1562,6 @@ background:rgba(63,137,169,0.5);
   font:2.9em "Times New Roman","MS Serif","New York",serif;
   color:DarkGreen;
   margin: -0.10em 0 -0.25em 0
-}
-.intro:first-child {
-  background:rgba(63,107,169,0.3);
-  font: 100 1.1em/180% Georgia;
-  padding: 20px 5%;
-  margin: auto;
-}
-.intro {
-  background:rgba(63,107,169,0.3);
-  font: 100 1.2em/180% Georgia;
-  padding: 0 5%;
-  margin: auto
 }
 ol li {
   font-size: 1.0em;
