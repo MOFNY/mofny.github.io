@@ -46,7 +46,7 @@ function scrollBarrier(){
 	if( $(window).scrollTop() > $("#closeArea").offset().top ) {
                         closeBar.css({position: "fixed"});
                 } else {
-                        closeBar.css({position: "relative", top: "0", zIndex: "501"});
+                        closeBar.css({position: "relative", top: "0", zIndex: "1"});
                 }
 }
 
