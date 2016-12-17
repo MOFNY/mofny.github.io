@@ -1380,6 +1380,9 @@ ol li {
 #firstSection article:nth-child(2){ 
   background:rgba(63,137,169,0.5);
 }
+.updates__title, .updates__article {
+  width: 80%;
+}
 footer {
   width: 100%;
   display: -webkit-flex;
@@ -1561,6 +1564,12 @@ background:rgba(63,137,169,0.5);
   font:2.9em "Times New Roman","MS Serif","New York",serif;
   color:DarkGreen;
   margin: -0.10em 0 -0.25em 0
+}
+.updates__title, .updates__article {
+  width: 95%;
+}
+.updates__article .updates__content {
+  font-size: 1em;
 }
 ol li {
   font-size: 1.0em;
