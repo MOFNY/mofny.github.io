@@ -394,7 +394,7 @@ article h4 {
 .maroon {
   color:#B22222;
 }
-#container{
+#container {
   width: 100%;
   display: -webkit-flex;
   display: flex;
@@ -406,14 +406,15 @@ article h4 {
   flex-flow: row nowrap;
   position: relative;
   padding-bottom: 20px;
-  padding-top: 20px
+  padding-top: 20px;
+  overflow-x: hidden;
 }
 #pageContainer {
   width: 100%;
   background:rgba(63,137,169,0.1);
   position: relative;
   padding-bottom: 20px;
-  padding-top: 20px
+  padding-top: 20px;
 }
 .imageGroup {
   transition: all 0.8s ease-in-out;
@@ -1010,41 +1011,31 @@ h4 {
   font: 1.6em 'Oswald', sans-serif;
   width: 100%;
 }
-.openClose:hover {
-  padding-left:300px;
+.openClose::before, .openClose2::before, .openClose3::before {
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateX(-200%);
+  transform: translateX(-200%);
+  opacity: 0;
+  font-size: 0.8em;
+  transition: transform 0.5s ease-in-out, opacity 0.25s ease-in-out;
 }
-.openClose:before, .openClose2:before, .openClose3:before {
-  content:"";
-  transition:all 0.6s ease-in-out;
-}
-.openClose:hover:before {
+.openClose::before {
   content: "Open \2192";
-  transition: all 0.6s ease-in-out;
-  position: absolute;
-  left: 160px
 }
-.openClose:active:before {
+.openClose:active::before {
   content: "Opening ";
-  transition: all 0.3s ease-in-out;
 }
-.openClose2:hover:before {
-  content:"Close ";
-  position: absolute;
-  left: 10px;
+.openClose2::before {
+  content: "Close ";
 }
-.openClose3 {
-  transition: all 0.6s ease-in-out;
+.openClose3::before {
+  content: "Open/Close \2192";
 }
-.openClose3:hover {
-  content: "Open/Close ";
-  padding-left: 185px;
-  transition: all 0.6s ease-in-out;
-}
-.openClose3:hover:before {
-  content:"Open/Close ";
-  position: absolute;
-  left: 160px;
-  transition: all 0.6s ease-in-out;
+.openClose:hover::before, .openClose2:hover::before, .openClose3:hover::before {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  opacity: 1;
 }
 .float {
   position: relative;
@@ -1094,11 +1085,10 @@ h4 {
   display: block;
   border-top: 20px solid rgba(63,107,169,1);
   transition: all 0.5s ease-in-out;
-  
   opacity: 1;
 }
 .arrow-up {
-  display:none;
+  display: none;
   width: 0;
   height: 0;
   border-left: 20px solid transparent;
@@ -1577,5 +1567,9 @@ ol li {
 }
 .totalGroup {
   font-size: 1.2em;
+}
+.revealButtons {
+  width: 95%;
+  font-size: 1.6em;
 }
 }
