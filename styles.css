@@ -828,7 +828,6 @@ p {
   display: none
 }
 .revealButtons {
-  width: 50%;
   transition: all 0.8s ease-in-out;
   border: 6px solid rgb(32, 98, 135);
   font: 2.2em 'Oswald', sans-serif;
@@ -1011,6 +1010,9 @@ h4 {
   font: 1.6em 'Oswald', sans-serif;
   width: 100%;
 }
+.openClose, .openClose3 {
+  width: 50% !important;
+}
 .openClose::before, .openClose2::before, .openClose3::before {
   position: absolute;
   top: 0;
@@ -1028,6 +1030,7 @@ h4 {
 }
 .openClose2::before {
   content: "Close ";
+  width: 100%;
 }
 .openClose3::before {
   content: "Open/Close \2192";
@@ -1297,10 +1300,6 @@ ol li {
 }
 .imgColumn img {
   width: 160px;
-  transition: all 0.7s cubic-bezier(0.785,0.135,0.150,0.860);
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
 }
 .wider{
   width: 220px !important
@@ -1401,7 +1400,6 @@ footer {
   border-radius: 15px;
   padding: 10px 0 10px 10px;
   margin: 20px auto;
-  z-index: 3
 }
 ol li {
   font-size: 1.3em;
@@ -1474,16 +1472,35 @@ ol li {
 h1 {
   font-size: 1.1em;
 }
+#allCloseBar {
+  display: -webkit-flex;
+  display: flex;
+  /* Account for the menu icon */
+  width: calc(100% - 65px);
+  overflow-x: auto;
+  height: auto !important;
+  margin: 0;
+}
+.openClose2 {
+  -webkit-flex: 0 0 80px;
+  flex: 0 0 80px;
+  font-size: 1.3em;
+  margin: auto;
+}
+.arrow-down {
+  position: static;
+}
 #totalsList {
   display: none;
 }
-#totalsList li{
-   display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: center;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
+#totalsList li {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  list-style: none;
   transition: none;
   text-decoration:none;
   color: black;
@@ -1507,33 +1524,30 @@ h1 {
 }
 #firstSection{
   width: 100%;
-        display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: stretch;
-    align-items: stretch;
-    position: relative;
-    justify-content: center;
-    -webkit-flex-flow: column wrap;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  position: relative;
+  justify-content: center;
+  -webkit-flex-flow: column wrap;
   flex-flow: column wrap;
   text-align: left
 }
-#firstSection article:first-child{
-    background:rgba(63,107,169,0.3);
-	 font: 100 1.0em/200% Georgia;
- padding: 20px 2% 10px 2%;
- width: 100%;
- -webkit-flex: 1;         
-  -ms-flex: 1;        
+#firstSection article:first-child {
+  background:rgba(63,107,169,0.3);
+  font: 100 1.0em/200% Georgia;
+  padding: 20px 2% 10px 2%;
+  width: 100%;
+  -webkit-flex: 1;
   flex: 1;
 }
-#firstSection article:nth-child(2){
-   
-background:rgba(63,137,169,0.5);
-	 font: 100 1.0em/200% Georgia;
- padding: 20px 2% 10px 2%;
- width: 100%;
- -webkit-flex: 1;         
-  -ms-flex: 1;        
+#firstSection article:nth-child(2) {
+  background: rgba(63,137,169,0.5);
+  font: 100 1.0em/200% Georgia;
+  padding: 20px 2% 10px 2%;
+  width: 100%;
+  -webkit-flex: 1; 
   flex: 1;
 }
 #firstSection article:first-child:first-letter {
@@ -1568,8 +1582,8 @@ ol li {
 .totalGroup {
   font-size: 1.2em;
 }
-.revealButtons {
-  width: 95%;
+.openClose, .openClose3 {
+  width: 95% !important;
   font-size: 1.6em;
 }
 }
