@@ -837,14 +837,13 @@ p {
 }
 .revealButtons:hover {
   border-color: rgba(63,107,169,0.7);
-  box-shadow: 0 0 20px rgba(63,107,169,0.7);
   transition: all 0.5s cubic-bezier(0.2,0,0,1.80);
 }
 .revealButtons:active {
   border-color: rgba(163,107,169,0.7);
   box-shadow: 0 0 10px rgba(63,107,169,0.7);
 }
-ul section {
+.figure-list__figure {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
@@ -857,24 +856,23 @@ ul section {
   align-content: center;
   -webkit-align-items: center;
   align-items: center;
-  width: 100%;
 }
-ul h4 {
+.total-group-header {
   margin-bottom: 20px
 }
-ul img, .imgColumn img {
+.figure-list img, .imgColumn img {
   position: relative;
   border: 2px solid rgb(121, 193, 234);
   z-index: 0;
   padding: 5px;
   transition: all 0.5s cubic-bezier(0.785,0.135,0.150,0.860);
 }
-.ulStyle {
+.figure-list {
   text-align: center;
 }
-.ulStyle img {
-  height:auto;
-  margin: 20px 5px
+.figure-list img {
+  height: auto;
+  margin: 20px 5px;
 }
 .p {
   width: 90%;
@@ -889,13 +887,13 @@ ul img, .imgColumn img {
   flex-flow: row wrap;
   position: relative;
 }
-ol {
+.numbered-list {
   position: relative;
   margin: 0;
   -webkit-flex: 1;
   flex: 1;
 }
-ol li {
+.numbered-list > li {
   font-family: 'Karma', sans-serif;
   list-style-position: inside;
   font-size: 1.65vw;
@@ -909,7 +907,7 @@ ol, x:-moz-any-link, x:default {
   list-style-type: none;
   list-style-position: inside;
 }
-ol li:before, x:-moz-any-link, x:default {
+.numbered-list > li:before, x:-moz-any-link, x:default {
   line-height: 145%;
   counter-increment: section;        
   content: counters(section,"") ". ";
@@ -1123,7 +1121,7 @@ h4 {
   content:'';
 }
 .overallInsertsTotal:hover:before {
-  content:"How did I get these numbers?";
+  content: "How did I get these numbers?";
   position: absolute;
   top: 280px;
   color: white;
@@ -1142,31 +1140,31 @@ h4 {
   background-color: rgba(0,0,0,0.7);
   transition: all 0.9s ease-in-out;
 }
-.ulStyle li {
-  list-style: none;
-  font: 1.25em 'Oswald', sans-serif;
-  background:rgba(255,255,255,0);
-  border: 4px solid #ccc;
-  border-radius:15px;
-  padding:8px;
-  display: inline-block;
+.figure-list__caption {
+  width: 100%;
 }
-ul span .red2{
+.figure-list__caption > span {
+  display: inline-block;
+  font: 1.25em 'Oswald', sans-serif;
+  border: 4px solid #ccc;
+  border-radius: 15px;
+  padding: 8px;
+}
+ul span .red2 {
   border: none;
   border-radius: 0;
   padding: 0;
   font-size: 1em;
 }
 .soldCards {
-  color:red;
+  color: red;
 }
 .thumbnail:hover, .thumbnailEndLeft:hover, .thumbnailEndRight:hover, .thumbnailEndBottom:hover {
-  background: rgba(63,107,169,0.7);
-  box-shadow: 0 0 6px 2px rgba(0,0,0,.8);
+  background: rgba(63,107,169,0.3);
+  box-shadow: 0 0 2px 1px rgba(0,0,0,.3);
   -webkit-transform: scale(3,3);
   transform: scale(3,3);
   z-index: 1000;
-  padding: 3px;
 }
 .thumbnail:hover{
   -webkit-transform-origin: 50% 50%;
@@ -1291,7 +1289,7 @@ nav ul li {
   padding: 10px 0 20px 20px;
   margin: 20px auto;
 }
-ol li {
+.numbered-list > li {
   font-size: 2.0vw;
   line-height: 180%;
 }
@@ -1401,7 +1399,7 @@ footer {
   padding: 10px 0 10px 10px;
   margin: 20px auto;
 }
-ol li {
+.numbered-list > li {
   font-size: 1.3em;
   line-height: 150%;
 }
@@ -1575,7 +1573,7 @@ h1 {
 .updates__article .updates__content {
   font-size: 1em;
 }
-ol li {
+.numbered-list > li {
   font-size: 1.0em;
   line-height: 145%
 }
