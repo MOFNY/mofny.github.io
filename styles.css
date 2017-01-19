@@ -1398,6 +1398,10 @@ footer {
   padding: 10px 0 10px 10px;
   margin: 20px auto;
 }
+.numbered-list {
+  -webkit-flex: 100%;
+  flex: 100%;
+}
 .numbered-list > li {
   font-size: 1.3em;
   line-height: 1.5;
