@@ -894,10 +894,8 @@ p {
   flex: 1;
 }
 .numbered-list > li {
-  font-family: 'Karma', sans-serif;
+  font: 1.25em/1.5 'Karma', sans-serif;
   list-style-position: inside;
-  font-size: 1.65vw;
-  line-height: 150%;
   width: 98%;
   padding-right: 15px
 }
@@ -908,7 +906,7 @@ ol, x:-moz-any-link, x:default {
   list-style-position: inside;
 }
 .numbered-list > li:before, x:-moz-any-link, x:default {
-  line-height: 145%;
+  line-height: 1.5;
   counter-increment: section;        
   content: counters(section,"") ". ";
 }
@@ -916,7 +914,6 @@ ol, x:-moz-any-link, x:default {
   color: red
 }
 .imgColumn {
-  min-width: 205px;
   padding-right: 20px;
   margin-top: 0;
   text-align: right;
@@ -1006,7 +1003,8 @@ h4 {
   text-align: center;
   margin: auto;
   font: 1.6em 'Oswald', sans-serif;
-  width: 100%;
+  -webkit-flex: 100%;
+  flex: 100%;
 }
 .openClose, .openClose3 {
   width: 50% !important;
@@ -1290,8 +1288,8 @@ nav ul li {
   margin: 20px auto;
 }
 .numbered-list > li {
-  font-size: 2.0vw;
-  line-height: 180%;
+  font-size: 1em;
+  line-height: 1.7;
 }
 .totalGroup {
   font-size: 1.5em
@@ -1402,7 +1400,7 @@ footer {
 }
 .numbered-list > li {
   font-size: 1.3em;
-  line-height: 150%;
+  line-height: 1.5;
 }
 .imgColumn {
   width: 100%;
@@ -1414,7 +1412,6 @@ footer {
   text-align: center;
   opacity: 0.1;
   pointer-events: none;
-  min-width: initial;
 }
 .inserts:hover {
   text-decoration: none;
@@ -1551,22 +1548,22 @@ h1 {
   flex: 1;
 }
 #firstSection article:first-child:first-letter {
-  font:3.0em "Times New Roman","MS Serif","New York",serif;
+  font: 3.0em "Times New Roman","MS Serif","New York",serif;
   margin: -0.35em 0 -0.25em 0
 }
 #firstSection article:first-child:first-letter,  x:-moz-any-link, x:default{
-  font:3.0em "Times New Roman","MS Serif","New York",serif;
+  font: 3.0em "Times New Roman","MS Serif","New York",serif;
   margin: -0.10em 0 -0.25em 0
 }
 #firstSection article:nth-child(2):first-letter {
-  font:2.9em "Times New Roman","MS Serif","New York",serif;
-  color:DarkGreen;
-  float:left;
+  font: 2.9em "Times New Roman","MS Serif","New York",serif;
+  color: DarkGreen;
+  float: left;
   margin: -0.35em 0 -0.25em 0
 }
 #firstSection article:nth-child(2):first-letter,  x:-moz-any-link, x:default{
-  font:2.9em "Times New Roman","MS Serif","New York",serif;
-  color:DarkGreen;
+  font: 2.9em "Times New Roman","MS Serif","New York",serif;
+  color: DarkGreen;
   margin: -0.10em 0 -0.25em 0
 }
 .updates__title, .updates__article {
@@ -1576,8 +1573,8 @@ h1 {
   font-size: 1em;
 }
 .numbered-list > li {
-  font-size: 1.0em;
-  line-height: 145%
+  font-size: 1em;
+  line-height: 1.45;
 }
 .totalGroup {
   font-size: 1.2em;
