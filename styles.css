@@ -1310,6 +1310,7 @@ nav ul li {
   #home {
     background: rgba(0,50,64,0.4) url('background.jpg') no-repeat center top / cover;
     height: 40vw;
+    z-index: 1;
   }
   #totalsList {
     display: -webkit-flex;
@@ -1413,6 +1414,7 @@ footer {
   text-align: center;
   opacity: 0.1;
   pointer-events: none;
+  min-width: initial;
 }
 .inserts:hover {
   text-decoration: none;
