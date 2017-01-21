@@ -915,24 +915,20 @@ ol, x:-moz-any-link, x:default {
 }
 .imgColumn {
   padding-right: 20px;
-  margin-top: 0;
-  text-align: right;
-}
-.imgColumn li {
-  list-style: none;
-  margin-right: 0;
-  margin-top: 80px;
-  margin-left: 0;
-  padding: 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+  list-style-type: none;
 }
 .imgColumn img {
   width: 180px;
   transition: all 0.3s cubic-bezier(0.785,0.135,0.150,0.860);
   position: relative;
-  cursor: pointer;
-}
-.imgColumn li:first-child {
-  margin-top: 10px;
 }
 .imgColumn img:hover {
   box-shadow: 0 0 12px 1px rgba(0,0,0,.7);
@@ -1042,6 +1038,7 @@ h4 {
   font-size: 1.4em;
   border-color: rgba(63,107,169,0.7);
   z-index: 2;
+  pointer-events: auto;
 }
 .float:hover {
   opacity: 1;
@@ -1060,6 +1057,7 @@ h4 {
   top: 0;
   height: 0;
   z-index: 1;
+  pointer-events: none;
 }
 .closeBar {
   text-align: center;
@@ -1067,18 +1065,21 @@ h4 {
   overflow: hidden;
   width: 100%;
 }
-.arrow-down {
+.arrow {
   display: none;
+  position: absolute;
   width: 0;
   height: 0;
   opacity: 0.7;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  border-top: 20px solid #B22222;
-  transition: all 0.5s ease-in-out;
-  position: absolute;
   background: transparent;
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  pointer-events: auto;
+}
+.arrow-down {
+  border-top: 20px solid #B22222;
 }
 .arrow-down:hover {
   display: block;
@@ -1087,36 +1088,26 @@ h4 {
   opacity: 1;
 }
 .arrow-up {
-  display: none;
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
   border-bottom: 20px solid #B22222;
-  opacity: 0.7;
-  position: absolute;
   top: 20px;
-  transition: all 0.5s ease-in-out;
-  background: transparent;
-  cursor: pointer;
 }
 .arrow-up:hover, .arrow-up2:hover {
   border-bottom: 20px solid rgba(63,107,169,1);
   opacity: 1;
 }
 .overallInsertsTotal, .overallInsertsTotal2:hover {
-  width:50%;
-  transition:all 0.8s ease-in-out;
+  width: 50%;
+  transition: all 0.8s ease-in-out;
 }
 .overallInsertsTotal:hover, .overallInsertsTotal2:hover {
-  cursor:pointer;
+  cursor: pointer;
   border-color: rgba(63,107,169,0.7);
-  box-shadow:0 0 20px rgba(63,107,169,0.7);
+  box-shadow: 0 0 20px rgba(63,107,169,0.7);
 }
 .overallInsertsTotal:before, .overallInsertsTotal2:before {
   transition: all 0.9s ease-in-out;
   background: rgba(0,0,0,0);
-  content:'';
+  content: '';
 }
 .overallInsertsTotal:hover:before {
   content: "How did I get these numbers?";
@@ -1408,14 +1399,14 @@ footer {
 }
 .imgColumn {
   width: 100%;
+  height: 100%;
   position: absolute;
-  top: 0;
   left: 0;
-  margin: auto;
-  padding: 0;
-  text-align: center;
+  padding-right: 0;
   opacity: 0.1;
   pointer-events: none;
+  -webkit-align-items: center;
+  align-items: center;
 }
 .inserts:hover {
   text-decoration: none;
