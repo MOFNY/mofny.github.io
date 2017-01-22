@@ -145,23 +145,8 @@ $(function() {
 		var spinner = $('.spinner');
 		//spinner.fadeOut(300);
 		$(item).text(totalAll).addClass('expand');
-		setTimeout(function(){
 			countLastAfter.text(ReplaceNumberWithCommas(overallTotal)).addClass('move-count-last-after');
-		}, 800);
-			
-			
-
-                console.log("loaded " + totalAll);
-
-            })
-            .fail(function(data) {
-                /*$(item).fadeOut(300, function() {
-                    var span2 = $("<span class='newSpan'>&nbsp;X</span>").hide();
-                    $(this).replaceWith(span2);
-                    span2.fadeIn(400);
-                });*/
             });
-
     });
 
     function ReplaceNumberWithCommas(yourNumber) {
