@@ -577,7 +577,7 @@ article h4 {
   -webkit-justify-content: center;
   justify-content: center;
 }
-#totalsList a:hover {
+#totalsList a:hover, #totalsList a:focus {
   background: rgb(235,235,235);
 }
 .tooltip::after {
@@ -602,7 +602,7 @@ article h4 {
   content: attr(data-title);
   pointer-events: none;
 }
-a.tooltip:hover::after {
+.tooltip:hover::after, .tooltip:focus::after {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
