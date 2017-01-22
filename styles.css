@@ -287,11 +287,10 @@ input:focus, textarea:focus {
 }
 #firstSection, #pageSection {
   width: 100%;
+}
+#firstSection {
   display: -webkit-flex;
   display: flex;
-}
-#pageSection {
-  width: 100%;
 }
 #firstSection article {
   font: 1em/1.8 Georgia;
