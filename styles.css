@@ -268,18 +268,13 @@ input[type=submit] {
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
 }
-input[type=submit]:hover {
-  cursor: pointer;
-  -webkit-transform: scaleY(1.2);
-  transform: scaleY(1.2);
-}
 textarea {
-  height: 50px;
+  height: 100px;
   width: 100%;
-  max-width: 100%;
   display: block;
   font-size: 1.2em;
   padding: 2px;
+  resize: vertical;
   transition: border 0.3s ease-in-out;
 }
 input:focus, textarea:focus {
