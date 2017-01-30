@@ -58,9 +58,9 @@ button {
   transform: scale(0.8) translateY(5px);
 }
 nav {
-  background: rgba(0,50,64,0.6);
+  background: rgba(0,50,64,0.7);
   position: relative;
-  font: 300 1.2em 'Oswald', serif;
+  font: 0.9em 'Cabin', sans-serif;
 }
 nav ul {
   display: -webkit-flex;
@@ -108,17 +108,17 @@ header a:visited {
   color: rgb(255,255,255);
 }
 header a:hover {
-  color: rgba(0,50,64,0.8);
+  color: rgb(0,50,64);
   background: rgba(235,247,255,0.7);
 }
 h1 {
   line-height: 1;
-  font: 2.8vw 'Oswald', sans-serif;
+  font: 2.5vw 'Oswald', sans-serif;
   margin: auto;
 }
 h1 > a {
   padding: 0.5em;
-  background: rgba(0,50,64,0.4);
+  background: rgba(0,50,64,0.7);
 }
 #totalsList {
   display: -webkit-flex;
@@ -127,7 +127,7 @@ h1 > a {
   list-style-type: none;
 }
 #totalsList li {
-  font: 1em 'Oswald', sans-serif;
+  font: 0.95em 'Cabin', sans-serif;
   -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
   border-right: 1px solid #ccc;
@@ -181,7 +181,7 @@ h1 > a {
   margin: 20px auto 0 auto;
 }
 .updates__title {
-  font: 200 2.3em Oswald, sans-serif;
+  font: 2.3em Oswald, sans-serif;
   color: rgb(41, 83, 54);
 }
 .updates__article {
@@ -620,7 +620,7 @@ p {
   right: 10px;
   top: 10px;
   border-radius: 0.25em;
-  font: 300 1.1em/80% 'Oswald', serif;
+  font: 1.1em/1 'Cabin', sans-serif;;
   background: rgb(32, 98, 135);
   visibility: hidden;
   overflow: hidden;
@@ -631,6 +631,7 @@ p {
   transform: scale(0);
   -webkit-transform-origin: 100% 0;
   transform-origin: 100% 0;
+  transition: -webkit-transform 0.3s, visibility 0s 0.3s;
   transition: transform 0.3s, visibility 0s 0.3s;
 }
 #cd-nav ul li {
