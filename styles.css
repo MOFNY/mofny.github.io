@@ -401,8 +401,6 @@ article h4 {
 }
 .carousel__arrow {
   position: absolute;
-  top: 0;
-  bottom: 0;
   z-index: 2;
   color: rgb(32, 98, 135);
   cursor: pointer;
