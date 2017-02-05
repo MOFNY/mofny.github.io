@@ -412,7 +412,7 @@ article h4 {
 }
 .carousel__arrow:disabled {
   pointer-events: none;
-  opacity: 0;
+  opacity: 0.5;
 }
 .carousel__arrow:hover > .carousel__arrow-icon,
 .carousel__arrow:focus > .carousel__arrow-icon {
