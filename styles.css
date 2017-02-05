@@ -740,14 +740,18 @@ p {
   overflow: hidden;
   position: relative;
   color: rgb(44, 44, 76);
+  background: rgb(255,255,255);
 }
-.revealButtons:hover {
+.revealButtons:hover,
+.revealButtons:focus {
   border-color: rgba(63,107,169,0.7);
+  background: rgb(235,235,235);
   transition: all 0.5s cubic-bezier(0.2,0,0,1.80);
 }
 .revealButtons:active {
   border-color: rgba(163,107,169,0.7);
-  box-shadow: 0 0 10px rgba(63,107,169,0.7);
+  -webkit-transform: translateY(0.2em);
+  transform: translateY(0.2em);
 }
 .figure-list__figure {
   display: -webkit-flex;
@@ -967,7 +971,8 @@ h4 {
 }
 .closeBar {
   text-align: center;
-  margin: 0 auto 10px auto;
+  margin: 0 auto;
+  padding-bottom: 10px;
   overflow: hidden;
   width: 100%;
 }
