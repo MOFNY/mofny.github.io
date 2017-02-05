@@ -14,6 +14,13 @@ body {
   position: relative;
   margin: 0 auto;
 }
+.screen-reader-text {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px,1px,1px,1px);
+}
 #wrapper {
   display: flex;
   display: -webkit-flex;
@@ -173,7 +180,7 @@ h1 > a {
   width: 100%;
 }
 .updates {
-  padding-bottom: 20px;
+  padding: 20px 0;
   background: rgba(63,137,169,0.1);
 }
 .updates__title, .updates__article {
@@ -183,6 +190,7 @@ h1 > a {
 .updates__title {
   font: 2.3em Oswald, sans-serif;
   color: rgb(41, 83, 54);
+  margin-top: 0;
 }
 .updates__article {
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -316,6 +324,7 @@ article h4 {
 }
 #container {
   width: 100%;
+  min-height: 90vmin;
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
@@ -338,8 +347,8 @@ article h4 {
 }
 .imageGroup {
   transition: all 0.8s ease-in-out;
-  display: -webkit-flex;
-  display: flex;
+  display: -webkit-inline-flex;
+  display: inline-flex;
   -webkit-justify-content: center;
   justify-content: center;
   -webkit-align-content: center;
@@ -354,26 +363,13 @@ article h4 {
   opacity: 0;   
 }
 .newImageGroupClass2 {
-  width: 90% !important;
+  width: calc(100% - 9em) !important;
   -webkit-transform: translateX(0) scale(1) !important;
   transform: translateX(0) scale(1) !important;
   opacity: 1 !important;
 }
-#container > .imageGroup img {
-  max-width: 291px;
-  min-width: 291px;
-}
 #container > .imageGroup ~ .imageGroup {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-content: center;
-  align-content: center;
-  -webkit-align-items: center;
-  align-items: center;
   width: 0;
-  padding: 0;
   -webkit-transform: translateX(-50%) scale(0);
   transform: translateX(-50%) scale(0);
   opacity: 0;
@@ -381,17 +377,11 @@ article h4 {
 #container > .imageGroup ~ .imageGroup img:nth-of-type(2) {
     -webkit-transform: translateX(100px);
     transform: translateX(100px);
-    
 }
 #container > .imageGroup ~ .imageGroup img:nth-of-type(3) {
     -webkit-transform: translate3d(0px,0px,0px);
     -webkit-transform: translateX(150px);
     transform: translateX(150px);
-}
-#container > .imageGroup ~ .imageGroup img{
-    max-width: 291px;
-    min-width: 291px;
-    height: auto;
 }
 #container > .imageGroup ~ .imageGroup #singleImage {
   max-width: 295px;
@@ -409,48 +399,47 @@ article h4 {
   animation-play-state: paused;
   border: 6px solid rgba(63,107,169,0.7);
 }
-#arrowRight {
-  font-size: 2.6em;
+.carousel__arrow {
+  position: absolute;
+  z-index: 2;
+  color: rgb(32, 98, 135);
+  cursor: pointer;
+  font-size: 1em;
+  background: none;
+  border: none;
   text-align: center;
-  font-weight: 700;
-  opacity: 1;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  transition: all 0.5s ease-in-out;
-  position: relative;
+  transition: all 0.3s ease-in-out;
 }
-#circleLeft {
-  color: DarkGreen;
+.carousel__arrow:disabled {
+  pointer-events: none;
   opacity: 0;
-  -webkit-transform: translateX(50px) rotateZ(120deg) scale(0);
-  transform: translateX(50px) rotateZ(120deg) scale(0);
-  font-size: 2.6em;
-  text-align: center;
-  font-weight: 700;
-  transition: all 0.5s ease-in-out;
-  position: relative;
 }
-#arrowRight:hover, #circleLeft:hover{
-  color: purple;
-  cursor: pointer
+.carousel__arrow:hover > .carousel__arrow-icon,
+.carousel__arrow:focus > .carousel__arrow-icon {
+  fill: rgb(127, 49, 125);
 }
-.newClassLeft {
-  opacity: 1 !important;
-  -webkit-transform: translateX(0) rotateZ(0deg) !important;
-  transform: translateX(0) rotateZ(0deg) !important;
+.carousel__arrow--left {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  left: 0;
 }
-.newClassRight {
-  opacity: 0 !important;
-  -webkit-transform: translateX(-50px) rotateZ(120deg) scale(0) !important;
-  transform: translateX(-50px) rotateZ(120deg) scale(0) !important;
+.carousel__arrow--right {
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+  right: 0;
+}
+.carousel__arrow-icon {
+  width: 5em;
+  height: auto;
+  fill: rgb(32, 98, 135);
+  transition: all 0.3s ease-in-out;
 }
 .imageGroup img {
   background:rgba(235,247,255,0.5);
   padding: 7px;
   transition: all 0.5s ease-in-out;
-  -webkit-flex: 1;
-  flex: 1;
-  position: relative;
+  max-width: 33.33%;
+  height: auto;
 }
 .imageGroup img:nth-of-type(1) {
   z-index: 3;
@@ -1145,18 +1134,6 @@ nav ul li {
   -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
 }
-#container{
-  border: 2px solid black
-}
-#container > .imageGroup img {
-  max-width: 191px;
-  min-width: 191px;
-  height: auto;
-}
-#container > .imageGroup ~ .imageGroup img{
-  max-width: 191px;
-  min-width: 191px;
-}
 .p {
   width: 96%;
   background:rgba(235,247,255,0.3);
@@ -1220,14 +1197,15 @@ footer {
   justify-content: flex-start;
   background-color: #222c3a;
 }
- #container > .imageGroup img {
-  max-width: 123px;
-  min-width: 123px;
-  height: auto;
+#container {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-#container > .imageGroup ~ .imageGroup img{
-  max-width: 137px;
-  min-width: 137px;
+.newImageGroupClass2 {
+  width: 100% !important;
+}
+.carousel__arrow {
+  font-size: 0.5em;
 }
 .p {
   width: 100%;
@@ -1334,6 +1312,12 @@ footer {
 }
 h1 {
   font-size: 1.1em;
+}
+#container {
+  min-height: 70vmin;
+}
+.carousel__arrow {
+  font-size: 0.4em;
 }
 #allCloseBar {
   display: -webkit-flex;

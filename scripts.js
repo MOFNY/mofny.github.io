@@ -12,7 +12,6 @@ var imageGroupArray = document.getElementsByClassName("imageGroup");
 var getTransitionDelay = getStyle(imageGroupArray[0], "transition-duration");
 getTransitionDelay.replace(/\D/g, '');
 var transitionDelay = parseFloat(getTransitionDelay) * 1000;
-console.log(transitionDelay);
 //var imageGroupImage2 = $(".imageGroup").find("img:nth-of-type(2)");
 var imageGroupImage2 = document.querySelectorAll(".imageGroup img:nth-of-type(2)");
 //var imageGroupImage3 = $(".imageGroup").find("img:nth-of-type(3)");
@@ -24,62 +23,51 @@ var overallTotal = 0;
 
 function changeImagesUp(x, y) {
     if (imageGroupArray[x].offsetWidth > 2) {
-        //$(imageGroupArray[x]).css({width: "0", transform: 'translateX(-50%) scale(0.3)', opacity: "0.1"});
         imageGroupArray[x].classList.remove("newImageGroupClass2");
         imageGroupArray[x].classList.add("newImageGroupClass");
         imageGroupArray[y].classList.add("newImageGroupClass2");
-        //imageGroupArray[y].classList.add("newImageGroupClass");
-        //$(imageGroupArray[x]).addClass("newImageGroupClass");
         imageGroupImage2[x].style.webkitTransform = 'translateX(100px)';
         imageGroupImage2[x].style.transform = 'translateX(100px)';
         imageGroupImage3[x].style.webkitTransform = 'translateX(150px)';
         imageGroupImage3[x].style.transform = 'translateX(150px)';
-        //$(imageGroupArray[y]).css({width: "51%", transform: 'translateX(0) scale(1)', opacity: "1"});
         imageGroupImage2[y].style.webkitTransform = 'translateX(0)';
         imageGroupImage2[y].style.transform = 'translateX(0)';
         imageGroupImage3[y].style.webkitTransform = 'translateX(-50px)';
         imageGroupImage3[y].style.transform = 'translateX(-50px)';
     }
 }
-
-//$(circleRight).on('click', clickEvent);
 circleRight.addEventListener('click', clickEvent);
 
 function imageMove() {
-    //$(circleLeft).addClass("newClassLeft");
-    circleLeft.classList.add("newClassLeft");
+    circleLeft.removeAttribute('disabled');
     for (i = 0, len = imageGroupArray.length; i < len; i++) {
         changeImagesUp(i, i + 1);
     }
     if (imageGroupArray[imageGroupArray.length - 2].offsetWidth > 2) {
-        //$(circleRight).addClass("newClassRight");
-        circleRight.classList.add("newClassRight");
+        circleRight.setAttribute('disabled', '');
+        circleLeft.focus();
     }
     setTimeout(function() {
-        //$(circleRight).on("click", clickEvent)
         circleRight.addEventListener('click', clickEvent);
     }, transitionDelay);
 }
 
 function clickEvent() {
-    //$(circleRight).off("click");
     circleRight.removeEventListener("click", clickEvent);
     imageMove();
+    return false;
 }
-
-//$(circleLeft).on('click', clickEvent2);
 circleLeft.addEventListener("click", clickEvent2)
 
 function imageMove2() {
-    //$(circleRight).removeClass("newClassRight");
-    circleRight.classList.remove("newClassRight");
+    circleRight.removeAttribute('disabled');
     for (i = 0, len = imageGroupArray.length; i < len; i++) {
         changeImagesUp(i, i - 1);
     }
     if (imageGroupArray[1].offsetWidth > 2) {
-        circleLeft.classList.remove("newClassLeft");
+        circleLeft.setAttribute('disabled', '');
+        circleRight.focus();
     }
-
     setTimeout(function() {
         circleLeft.addEventListener("click", clickEvent2)
     }, transitionDelay);
@@ -88,6 +76,7 @@ function imageMove2() {
 function clickEvent2() {
     circleLeft.removeEventListener("click", clickEvent2);
     imageMove2();
+    return false;
 }
 //for getting the style from the existing external style sheet
 function getStyle(oElm, strCssRule) {
