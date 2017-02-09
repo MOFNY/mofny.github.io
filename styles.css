@@ -91,7 +91,8 @@ nav a:visited {
   color: white;
   text-decoration: none
 }
-nav a:hover {
+nav a:hover,
+nav a:focus {
   background: rgba(0,50,64,0.8);
 }
 header, #home {
@@ -114,7 +115,8 @@ header a {
 header a:visited {
   color: rgb(255,255,255);
 }
-header a:hover {
+header a:hover,
+header a:focus {
   color: rgb(0,50,64);
   background: rgba(235,247,255,0.7);
 }
@@ -232,61 +234,54 @@ footer article {
   padding: 20px
 }
 h3 {
-  color: #7accc8;
+  color: rgb(122, 204, 200);
   font: 1.6em 'Oswald', sans-serif;
 }
 footer p {
-  color: #FFF;
+  color: rgb(255,255,255);
   font: 100 0.9em/180% Georgia !important;
   text-align: left !important;
 }
 .footerLink {
-  color: #7accc8 !important;
-  padding-bottom: 2px;
-  border-bottom: 1px solid #7accc8;
-  transition: all 0.5s ease-in-out;
-}
-.footerLink:hover {
-  border-bottom: 0 solid transparent;
+  color: rgb(122, 204, 200);
 }
 .footeLink:visited {
-  color: #7accc8;
+  color: rgb(122, 204, 200);
 }
-em {
-  color: #BDB76B;
+footer em {
+  color: rgb(189, 183, 107);
 }
-em::after {
+footer em::after {
   content: ':';
-  font-size: 1.2em
-}
-input {
-  display: block;
-  margin: 20px auto;
-  width: 100%;
   font-size: 1.2em;
-  padding: 2px;
-  transition: border 0.3s ease-in-out;
 }
-input[type=submit] {
-  display: inline-block;
-  width: 70px;
-  font: 1.3em 'Oswald', sans-serif;
-  background: #7accc8;
-  border: 0;
-  border-radius: 10px;
-  transition: all 0.3s ease-in-out;
+.footer-form {
+  padding-top: 0.625em;
+  font: 1em/1 Georgia;
 }
-textarea {
-  height: 100px;
-  width: 100%;
+.footer-form__label {
   display: block;
-  font-size: 1.2em;
-  padding: 2px;
+  margin-bottom: 0.75em;
+  color: rgb(189, 183, 107);
+}
+.footer-form__input, .footer-form__textarea {
+  width: 100%;
+  font: inherit;
+  padding: 0.25em;
+  margin-top: 0.5em;
+  border: 2px solid rgb(189, 183, 107);
+  box-shadow: 0 0 0px 1000px white inset;
+}
+.footer-form__textarea {
+  height: 6.25em;
   resize: vertical;
-  transition: border 0.3s ease-in-out;
 }
-input:focus, textarea:focus {
-  border: 2px solid DarkGreen;
+.footer-form__button {
+  color: rgb(44, 44, 76);
+  background: rgb(255,255,255);
+  padding: 0.25em;
+  font-size: 1.5em;
+  border: 2px solid rgb(189, 183, 107);
 }
 #firstSection, #pageSection {
   width: 100%;

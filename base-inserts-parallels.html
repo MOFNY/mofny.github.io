@@ -1308,11 +1308,11 @@
                 </article>
                 <article>
                     <h3>Contact Me</h3>
-                    <form method="POST" action="http://formspree.io/chrisschuck@yahoo.com">
-                        <input type="text" name="name" required="required" placeholder="Name*">
-                        <input type="email" name="_replyto" required="required" placeholder="Email*">
-                        <textarea name="message" required="required" placeholder="Send me a message pertaining to the hobby*"></textarea>
-                        <input type="submit" value="Send">
+                    <form class="footer-form" method="POST" action="http://formspree.io/chrisschuck@yahoo.com">
+                        <label class="footer-form__label">Name<input class="footer-form__input" type="text" name="name" required="" pattern="[a-z]+"></label>
+                        <label class="footer-form__label">Email<input class="footer-form__input" type="email" name="_replyto" required=""></label>
+                        <label class="footer-form__label">Have a card I need?<textarea class="footer-form__textarea" name="message" required="" pattern="[a-z]+"></textarea></label>
+                        <button class="footer-form__button" type="submit">Send</button>
                     </form>
                 </article>
             </footer>
