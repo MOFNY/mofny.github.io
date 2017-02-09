@@ -264,6 +264,10 @@ footer em::after {
   margin-bottom: 0.75em;
   color: rgb(189, 183, 107);
 }
+.footer-form__label::before {
+  content: '* ';
+  color: #B22222;
+}
 .footer-form__input, .footer-form__textarea {
   width: 100%;
   font: inherit;
