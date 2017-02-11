@@ -190,7 +190,7 @@ h1 > a {
   margin: 20px auto 0 auto;
 }
 .updates__title {
-  font: 2.3em Oswald, sans-serif;
+  font: 2em Oswald, sans-serif;
   color: rgb(41, 83, 54);
   margin-top: 0;
 }
@@ -198,7 +198,7 @@ h1 > a {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .updates__date {
-  color:rgb(127, 49, 125);
+  color: rgb(127, 49, 125);
   font-size: 1.1em;
   line-height: 1;
 }
