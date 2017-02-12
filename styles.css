@@ -274,6 +274,7 @@ footer em::after {
   padding: 0.25em;
   margin-top: 0.5em;
   border: 2px solid rgb(189, 183, 107);
+  border-radius: 0;
   box-shadow: 0 0 0px 1000px white inset;
 }
 .footer-form__textarea {
@@ -778,6 +779,9 @@ p {
 }
 .figure-list {
   text-align: center;
+}
+.figure-list > li {
+  display: block;
 }
 .figure-list img {
   height: auto;
