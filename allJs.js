@@ -306,7 +306,7 @@ $.each(totalNumArray,function(){totals+=parseFloat(this) || 0;});
 	var formatOverallNumber = 100*(overallGroup) / totals;
 	//the string for the hmtl for the overallTotal ID
 	
-	$(overallTotal).text("Completion Stats: " + overallGroup + "/" + totals + " or "
+	$(overallTotal).text(overallGroup + "/" + totals + " or "
                              + parseFloat(formatOverallNumber.toFixed(1)) + "%");
 
 	
