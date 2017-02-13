@@ -1443,6 +1443,8 @@ h1 {
   height: 0.125em;
   position: absolute;
   top: 50%;
+  left: 0;
+  right: 0;
 }
 .card-list-intro__completion::after {
   display: none;
