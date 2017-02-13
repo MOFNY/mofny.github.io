@@ -1428,11 +1428,13 @@ h1 {
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
   -webkit-align-items: center;
   align-items: center;
   position: relative;
+}
+.card-list-intro__numbers {
+  /* Damn it Firefox! */
+  margin-top: auto;
 }
 .card-list-intro__text::after {
   content: '';
