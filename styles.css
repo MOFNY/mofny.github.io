@@ -1424,7 +1424,7 @@ h1 {
 .card-list-intro__text {
   -webkit-flex: 100%;
   flex: 100%;
-  -webkit-display: flex;
+  display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
