@@ -1438,6 +1438,7 @@ h1 {
   content: '';
   width: 100%;
   max-width: 7em;
+  margin: 0 auto;
   background: currentColor;
   height: 0.125em;
   position: absolute;
