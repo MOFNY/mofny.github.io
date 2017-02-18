@@ -93,14 +93,11 @@ function getStyle(oElm, strCssRule) {
 }
 
 $(function() {
-    var navigationContainer = $('#cd-nav'),
-        mainNavigation = navigationContainer.find('#cd-main-nav ul');
-    $('.cd-nav-trigger').on('click', function() {
-        $(this).toggleClass('menu-is-open');
-        //we need to remove the transitionEnd event handler (we add it when scolling up with the menu open)
-        mainNavigation.off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend').toggleClass('is-visible');
+    var primaryNav = $("#primary-nav")
+    $("#menu-button").on("click",function(){
+        $(this).toggleClass("menu-is-open");
+        primaryNav.on("webkitTransitionEnd transitionend").toggleClass("primary-nav--is-visible")
     });
-
     $.each(countClass, function(i, item) {
         var dataString = $(item).attr('data-value').toString();
         var theCompleteString = dataString;

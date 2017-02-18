@@ -64,70 +64,64 @@ button {
   -webkit-transform: scale(0.8) translateY(5px);
   transform: scale(0.8) translateY(5px);
 }
-nav {
-  background: rgba(0,50,64,0.7);
-  position: relative;
-  font: 0.9em 'Cabin', sans-serif;
+.primary-nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background: rgba(0,50,64,0.8);
+  font: 1em/1 'Cabin', sans-serif;
 }
-nav ul {
+.primary-nav__list {
   display: -webkit-flex;
   display: flex;
+  list-style-type: none;
 }
-nav ul li {
-  list-style: none;
+.primary-nav__list-item {
   -webkit-flex: 1;
   flex: 1;
 }
-nav ul li:last-child {
-  border-right: none;
+.primary-nav__anchor, .primary-nav__anchor:visited {
+  color: rgb(255,255,255);
 }
-nav a {
+.primary-nav__anchor:hover,
+.primary-nav__anchor:focus {
+  color: rgb(0,50,64);
+  background: rgba(235,247,255,0.7);
+}
+.primary-nav__anchor {
   display: block;
-  padding: 0.5em 0;
-  color: white;
-  transition: background 0.3s ease-in-out;
-}
-nav a:visited {
-  color: white;
-  text-decoration: none
-}
-nav a:hover,
-nav a:focus {
-  background: rgba(0,50,64,0.8);
+  padding: 0.625em 0;
+  font-size: 0.875em;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
 }
 header, #home {
   background: url('background.jpg') no-repeat 0 0 / 100% auto;
   background-attachment: fixed;
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-flow: column nowrap;
-  flex-flow: column nowrap;
   width: 100%;
   text-align: center;
   position: relative;
   z-index: 4;
   height: 28vw;
 }
-header a {
-  color: rgb(255,255,255);
-  transition: all 0.3s ease-in-out;
-}
-header a:visited {
-  color: rgb(255,255,255);
-}
-header a:hover,
-header a:focus {
-  color: rgb(0,50,64);
-  background: rgba(235,247,255,0.7);
-}
-h1 {
-  line-height: 1;
-  font: 2.5vw 'Oswald', sans-serif;
+.site-title-header {
   margin: auto;
 }
-h1 > a {
+.site-title-header__anchor, .site-title-header__anchor:visited {
+  color: rgb(255,255,255);
+}
+.site-title-header__anchor {
   padding: 0.5em;
-  background: rgba(0,50,64,0.7);
+  font: 1em/1 'Oswald', sans-serif;
+  background: rgba(0,50,64,0.8);
+  transition: all 0.3s ease-in-out;
+}
+.site-title-header__anchor:hover,
+.site-title-header__anchor:focus {
+  color: rgb(0,50,64);
+  background: rgba(235,247,255,0.7);
 }
 #totalsList {
   display: -webkit-flex;
@@ -150,7 +144,7 @@ h1 > a {
   height: 80px;
   display: inline-block; 
   position: absolute;
-  top: 	calc(50% - 40px);
+  top: calc(50% - 40px);
   left: calc(50% - 40px);
   border-radius: 100%;  
   -webkit-animation: scaleout 1.5s infinite ease-in-out;
@@ -628,52 +622,8 @@ p {
   padding: 10px 0;
   color: rgb(75,75,75);
 }
-#cd-nav ul {
-  /* mobile first */
-  list-style: none;
-  position: fixed;
-  width: 100%;
-  max-width: 200px;
-  right: 10px;
-  top: 10px;
-  border-radius: 0.25em;
-  font: 1.1em/1 'Cabin', sans-serif;;
-  background: rgb(32, 98, 135);
-  visibility: hidden;
-  overflow: hidden;
-  z-index: 2;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: scale(0);
-  transform: scale(0);
-  -webkit-transform-origin: 100% 0;
-  transform-origin: 100% 0;
-  transition: -webkit-transform 0.3s, visibility 0s 0.3s;
-  transition: transform 0.3s, visibility 0s 0.3s;
-}
-#cd-nav ul li {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  width: 100%
-}
-#cd-nav a {
-  color: white;
-}
-#cd-nav ul.is-visible {
-  visibility: visible;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  transition: transform 0.3s, visibility 0s 0s;
-}
-#cd-nav li a {
-  display: block;
-  padding: 0.5em;
-  border-bottom: 1px solid #CCC;
-}
-#cd-nav li:last-child a {
-  border-bottom: none;
-}
-.cd-nav-trigger {
+.menu-button {
+  display: none;
   position: fixed;
   top: 10px;
   right: 10px;
@@ -687,7 +637,7 @@ p {
   z-index: 3;
   border: none;
 }
-.cd-nav-trigger span {
+.menu-button span {
   /* the span element is used to create the menu icon */
   position: absolute;
   display: block;
@@ -700,7 +650,7 @@ p {
   margin-left: -10px;
   transition: background 0.3s;
 }
-.cd-nav-trigger span::before, .cd-nav-trigger span::after {
+.menu-button span::before, .menu-button span::after {
   content: '';
   position: absolute;
   left: 0;
@@ -713,55 +663,31 @@ p {
   backface-visibility: hidden;
   transition: transform 0.3s, background 0s;
 }
-.cd-nav-trigger span::before {
+.menu-button span::before {
   top: -6px;
   -webkit-transform: rotate(0);
   transform: rotate(0);
 }
-.cd-nav-trigger span::after {
+.menu-button span::after {
   bottom: -6px;
   -webkit-transform: rotate(0);
   transform: rotate(0);
 }
-.cd-nav-trigger.menu-is-open {
-  box-shadow: none;
-}
-.cd-nav-trigger.menu-is-open span {
+.menu-is-open span {
   background: rgba(232, 74, 100, 0);
 }
-.cd-nav-trigger.menu-is-open span::before, .cd-nav-trigger.menu-is-open span::after {
+.menu-is-open span::before, .menu-is-open span::after {
   background: #e84a64;
 }
-.cd-nav-trigger.menu-is-open span::before {
+.menu-is-open span::before {
   top: 0;
   -webkit-transform: rotate(135deg);
   transform: rotate(135deg);
 }
-.cd-nav-trigger.menu-is-open span::after {
+.menu-is-open span::after {
   bottom: 0;
   -webkit-transform: rotate(225deg);
   transform: rotate(225deg);
-}
-#cd-nav ul.is-visible {
-  /* this class is used to bring back the navigation animation - as on touch devices */
-  visibility: visible;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  transition: transform 0.3s, visibility 0s 0s;
-}
-#cd-nav ul.is-hidden {
-  /* this class is used to animate the scale down the navigation when the user scrolls down with the navigation still open */
-  -webkit-transform: scale(0);
-  transform: scale(0);
-  transition: transform 0.3s;
-}
-.is-fixed .cd-nav-trigger {
-  visibility: visible;
-  transition: all 0s;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  -webkit-animation: cd-bounce-in 0.3s linear;
-  animation: cd-bounce-in 0.3s linear;
 }
 .hideGroup{
   display: none
@@ -1169,13 +1095,6 @@ ul span .red2 {
   margin-bottom: 10px;
 }
 @media only screen and (max-width : 1024px) {
-nav {
-  font-size: 1em;
-}
-nav ul li {
-  -webkit-flex: 1 1 auto;
-  flex: 1 1 auto;
-}
 .p {
   width: 96%;
   background:rgba(235,247,255,0.3);
@@ -1199,13 +1118,50 @@ nav ul li {
 }
 }
 @media only screen and (max-width : 768px) {
-  nav {
-    opacity: 0;
-    width: 1px;
-    pointer-events: none;
-    position: absolute;
-    overflow: hidden;
+  .menu-button {
+    display: inline-block;
   }
+  .primary-nav {
+    max-width: 200px;
+    right: 10px;
+    top: 10px;
+    border-radius: 0.25em;
+    background: rgb(32, 98, 135);
+    visibility: hidden;
+    overflow: hidden;
+    z-index: 2;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+    transition: -webkit-transform 0.3s, visibility 0s 0.3s;
+    transition: transform 0.3s, visibility 0s 0.3s;
+  }
+.primary-nav--is-visible {
+  visibility: visible;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  transition: transform 0.3s, visibility 0s 0s;
+}
+.primary-nav__list {
+  display: block;
+}
+.primary-nav__list-item {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.primary-nav__anchor {
+  display: block;
+  padding: 0.5em;
+  font-size: 1.1em;
+  text-align: left;
+  border-bottom: 1px solid #CCC;
+}
+.primary-nav__anchor:last-child {
+  border-bottom: none;
+}
   #home {
     background: rgba(0,50,64,0.4) url('background.jpg') no-repeat center top / cover;
     height: 40vw;
@@ -1214,9 +1170,8 @@ nav ul li {
   #totalsList li {
     font-size: 0.9em;
   }
-  h1 {
-    margin: auto;
-    font-size: 1.5em;
+  .site-title-header__anchor {
+    font-size: 0.75em;
   }
   #above {
     display: none
@@ -1336,14 +1291,6 @@ footer {
   animation: header-move 10s 1 linear forwards;
   will-change: background-position;
 }
-@-webkit-keyframes header-move {
-  0% {
-    background-position-x: 0;
-  }
-  100% {
-    background-position-x: 100%;
-  }
-}
 @keyframes header-move {
   0% {
     background-position-x: 0;
@@ -1352,8 +1299,8 @@ footer {
     background-position-x: 100%;
   }
 }
-h1 {
-  font-size: 1.1em;
+.site-title-header__anchor {
+  font-size: 0.5em;
 }
 #container {
   min-height: 70vmin;

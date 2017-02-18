@@ -322,6 +322,13 @@ arrowDown.click(function() {
 arrowUp.click(function() {
 	htmlBody.animate({scrollTop: revealAllButton.offset().top - 75}, 500);
     });
-var y=$("#cd-nav"),A=y.find("#cd-main-nav ul");$(".cd-nav-trigger").on("click",function(){$(this).toggleClass("menu-is-open"),A.off("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend").toggleClass("is-visible")}),$(".arrow-up2").click(function(){$("html, body").animate({scrollTop:0},700,"easeInOutCubic")})
+    var primaryNav = $("#primary-nav")
+    $("#menu-button").on("click",function(){
+        $(this).toggleClass("menu-is-open");
+        primaryNav.on("webkitTransitionEnd transitionend").toggleClass("primary-nav--is-visible")
+    });
+	$(".arrow-up2").click(function(){
+		$("html, body").animate({scrollTop:0},700,"easeInOutCubic")
+	});
 });
 	
