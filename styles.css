@@ -1143,7 +1143,7 @@ ul span .red2 {
   visibility: visible;
   -webkit-transform: scale(1);
   transform: scale(1);
-  transition: transform 0.3s, visibility 0s 0s;
+  transition: transform 0.3s cubic-bezier(.23,.74,.33,1.26), visibility 0s 0s;
 }
 .primary-nav__list {
   display: block;
