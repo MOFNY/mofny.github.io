@@ -71,6 +71,9 @@ button {
   background: rgba(0,50,64,0.8);
   font: 1em/1 'Cabin', sans-serif;
 }
+.primary-nav--float-bar-is-open {
+  position: relative;
+}
 .primary-nav__list {
   display: -webkit-flex;
   display: flex;
@@ -100,6 +103,8 @@ header, #home {
   background-attachment: fixed;
   display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
   width: 100%;
   text-align: center;
   position: relative;
@@ -1122,6 +1127,8 @@ ul span .red2 {
     display: inline-block;
   }
   .primary-nav {
+    /* To make sure it's always fixed even when the float bar is open*/
+    position: fixed !important;
     max-width: 200px;
     right: 10px;
     top: 10px;
