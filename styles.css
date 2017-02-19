@@ -731,6 +731,38 @@ p {
   -webkit-align-items: center;
   align-items: center;
 }
+.image-unavailable {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2em 0.5em;
+}
+.image-unavailable__svg {
+  max-width: 7em;
+  -webkit-flex: 50%;
+  flex: 50%;
+  height: auto;
+  margin-right: 1em;
+}
+.image-unavailable__svg-border {
+  fill: #ccc;
+}
+.image-unavailable__svg-landscape {
+  fill: rgb(41, 83, 54);
+}
+.image-unavailable__svg-sun {
+  fill: rgb(189, 183, 107);
+}
+.image-unavailable__caption {
+  color: rgb(75,75,75);
+  text-align: left;
+  font: 1.1em 'Georgia', sans-serif;
+  line-height: 1.5;
+}
 .total-group-header {
   margin-bottom: 20px
 }
@@ -1415,6 +1447,9 @@ footer {
 .openClose, .openClose3 {
   width: 95% !important;
   font-size: 1.6em;
+}
+.image-unavailable {
+  font-size: 14px;
 }
 
 }
