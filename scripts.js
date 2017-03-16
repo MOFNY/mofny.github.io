@@ -104,7 +104,7 @@ $(function() {
         var urlsAll = [theCompleteString];
         var totalAll = 0;
         $.ajaxSetup({
-            timeout: 8000 
+            timeout: 8000
         });
         $.get(urlsAll).done(function(data) {
                 totalAll += $(data).find(".yearGroup").find("li").length - $(data).find(".yearGroup").find(".red").length;
@@ -117,7 +117,7 @@ $(function() {
                 var totalForTitle = $(title[i]).attr('data-value');
                 var totalForEndTitle = $(title).last().attr('data-value');
                 var formatIndividualTitle = 100 * (totalAll) / totalForTitle;
-                $(title[i]).attr("data-title", "Completion Stats: " + totalAll + "/" + ReplaceNumberWithCommas(totalForTitle) + " or " + parseFloat(formatIndividualTitle.toFixed(1)) + "%" /*+ "<br /><hr />" + "Cards include: " + randomness*/ );
+                $(title[i]).attr("data-title", "Completion Stats: " + ReplaceNumberWithCommas(totalAll) + "/" + ReplaceNumberWithCommas(totalForTitle) + " or " + parseFloat(formatIndividualTitle.toFixed(1)) + "%" /*+ "<br /><hr />" + "Cards include: " + randomness*/ );
                 overallTotal += totalAll;
                 var formatIndividualEndTitle = 100 * (overallTotal) / totalForEndTitle;
                 $(title).last().attr("data-title", "Overall Stats: " + ReplaceNumberWithCommas(overallTotal) + "/" + ReplaceNumberWithCommas(totalForEndTitle) + " or " + parseFloat(formatIndividualEndTitle.toFixed(1)) + "%")
@@ -130,7 +130,7 @@ $(function() {
                 });*/
 		var spinner = $('.spinner');
 		//spinner.fadeOut(300);
-		$(item).text(totalAll).addClass('expand');
+		$(item).text(ReplaceNumberWithCommas(totalAll)).addClass('expand');
 			countLastAfter.text(ReplaceNumberWithCommas(overallTotal)).addClass('move-count-last-after');
             });
     });
@@ -163,7 +163,7 @@ function toggleMenu(){
       for(i=0, len = imageGroupArray.length; i < len;i++){
         changeImagesUp(i,i+1);
     }
-  }, interval); 
+  }, interval);
 });
 
 $("#expand").click(function() {
