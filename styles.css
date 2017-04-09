@@ -99,7 +99,7 @@ button {
   transition: all 0.3s ease-in-out;
 }
 header, #home {
-  background: url('background.jpg') no-repeat 0 0 / 100% auto;
+  background: url('https://c1.staticflickr.com/3/2925/33890309896_ab2384da36_o.jpg') no-repeat 0 0 / 100% auto;
   background-attachment: fixed;
   display: -webkit-flex;
   display: flex;
@@ -109,7 +109,7 @@ header, #home {
   text-align: center;
   position: relative;
   z-index: 4;
-  height: 28vw;
+  height: 27.35vw;
 }
 .site-title-header {
   margin: auto;
@@ -1202,7 +1202,7 @@ ul span .red2 {
   border-bottom: none;
 }
   #home {
-    background: rgba(0,50,64,0.4) url('background.jpg') no-repeat center top / cover;
+    background: rgba(0,50,64,0.4) url('https://c1.staticflickr.com/3/2925/33890309896_ab2384da36_o.jpg') no-repeat center top / cover;
     height: 40vw;
     z-index: 1;
   }
