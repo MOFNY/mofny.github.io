@@ -264,4 +264,13 @@ $(document).ready(function () {
 	$(".arrow-up2").click(function () {
 		$("html, body").animate({ scrollTop: 0 }, 700, "easeInOutCubic")
 	});
+	$('#open-all-years').on('click', function() {
+		toggleOpen('')
+	});
+	$('#close-all-years').on('click', function() {
+		toggleOpen(false)
+	});
+	function toggleOpen(value) {
+		$('.details-year').attr('open', value)
+	}
 });
