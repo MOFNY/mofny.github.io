@@ -41,7 +41,7 @@ button {
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
   display: block;
-  border-bottom: 20px solid #B22222;
+  border-bottom: 20px solid rgb(178,34,34);
   opacity: 0.7;
   position: fixed;
   right: 1.5%;
@@ -129,7 +129,7 @@ header, #home {
 #totalsList li {
   font: 0.95em 'Cabin', sans-serif;
   flex: 1 1 auto;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid rgb(204,204,204);
 }
 #totalsList span {
   color: rgb(41, 83, 54);
@@ -205,7 +205,7 @@ footer {
   align-items: stretch;
   flex-flow: row wrap;
   justify-content: flex-start;
-  background: #222c3a;
+  background: rgb(34,44,58);
 }
 footer article {            
   flex: 1;
@@ -249,7 +249,7 @@ footer em::after {
 }
 .footer-form__label::before {
   content: '* ';
-  color: #B22222;
+  color: rgb(178,34,34);
 }
 .footer-form__input, .footer-form__textarea {
   width: 100%;
@@ -328,7 +328,7 @@ footer em::after {
   vertical-align: middle;
 }
 .maroon {
-  color:#B22222;
+  color:rgb(178,34,34);
 }
 #container {
   width: 100%;
@@ -389,7 +389,7 @@ footer em::after {
   -webkit-transform: translate3d(0,0,0);
   -webkit-transform: translateX(0);
   transform: translateX(0);
-  border: 6px solid #ccc;
+  border: 6px solid rgb(204,204,204);
 }
 #container > .imageGroup ~ .imageGroup #singleImage:hover {
   -webkit-animation: animateLastImage;
@@ -445,7 +445,7 @@ footer em::after {
 .imageGroup img:nth-of-type(1) {
   z-index: 3;
   order: 0;
-  border: 6px solid #ccc;
+  border: 6px solid rgb(204,204,204);
   transform: translateX(50px);   
   -webkit-transform: translate3d(50px,0,0);
 }
@@ -455,12 +455,12 @@ footer em::after {
 .imageGroup img:nth-of-type(1):hover ~ img:not(:nth-of-type(1)){
   -webkit-filter: blur(2px);
   filter: blur(2px);
-  border: 6px solid #ccc;
+  border: 6px solid rgb(204,204,204);
 }
 .imageGroup img:nth-of-type(2) {
   z-index: 2;
   order: 1;
-  border: 6px solid DarkGreen;
+  border: 6px solid rgb(41, 83, 54);
   transition: all 1.2s ease-in-out;
   -webkit-transform: translateX(0);
   transform: translateX(0);
@@ -478,7 +478,7 @@ footer em::after {
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
   filter: blur(2px);
-  border: 6px solid DarkGreen
+  border: 6px solid rgb(41, 83, 54)
 }
 .imageGroup img:nth-of-type(3) {
   z-index: 1;
@@ -578,7 +578,7 @@ footer em::after {
   max-width: 360px;
   background: rgba(0,0,0,.8);
   border-radius: 15px;
-  color: #fff;
+  color: rgb(255,255,255);
   z-index: 5;
   content: attr(data-title);
   pointer-events: none;
@@ -614,7 +614,7 @@ p {
   display: block;
   width: 20px;
   height: 2px;
-  background: white;
+  background: rgb(255,255,255);
   top: 50%;
   margin-top: -1px;
   left: 50%;
@@ -693,7 +693,7 @@ p {
   text-align: center;
 }
 .toggle-all__section--close {
-  border-right: 4px solid #ccc;
+  border-right: 4px solid rgb(204,204,204);
   padding-right: 1.25em;
 }
 .toggle-all__section--open {
@@ -790,7 +790,7 @@ p {
   margin-right: 1em;
 }
 .image-unavailable__svg-border {
-  fill: #ccc;
+  fill: rgb(204,204,204);
 }
 .image-unavailable__svg-landscape {
   fill: rgb(41, 83, 54);
@@ -825,7 +825,7 @@ p {
 .p {
   width: 90%;
   background:rgba(235,247,255,0.3);
-  border: 6px solid #ccc;
+  border: 6px solid rgb(204,204,204);
   border-radius: 15px;
   padding: 10px 0 20px 20px;
   margin: 20px auto;
@@ -856,7 +856,7 @@ ol, x:-moz-any-link, x:default {
   content: counters(section,"") ". ";
 }
 .red, .red2 {
-  color: red
+  color: rgb(178,34,34)
 }
 .imgColumn {
   padding-right: 20px;
@@ -894,7 +894,7 @@ ol, x:-moz-any-link, x:default {
   background: rgba(63,137,169,0.4);
   box-shadow: 0 10px 8px -10px rgba(0,0,0,.9);
   padding: 8px;
-  color: DarkGreen;
+  color: rgb(41, 83, 54);
 }
 .overlap, .overlap2 {
   white-space: nowrap;
@@ -984,7 +984,7 @@ h4 {
   opacity: 1;
   padding-left: 110px;
   overflow: hidden;
-  border: 6px solid #B22222;
+  border: 6px solid rgb(178,34,34);
   transition: all 0.4s ease-in-out;
   font-size: 2.7em;
 }
@@ -1020,7 +1020,7 @@ h4 {
   pointer-events: auto;
 }
 .arrow-down {
-  border-top: 20px solid #B22222;
+  border-top: 20px solid rgb(178,34,34);
 }
 .arrow-down:hover {
   display: block;
@@ -1029,7 +1029,7 @@ h4 {
   opacity: 1;
 }
 .arrow-up {
-  border-bottom: 20px solid #B22222;
+  border-bottom: 20px solid rgb(178,34,34);
   top: 20px;
 }
 .arrow-up:hover, .arrow-up2:hover {
@@ -1054,7 +1054,7 @@ h4 {
   content: "How did I get these numbers?";
   position: absolute;
   top: 280px;
-  color: white;
+  color: rgb(255,255,255);
   width: 30%;
   left: 350px;
   background: rgba(0,0,0,0.7);
@@ -1064,7 +1064,7 @@ h4 {
   content: attr(data-content) 'Please close all lists to view content';
   position: absolute;
   top: 280px;
-  color: white;
+  color: rgb(255,255,255);
   width: 40%;
   left: 295px;
   background-color: rgba(0,0,0,0.7);
@@ -1076,8 +1076,8 @@ h4 {
 .figure-list__caption > span {
   display: inline-block;
   font: 300 1.25em 'Oswald', sans-serif;
-  border-top: 4px solid #ccc;
-  border-bottom: 4px solid #ccc;
+  border-top: 4px solid rgb(204,204,204);
+  border-bottom: 4px solid rgb(204,204,204);
   padding: 0.5em;
   color: rgb(41, 83, 54);
 }
@@ -1088,7 +1088,7 @@ ul span .red2 {
   font-size: 1em;
 }
 .soldCards {
-  color: red;
+  color: rgb(178,34,34);
 }
 .thumbnail:hover, .thumbnailEndLeft:hover, .thumbnailEndRight:hover, .thumbnailEndBottom:hover {
   background: rgba(63,107,169,0.3);
@@ -1145,12 +1145,12 @@ ul span .red2 {
 }
 .right > li:first-child {
   font-size: 2.4em;
-  color: #ccc;
+  color: rgb(204,204,204);
   margin-bottom: 20px;
 }
 .right > li:nth-child(2){
   font-size: 2em;
-  color: #000;
+  color: rgb(0,0,0);
   margin-bottom: 20px
 }
 .right > li:nth-child(n+3) {
@@ -1161,7 +1161,7 @@ ul span .red2 {
   .p {
     width: 96%;
     background:rgba(235,247,255,0.3);
-    border: 6px solid #ccc;
+    border: 6px solid rgb(204,204,204);
     border-radius: 15px;
     padding: 10px 0 20px 20px;
     margin: 20px auto;
@@ -1219,7 +1219,7 @@ ul span .red2 {
     padding: 0.5em;
     font-size: 1.1em;
     text-align: left;
-    border-bottom: 1px solid #CCC;
+    border-bottom: 1px solid rgb(204,204,204);
   }
   .primary-nav__anchor:last-child {
     border-bottom: none;
@@ -1251,7 +1251,7 @@ ul span .red2 {
     align-items: stretch;
     flex-flow: column wrap;
     justify-content: flex-start;
-    background-color: #222c3a;
+    background-color: rgb(34,44,58);
   }
   #container {
     flex-wrap: wrap;
@@ -1265,7 +1265,7 @@ ul span .red2 {
   .p {
     width: 100%;
     background:rgba(235,247,255,0.3);
-    border: 6px solid #ccc;
+    border: 6px solid rgb(204,204,204);
     border-radius: 15px;
     padding: 10px 0 10px 10px;
     margin: 20px auto;
@@ -1297,7 +1297,7 @@ ul span .red2 {
     box-shadow: none;
     border-radius: 0;
     padding: 0;
-    color: DarkGreen;
+    color: rgb(41, 83, 54);
   }
   .wider {
     width: 280px !important
@@ -1370,7 +1370,7 @@ ul span .red2 {
   }
   #totalsList li {
     flex: 50%;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid rgb(204,204,204);
     font-size: 0.85em;
   }
   #totalsList li:nth-child(2n) {
@@ -1438,7 +1438,7 @@ ul span .red2 {
   }
   .toggle-all__section--close {
     border-right: none;
-    border-bottom: 4px solid #ccc;
+    border-bottom: 4px solid rgb(204,204,204);
     padding-right: 0;
     padding-bottom: 0.625em;
     margin-bottom: 0.625em;
