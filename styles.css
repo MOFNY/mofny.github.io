@@ -1251,6 +1251,12 @@ ul span .red2 {
   #above {
     display: none
   }
+  .intro-section {
+    flex-wrap: wrap;
+  }
+  .intro-section__article {
+    flex: 100%;
+  }
   .intro-section__article {
     padding: 0.5em;
   }
@@ -1383,12 +1389,6 @@ ul span .red2 {
   }
   .totals-list__item:nth-child(2n) {
     border-right: none;
-  }
-  .intro-section {
-    flex-wrap: wrap;
-  }
-  .intro-section__article {
-    flex: 100%;
   }
   .updates__title, .updates__article {
     width: 95%;
