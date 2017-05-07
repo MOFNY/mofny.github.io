@@ -1118,46 +1118,47 @@ ul span .red2 {
   transform-origin:50% 50%;
 }
 /*for the 404 page*/
-.main-container {
+.page-404 {
   min-height: 100%;
   display: flex;
 }
-.left, .right {
+.page-404__image-section, .page-404__nav-section {
   flex: 1;
   display: flex;
 }
-.left {
-  background: rgba(63,107,169,0.5);
-}
-.left img {
+.page-404__image {
   margin: auto;
-  width: 90%;
+  width: 100%;
+  max-width: 500px;
   height: auto;
   padding: 10px;
   background: rgba(255,255,255,0.3);
   border-radius: 15px
 }
-.right {
-  list-style: none;
-  background: rgba(63,107,169,0.7);
-  padding: 0 10px 0 10px;
-  flex-flow: column nowrap;
+.page-404__nav-section {
   justify-content: center;
-  position: relative;
-  text-align: center;
+  flex-wrap: wrap;
   font-family: 'Oswald', sans-serif;
+  text-align: center;
 }
-.right > li:first-child {
+.page-404__nav-section-list {
+  list-style: none;
+  padding: 0 10px 0 10px;
+  position: relative;
+}
+.page-404__nav-section-header {
+  width: 100%;
+  color: rgb(41, 83, 54);
+  margin: auto 0 20px 0;
+}
+.page-404__nav-section-header--primary {
   font-size: 2.4em;
-  color: rgb(204,204,204);
   margin-bottom: 20px;
 }
-.right > li:nth-child(2){
+.page-404__nav-section-header--secondary {
   font-size: 2em;
-  color: rgb(0,0,0);
-  margin-bottom: 20px
 }
-.right > li:nth-child(n+3) {
+.page-404__nav-section-list-item {
   font-size: 1.5em;
   margin-bottom: 10px;
 }
@@ -1315,34 +1316,28 @@ ul span .red2 {
     width: 280px !important
   }
   /*for the 404 page*/
-  .main-container {
+  .page-404 {
     display: flex;
     flex-direction: column;
   }
-  .left {
+  .page-404__image-section {
     align-items: center;
     padding: 0.5em;
   }
-  .left-img {
-    width: 100%;
-  }
-  .right {
+  .page-404__nav-section-list {
     padding: 0 10px 0 10px;
   }
-  .right > li:first-child {
+  .page-404__nav-section-header--primary {
     font-size: 1.8em;
     margin-top: 10px
   }
-  .right > li:nth-child(2) {
+  .page-404__nav-section-header--secondary {
     font-size: 1.5em;
     margin-bottom: 10px
   }
-  .right > li:nth-child(n+3) {
+  .page-404__nav-section-list-item {
     font-size: 1.2em;
     margin-bottom: 5px;
-  }
-  .right > li:last-child {
-    margin-bottom: 10px
   }
 }
 @media only screen and (max-width: 480px) {
