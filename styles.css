@@ -121,17 +121,21 @@ header, #home {
   color: rgb(0,50,64);
   background: rgba(235,247,255,0.7);
 }
-#totalsList {
+.totals-list {
   display: flex;
   width: 100%;
   list-style-type: none;
+  border-bottom: 1px solid rgb(204,204,204);
 }
-#totalsList li {
+.totals-list__item {
   font: 0.95em 'Cabin', sans-serif;
   flex: 1 1 auto;
   border-right: 1px solid rgb(204,204,204);
 }
-#totalsList span {
+.totals-list__item--overall-total {
+  border-right: none;
+}
+.totals-list__category {
   color: rgb(41, 83, 54);
 }
 .spinner {
@@ -147,7 +151,7 @@ header, #home {
   animation: scaleout 1.5s infinite ease-in-out;
 }
 .count {
-  color: rgb(63,137,169) !important;
+  color: rgb(63,137,169);
   max-width: 0;
   overflow: hidden;
   transition: max-width 2s, padding 0.5s ease-in-out !important;
@@ -271,22 +275,22 @@ footer em::after {
   font-size: 1.5em;
   border: 2px solid rgb(189, 183, 107);
 }
-#firstSection, #pageSection {
+.intro-section, #pageSection {
   width: 100%;
 }
-#firstSection {
+.intro-section {
   display: flex;
 }
-#firstSection article {
-  font: 1em/1.8 Georgia;
+.intro-section__article {
   padding: 1em 2em;
   flex: 1;
 }
-#firstSection article:first-child { 
-  background: rgba(63,107,169,0.1);
+.intro-section__header {
+  font: 1.5em Oswald, sans-serif;
+  color: rgb(41, 83, 54);
 }
-#firstSection article:nth-child(2) { 
-  background: rgba(63,137,169,0.2);
+.intro-section__paragraph {
+  line-height: 1.6;
 }
 .card-list-intro {
   padding: 0.625em 0.3125em;
@@ -550,7 +554,7 @@ footer em::after {
     opacity: 0;
   }
 }
-#totalsList a {
+.totals-list__anchor {
   text-align: center;
   display: flex;
   padding: 10px 5px;
@@ -558,7 +562,7 @@ footer em::after {
   align-items: center;
   justify-content: center;
 }
-#totalsList a:hover, #totalsList a:focus {
+.totals-list__anchor:hover, .totals-list__anchor:focus {
   background: rgb(235,235,235);
 }
 .tooltip::after {
@@ -1157,6 +1161,14 @@ ul span .red2 {
   font-size: 1.5em;
   margin-bottom: 10px;
 }
+@media only screen and (min-width: 1366px) {
+  .totals-list__item {
+    font-size: 1.1em;
+  }
+  .intro-section__article {
+    font-size: 1.25em;
+  }
+}
 @media only screen and (max-width: 1024px) {
   .p {
     width: 96%;
@@ -1229,7 +1241,7 @@ ul span .red2 {
     height: 40vw;
     z-index: 1;
   }
-  #totalsList li {
+  .totals-list__item {
     font-size: 0.9em;
   }
   .site-title-header__anchor {
@@ -1238,7 +1250,7 @@ ul span .red2 {
   #above {
     display: none
   }
-  #firstSection article {
+  .intro-section__article {
     padding: 0.5em;
   }
   .updates__title, .updates__article, .card-list-intro__paragraph {
@@ -1349,7 +1361,7 @@ ul span .red2 {
     }
   }
   .site-title-header__anchor {
-    font-size: 0.5em;
+    font-size: 0.6em;
   }
   #container {
     min-height: 70vmin;
@@ -1365,21 +1377,22 @@ ul span .red2 {
   .arrow-down {
     position: static;
   }
-  #totalsList {
+  .totals-list {
     flex-wrap: wrap;
+    border-bottom: none;
   }
-  #totalsList li {
+  .totals-list__item {
     flex: 50%;
     border-bottom: 1px solid rgb(204,204,204);
     font-size: 0.85em;
   }
-  #totalsList li:nth-child(2n) {
-    border-right: none !important;
+  .totals-list__item:nth-child(2n) {
+    border-right: none;
   }
-  #firstSection {
+  .intro-section {
     flex-wrap: wrap;
   }
-  #firstSection article {
+  .intro-section__article {
     font-size: 0.9em;
     flex: 100%;
   }

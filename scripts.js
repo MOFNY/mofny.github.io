@@ -18,7 +18,7 @@ var imageGroupImage2 = document.querySelectorAll(".imageGroup img:nth-of-type(2)
 var imageGroupImage3 = document.querySelectorAll(".imageGroup img:nth-of-type(3)");
 var countClass = $(".count");
 var countLastAfter = $('#countLastAfter');
-var title = $(".statsLink2");
+var title = $(".totals-list__anchor");
 var overallTotal = 0;
 
 function changeImagesUp(x, y) {
