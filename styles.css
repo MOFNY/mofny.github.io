@@ -188,6 +188,12 @@ main {
   color: rgb(41, 83, 54);
   margin-top: 0;
 }
+.updates__icon-link {
+  display: inline-block;
+  vertical-align: text-bottom;
+  width: 1.25em;
+  line-height: 1;
+}
 .updates__article {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
