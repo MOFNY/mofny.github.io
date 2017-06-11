@@ -1,39 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--
+ created with Free Online Sitemap Generator www.xml-sitemaps.com 
+-->
 <url>
-  <loc>http://royoswalt44.com/</loc>
-  <lastmod>2014-09-04T15:27:39+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+<loc>http://royoswalt44.com/</loc>
+<lastmod>2017-06-11T17:37:48+00:00</lastmod>
+<changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://royoswalt44.com/autographs.html</loc>
-  <lastmod>2014-09-04T15:27:39+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+<loc>http://royoswalt44.com/autographs.html</loc>
+<lastmod>2017-06-11T17:37:48+00:00</lastmod>
+<changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://royoswalt44.com/game-used.html</loc>
-  <lastmod>2014-09-04T15:27:39+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+<loc>http://royoswalt44.com/game-used.html</loc>
+<lastmod>2017-06-11T17:37:48+00:00</lastmod>
+<changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://royoswalt44.com/base-inserts-parallels.html</loc>
-  <lastmod>2014-09-04T15:27:39+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+<loc>http://royoswalt44.com/rookie-cards.html</loc>
+<lastmod>2017-06-11T17:37:48+00:00</lastmod>
+<changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://royoswalt44.com/1of1.html</loc>
-  <lastmod>2014-09-04T15:27:39+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+<loc>http://royoswalt44.com/base-inserts-parallels.html</loc>
+<lastmod>2017-06-11T17:37:48+00:00</lastmod>
+<changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://royoswalt44.com/rookie-cards.html</loc>
-  <lastmod>2014-09-04T15:27:39+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+<loc>http://royoswalt44.com/1of1.html</loc>
+<lastmod>2017-06-11T17:37:48+00:00</lastmod>
+<changefreq>weekly</changefreq>
 </url>
 </urlset>
