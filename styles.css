@@ -142,11 +142,11 @@ header, #home {
   background-color:rgb(63,137,169);
   width: 80px;
   height: 80px;
-  display: inline-block; 
+  display: inline-block;
   position: absolute;
   top: calc(50% - 40px);
   left: calc(50% - 40px);
-  border-radius: 100%;  
+  border-radius: 100%;
   -webkit-animation: scaleout 1.5s infinite ease-in-out;
   animation: scaleout 1.5s infinite ease-in-out;
 }
@@ -212,18 +212,12 @@ footer {
   width: 100%;
   position: relative;
   display: flex;
-  align-items: stretch;
   flex-flow: row wrap;
-  justify-content: flex-start;
   background: rgb(34,44,58);
 }
-footer article {            
+footer article {
   flex: 1;
-  display: flex;
-  align-items: stretch;
   position: relative;
-  justify-content: flex-start;
-  flex-flow: column nowrap;
   padding: 20px
 }
 h3 {
@@ -371,7 +365,7 @@ footer em::after {
   width: 0;
   -webkit-transform: translateX(-50%) scale(0);
   transform: translateX(-50%) scale(0);
-  opacity: 0;   
+  opacity: 0;
 }
 .newImageGroupClass2 {
   width: calc(100% - 9em) !important;
@@ -456,7 +450,7 @@ footer em::after {
   z-index: 3;
   order: 0;
   border: 6px solid rgb(204,204,204);
-  transform: translateX(50px);   
+  transform: translateX(50px);
   -webkit-transform: translate3d(50px,0,0);
 }
 .imageGroup img:hover:nth-of-type(1) {
@@ -482,7 +476,7 @@ footer em::after {
   animation: animateImage 0.5s ease-in-out;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
-  transition: all 0.6s ease-in-out;   
+  transition: all 0.6s ease-in-out;
 }
 .imageGroup img:hover:nth-of-type(2) ~ img:not(:nth-of-type(2)) {
   -webkit-filter: blur(2px);
@@ -509,7 +503,7 @@ footer em::after {
 }
 @-webkit-keyframes animateImage {
     50% {
-      -webkit-transform: translateX(50px)     
+      -webkit-transform: translateX(50px)
     }
     100% {
       -webkit-transform: translateX(0)
@@ -517,7 +511,7 @@ footer em::after {
 }
 @-webkit-keyframes animateLastImage {
     50% {
-      -webkit-transform: translateX(0)      
+      -webkit-transform: translateX(0)
     }
     100% {
       -webkit-transform: translateX(-50px)
@@ -526,7 +520,7 @@ footer em::after {
 
 @keyframes animateImage {
     50% {
-      transform: translateX(50px) 
+      transform: translateX(50px)
     }
     100% {
       transform: translateX(0)
@@ -550,7 +544,7 @@ footer em::after {
   }
 }
 @keyframes scaleout {
-  0% { 
+  0% {
     transform: scale(0.0);
     -webkit-transform: scale(0.0);
   }
@@ -862,7 +856,7 @@ ol, x:-moz-any-link, x:default {
 }
 .numbered-list > li:before, x:-moz-any-link, x:default {
   line-height: 1.5;
-  counter-increment: section;        
+  counter-increment: section;
   content: counters(section,"") ". ";
 }
 .red, .red2 {
@@ -1277,6 +1271,10 @@ ul span .red2 {
     flex-flow: column wrap;
     justify-content: flex-start;
     background-color: rgb(34,44,58);
+    padding-bottom: 20px;
+  }
+  footer article {
+    padding-bottom: 0;
   }
   #container {
     flex-wrap: wrap;
