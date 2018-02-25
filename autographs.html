@@ -61,6 +61,13 @@
                         </span>
                     </h2>
                 </article>
+                <script>
+                    if (sessionStorage.keepClosed) {
+                        document.querySelectorAll('.details-year').forEach(function(detail) {
+                            detail.removeAttribute('open')
+                        });
+                    }
+                </script>
                 <div id="pageContainer">
                     <div id="closeArea">
                         <section class="toggle-all">

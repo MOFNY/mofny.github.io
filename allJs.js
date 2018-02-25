@@ -241,7 +241,7 @@ $(document).ready(function () {
 		$(totalArray[i]).text(totalItemsString);
 		//for the tooltip
 		var theTitle = $(buttonArray[i + 1]).attr('title', totalItemsString);
-		//for adding the totals in totalNumArray 
+		//for adding the totals in totalNumArray
 	});
 	var totals = 0;
 	$.each(totalNumArray, function () { totals += parseFloat(this) || 0; });
@@ -265,12 +265,14 @@ $(document).ready(function () {
 		$("html, body").animate({ scrollTop: 0 }, 700, "easeInOutCubic")
 	});
 	$('#open-all-years').on('click', function() {
-		toggleOpen('')
+		toggleOpen('');
+		localStorage.removeItem('keepClosed');
 	});
 	$('#close-all-years').on('click', function() {
-		toggleOpen(false)
+		toggleOpen(false);
+		localStorage.setItem('keepClosed', true);
 	});
 	function toggleOpen(value) {
-		$('.details-year').attr('open', value)
+		$('.details-year').attr('open', value);
 	}
 });
