@@ -61,13 +61,6 @@
                         </span>
                     </h2>
                 </article>
-                <script>
-                    if (localStorage.keepClosed) {
-                        document.querySelectorAll('.details-year').forEach(function(detail) {
-                            detail.removeAttribute('open')
-                        });
-                    }
-                </script>
                 <div id="pageContainer">
                     <div id="closeArea">
                         <section class="toggle-all">
@@ -2208,7 +2201,13 @@
         </footer>
 
     </div>
-
+    <script>
+        if (localStorage.keepClosed) {
+            document.querySelectorAll('.details-year').forEach(function(detail) {
+                detail.removeAttribute('open')
+            });
+        }
+    </script>
     <script type="text/javascript">
         function getScript(url, success) {
             var script = document.createElement('script');
