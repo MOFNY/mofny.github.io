@@ -846,7 +846,8 @@ p {
   font: 1.25em/1.5 'Karma', sans-serif;
   list-style-position: inside;
   width: 98%;
-  padding-right: 15px
+  padding-right: 15px;
+  color: #4b4b4b;
 }
 /*Fixes Firefox bug where all numbers are zero*/
 ol, x:-moz-any-link, x:default {
