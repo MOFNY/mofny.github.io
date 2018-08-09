@@ -1449,6 +1449,16 @@ ul span .red2 {
   .details-year {
     margin: 1.25em 0.625em;
   }
+  .details-year[open]::after,
+  .details-year[open]::before {
+    width: 10px;
+  }
+  .details-year[open]::after {
+    left: -12px;
+  }
+  .details-year[open]::before {
+    right: -12px;
+  }
   .details-year__summary {
     padding: 0.625em;
   }
