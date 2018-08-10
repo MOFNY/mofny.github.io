@@ -1117,8 +1117,8 @@ ul span .red2 {
 .thumbnail:hover, .thumbnailEndLeft:hover, .thumbnailEndRight:hover, .thumbnailEndBottom:hover {
   background: rgba(63,107,169,0.3);
   box-shadow: 0 0 2px 1px rgba(0,0,0,.3);
-  -webkit-transform: scale(3,3);
-  transform: scale(3,3);
+  -webkit-transform: scale(2,2);
+  transform: scale(2,2);
   z-index: 1000;
 }
 .thumbnail:hover{
