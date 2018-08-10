@@ -1409,7 +1409,6 @@ ul span .red2 {
     margin-right: 0.5em;
   }
   .card-list-intro__text {
-    flex: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
