@@ -803,6 +803,7 @@ p {
   justify-content: center;
   align-content: center;
   align-items: center;
+  padding: 0 10px;
 }
 .image-unavailable {
   display: flex;
@@ -847,6 +848,7 @@ p {
   display: block;
 }
 .figure-list img {
+  width: 100%;
   height: auto;
   margin: 20px 10px;
 }
@@ -953,10 +955,10 @@ ol, x:-moz-any-link, x:default {
   padding:7px !important;
 }
 .tall { /*for cards with greater heights then widths*/
-  width: 130px !important;
+  max-width: 200px;
 }
 .wide { /*for cards with greater widths then heights*/
-  width: 190px !important;
+  max-width: 270px !important;
 }
 h4 {
   text-align: center;
