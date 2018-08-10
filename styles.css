@@ -176,15 +176,15 @@ main {
   width: 100%;
 }
 .updates {
-  padding: 20px 0;
+  padding: 20px 10px;
   background: rgba(63,137,169,0.1);
 }
 .updates__title, .updates__article {
-  width: 60%;
+  max-width: 65ch;
   margin: 20px auto 0 auto;
 }
 .updates__title {
-  font: 2em Oswald, sans-serif;
+  font: 20px Oswald, sans-serif;
   color: rgb(41, 83, 54);
   margin-top: 0;
 }
@@ -203,7 +203,7 @@ main {
   line-height: 1;
 }
 .updates__article .updates__content {
-  font: 1.2em Georgia, sans-serif;
+  font: 16px Georgia, sans-serif;
   line-height: 1.7;
   text-align: left;
   padding-bottom: 0;
@@ -1270,9 +1270,6 @@ ul span .red2 {
   .intro-section__article {
     padding: 0.5em;
   }
-  .updates__title {
-    width: 80%;
-  }
   footer {
     width: 100%;
     display: flex;
@@ -1398,9 +1395,6 @@ ul span .red2 {
   }
   .totals-list__item:nth-child(2n) {
     border-right: none;
-  }
-  .updates__title, .updates__article {
-    width: 95%;
   }
   .updates__article .updates__content, .card-list-intro__paragraph {
     font-size: 1em;
