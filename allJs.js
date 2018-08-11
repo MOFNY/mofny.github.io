@@ -275,4 +275,11 @@ $(document).ready(function () {
 	function toggleOpen(value) {
 		$('.details-year').attr('open', value);
 	}
+	$('.details-year').on('toggle', function () {
+		if ($(this).attr('open')) {
+    	console.log('open')
+		} else {
+			$('html, body').animate({scrollTop: $(this).offset().top}, 300);
+		}
+	});
 });
