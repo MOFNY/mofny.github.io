@@ -276,10 +276,9 @@ $(document).ready(function () {
 		$('.details-year').attr('open', value);
 	}
 	$('.details-year').on('toggle', function () {
-		if ($(this).attr('open')) {
-    	console.log('open')
-		} else {
-			$('html, body').animate({scrollTop: $(this).offset().top}, 300);
+		$this = $(this)
+		if (!$this.attr('open')) {
+			$('html, body').animate({scrollTop: $this.offset().top - 75}, 0);
 		}
 	});
 });
