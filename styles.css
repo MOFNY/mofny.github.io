@@ -868,6 +868,8 @@ p {
   padding-top: 0.25em;
   color: #4b4b4b;
   line-height: 1.5;
+  word-spacing: 0.1em;
+  letter-spacing: -0.06em;
 }
 /*Fixes Firefox bug where all numbers are zero*/
 ol, x:-moz-any-link, x:default {
