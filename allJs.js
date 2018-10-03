@@ -284,7 +284,7 @@ $(document).ready(function () {
 	$('body').on('click', function() {
 		$this = $(this)
 		scrollTop = $(document).scrollTop()
-		$this.css('top', scrollTop + "px")
+		$this.css('top', "scrollTop" + "px")
 		$this.addClass('lock')
 		window.scrollTo(0, 1)
 	});
