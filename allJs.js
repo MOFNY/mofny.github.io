@@ -281,4 +281,11 @@ $(document).ready(function () {
 			$('html, body').animate({scrollTop: $this.offset().top - 75}, 0);
 		}
 	});
+	$('body').on('click', function() {
+		$this = $(this)
+		scrollTop = $(document).scrollTop()
+		$this.css('top', "scrollTop" + "px")
+		$this.addClass('lock')
+		window.scrollTo(0, 1)
+	});
 });
