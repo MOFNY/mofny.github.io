@@ -286,6 +286,6 @@ $(document).ready(function () {
 		scrollTop = $(document).scrollTop()
 		//$this.css('margin-top', scrollTop + "px")
 		$this.addClass('lock')
-		setTimeout(scrollTo, 0, 0, 1)
+		window.scrollTo(0, 1)
 	});
 });
