@@ -153,8 +153,6 @@ header, #home {
 .count {
   color: rgb(63,137,169);
   max-width: 0;
-  overflow: hidden;
-  transition: max-width 2s, padding 0.5s ease-in-out !important;
 }
 .expand {
   max-width: 60px;
@@ -164,10 +162,27 @@ header, #home {
   transform: translateX(-200%);
   transition: transform 1s ease-in-out !important;
   color: rgb(63,137,169) !important;
-  padding-left: 5px;
+  /*padding-left: 5px;*/
 }
 .move-count-last-after {
   transform: translateX(0) !important
+}
+.count:empty::after,
+.move-count-last-after:empty::after {
+  content: '\26BE';
+  display: inline-block;
+  width: 16px;
+  transform-origin: 51% 54%;
+  animation: spin 0.75s infinite linear;
+  font-size: 12px;
+}
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
 }
 .move-count-last-before {
   transform: translateX(200%)
@@ -1477,4 +1492,10 @@ ul span .red2 {
   .image-unavailable {
     font-size: 14px;
   }
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }

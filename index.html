@@ -21,6 +21,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Cabin:500|Oswald:300,400" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.min.js"></script>
 	<script src="scripts.js"></script>
 	<script>
 		(function (i, s, o, g, r, a, m) {
@@ -58,38 +61,48 @@
 		<main>
 			<ol class="totals-list">
 				<li class="totals-list__item">
-					<a class="totals-list__anchor tooltip" href="/autographs.html" data-value="575" data-title="">
-						<span class="totals-list__category">Autographs:<span class="count"
-								data-value="/autographs.html"></span></span>
+					<a class="totals-list__anchor tooltip" href="/autographs.html"
+						:data-title="overallTotals[0].autos.overall_total">
+						<span class="totals-list__category">Autographs:
+							<span class="count">{{ overallTotals[0].autos.total }}</span>
+						</span>
 					</a>
 				</li>
 				<li class="totals-list__item">
-					<a class="totals-list__anchor tooltip" href="/base-inserts-parallels.html" data-value="1900" data-title="">
-						<span class="totals-list__category">Base, Inserts, Parallels:<span class="count"
-								data-value="/base-inserts-parallels.html"></span></span>
+					<a class="totals-list__anchor tooltip" href="/base-inserts-parallels.html"
+						:data-title="overallTotals[1].base_inserts_parallels.overall_total">
+						<span class="totals-list__category">Base, Inserts, Parallels:
+							<span class="count">{{ overallTotals[1].base_inserts_parallels.total }}</span>
+						</span>
 					</a>
 				</li>
 				<li class="totals-list__item">
-					<a class="totals-list__anchor tooltip" href="/game-used.html" data-value="717" data-title="">
-						<span class="totals-list__category">Game Used:<span class="count"
-								data-value="/game-used.html"></span></span>
+					<a class="totals-list__anchor tooltip" href="/game-used.html" :data-title="overallTotals[2].gu.overall_total">
+						<span class="totals-list__category">Game Used:
+							<span class="count">{{ overallTotals[2].gu.total }}</span>
+						</span>
 					</a>
 				</li>
 				<li class="totals-list__item">
-					<a class="totals-list__anchor tooltip" href="/1of1.html" data-value="1032" data-title="">
-						<span class="totals-list__category">1 of 1:<span class="count" data-value="/1of1.html"></span></span>
+					<a class="totals-list__anchor tooltip" href="/1of1.html" :data-title="overallTotals[3].ones.overall_total">
+						<span class="totals-list__category">1 of 1:
+							<span class="count">{{ overallTotals[3].ones.total }}</span>
+						</span>
 					</a>
 				</li>
 				<li class="totals-list__item">
-					<a class="totals-list__anchor tooltip" href="/rookie-cards.html" data-value="10" data-title="">
-						<span class="totals-list__category">Rookie Cards:<span class="count"
-								data-value="/rookie-cards.html"></span></span>
+					<a class="totals-list__anchor tooltip" href="/rookie-cards.html"
+						:data-title="overallTotals[4].rcs.overall_total">
+						<span class="totals-list__category">Rookie Cards:
+							<span class="count">{{ overallTotals[4].rcs.total }}</span>
+						</span>
 					</a>
 				</li>
 				<li class="totals-list__item totals-list__item--overall-total">
-					<a class="totals-list__anchor tooltip" href="/" data-value="4234" data-title="">
-						<span class="totals-list__category">Total:<span id="countLastAfter"
-								class="move-count-last-after"></span></span>
+					<a class="totals-list__anchor tooltip" href="/" :data-title="overallTotals[5].overall.overall_total">
+						<span class="totals-list__category">Total:
+							<span id="countLastAfter" class="move-count-last-after">{{ overallTotals[5].overall.total }}</span>
+						</span>
 					</a>
 				</li>
 			</ol>

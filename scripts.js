@@ -1,4 +1,66 @@
 $(document).ready(function () {
+	var config = {
+		apiKey: "AIzaSyDMn-sNlJ5lIF1YVeLqujt_JXCL_Ac8tO8",
+		authDomain: "roy-oswalt-collection.firebaseapp.com",
+		databaseURL: "https://roy-oswalt-collection.firebaseio.com",
+		projectId: "roy-oswalt-collection",
+		storageBucket: "roy-oswalt-collection.appspot.com",
+		messagingSenderId: "81132660105"
+	};
+	firebase.initializeApp(config);
+	const db = firebase.firestore();
+
+	window.app = new Vue({
+		el: '#wrapper',
+		data: {
+			cardState: null,
+			initialTotals: null,
+			overallTotals: [
+				{
+					autos: {
+						overall_total: '',
+						total: ''
+					}
+				},
+				{
+					base_inserts_parallels: {
+						overall_total: '',
+						total: ''
+					}
+				},
+				{
+					gu: {
+						overall_total: '',
+						total: ''
+					}
+				},
+				{
+					ones: {
+						overall_total: '',
+						total: ''
+					}
+				},
+				{
+					rcs: {
+						overall_total: '',
+						total: ''
+					}
+				},
+				{
+					overall: {
+						overall_total: '',
+						total: ''
+					}
+				}
+			]
+		},
+		created: function () {
+			db.collection('cards/cards_document/cards_subcollection').doc('overall_totals').get().then((snapshot) => {
+				this.initialTotals = snapshot.data()['totals'];
+				this.overallTotals = this.initialTotals;
+			});
+		}
+	});
 	var circleRight = document.getElementById('arrowRight');
 	var circleLeft = document.getElementById("circleLeft");
 	var i = 0;
@@ -8,10 +70,6 @@ $(document).ready(function () {
 	var transitionDelay = parseFloat(getTransitionDelay) * 1000;
 	var imageGroupImage2 = document.querySelectorAll(".imageGroup img:nth-of-type(2)");
 	var imageGroupImage3 = document.querySelectorAll(".imageGroup img:nth-of-type(3)");
-	var countClass = $(".count");
-	var countLastAfter = $('#countLastAfter');
-	var title = $(".totals-list__anchor");
-	var overallTotal = 0;
 
 	function changeImagesUp(x, y) {
 		if (imageGroupArray[x].offsetWidth > 2) {
@@ -87,39 +145,8 @@ $(document).ready(function () {
 	var primaryNav = $("#primary-nav")
 	$("#menu-button").on("click", function () {
 		$(this).toggleClass("menu-is-open");
-		primaryNav.on("webkitTransitionEnd transitionend").toggleClass("primary-nav--is-visible")
+		primaryNav.on("transitionend").toggleClass("primary-nav--is-visible")
 	});
-	$.each(countClass, function (i, item) {
-		var dataString = $(item).attr('data-value').toString();
-		var theCompleteString = dataString;
-		var urlsAll = [theCompleteString];
-		var totalAll = 0;
-		$.ajaxSetup({
-			timeout: 8000
-		});
-		$.get(urlsAll).done(function (data) {
-			totalAll += $(data).find(".yearGroup").find("li").length - $(data).find(".yearGroup").find(".red").length;
-			var totalForTitle = $(title[i]).attr('data-value');
-			var totalForEndTitle = $(title).last().attr('data-value');
-			var formatIndividualTitle = 100 * (totalAll) / totalForTitle;
-			$(title[i]).attr("data-title", "Completion Stats: " + ReplaceNumberWithCommas(totalAll) + "/" + ReplaceNumberWithCommas(totalForTitle) + " or " + parseFloat(formatIndividualTitle.toFixed(1)) + "%");
-			overallTotal += totalAll;
-			var formatIndividualEndTitle = 100 * (overallTotal) / totalForEndTitle;
-			$(title).last().attr("data-title", "Overall Stats: " + ReplaceNumberWithCommas(overallTotal) + "/" + ReplaceNumberWithCommas(totalForEndTitle) + " or " + parseFloat(formatIndividualEndTitle.toFixed(1)) + "%")
-			var spinner = $('.spinner');
-			$(item).text(ReplaceNumberWithCommas(totalAll)).addClass('expand');
-			countLastAfter.text(ReplaceNumberWithCommas(overallTotal)).addClass('move-count-last-after');
-		});
-	});
-
-	function ReplaceNumberWithCommas(yourNumber) {
-		//Seperates the components of the number
-		var n = yourNumber.toString().split(".");
-		//Comma-fies the first part
-		n[0] = n[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-		//Combines the two sections
-		return n.join(".");
-	}
 	$(".arrow-up2").click(function () {
 		$('html, body').animate({
 			scrollTop: 0
