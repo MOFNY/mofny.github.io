@@ -962,14 +962,9 @@ ol, x:-moz-any-link, x:default {
   width: 120px !important;
   height: auto
 }
-.fancybox-title-over-wrap {
-  width: 100% !important;
-  padding: 0 !important;
-  text-align: center !important;
-  font: 1em Georgia !important;
-}
-.fancybox-title-over-wrap > div {
-  padding:7px !important;
+.fancybox-caption,
+.fancybox-infobar {
+  font: 16px/1.5 Karla,sans-serif !important;
 }
 .tall { /*for cards with greater heights then widths*/
   max-width: 200px;
