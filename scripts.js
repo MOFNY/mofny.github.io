@@ -1,4 +1,8 @@
-$(document).ready(function () {
+var domReady = function (callback) {
+	document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
+};
+
+domReady(function () {
 	var config = {
 		apiKey: "AIzaSyDMn-sNlJ5lIF1YVeLqujt_JXCL_Ac8tO8",
 		authDomain: "roy-oswalt-collection.firebaseapp.com",
@@ -13,7 +17,6 @@ $(document).ready(function () {
 	window.app = new Vue({
 		el: '#wrapper',
 		data: {
-			cardState: null,
 			initialTotals: null,
 			overallTotals: [
 				{
