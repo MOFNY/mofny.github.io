@@ -17,7 +17,7 @@ The site is broken up into **5 major sections**:
 
 ## Technologies Used
 
-The site has gone through many changes and updated.  Here are some of the libraries and frameworks used:
+The site has gone through many changes and updates.  Here are some of the libraries and frameworks used:
 
 + Vue
 + Firebase
