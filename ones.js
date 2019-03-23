@@ -75,6 +75,7 @@ domReady(function () {
     updated: function () {
       this.startFancybox();
       this.triggerFancyboxHash();
+      $(window).on('hashchange', this.triggerFancyboxHash);
     },
     methods: {
       buildLastUpdated: function (data) {
@@ -86,7 +87,8 @@ domReady(function () {
         return allCards[0].year + ' - ' + allCards[allCards.length - 1].year;
       },
       startFancybox: function () {
-        // TODO: possibly find a way to remove the appended index number in the custom `data-hash`
+        // TODO: Possibly find a way to remove the appended index number in the custom `data-hash`
+        // without messing up the back button and history.
         $('[data-fancybox="gallery"]').fancybox({
           loop: true,
           animationEffect: 'fade',
