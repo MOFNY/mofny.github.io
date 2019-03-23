@@ -15,6 +15,16 @@ The site is broken up into **5 major sections**:
 + Rookie Cards
 + 1/1s
 
+## Technologies Used
+
+The site has gone through many changes and updated.  Here are some of the libraries and frameworks used:
+
++ Vue
++ Firebase
++ Google Fonts
++ Fancybox (latest version)
++ Lazysizes
+
 Please check out [http://royoswalt44.com/](http://royoswalt44.com/ "The Definitive Roy Oswalt Collection") to see the latest.
 
 A contact form can be found in the footer on every page.
