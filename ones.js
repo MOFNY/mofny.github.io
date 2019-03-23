@@ -21,7 +21,9 @@ domReady(function () {
         <figcaption class="figure-list__caption">
           <span>{{buildCardString(card)}}</span>
         </figcaption>
-        <img v-if="card.img_src != ''" :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']">
+        <a v-if="card.img_src != ''" aria-label="Open Image in Gallery" data-fancybox="gallery" :data-caption="buildCardString(card)" :href="card.img_src">
+          <img :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']">
+        </a>
         <div v-else class="image-unavailable">
           <svg role="presentation" class="image-unavailable__svg" viewBox="0 0 32 32">
             <use xlink:href="#image-unavailable__svg" />
@@ -67,14 +69,31 @@ domReady(function () {
         this.yearsRange = this.buildYearsRange();
       });
     },
+    updated: function () {
+      this.startFancybox();
+    },
     methods: {
       buildLastUpdated: function (data) {
         return data.toDate().toLocaleDateString('en-US',
-          {weekday: 'short', year: 'numeric', month: 'short', day: 'numeric'});
+          { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
       },
       buildYearsRange: function () {
         let allCards = this.onesAllCards;
         return allCards[0].year + ' - ' + allCards[allCards.length - 1].year;
+      },
+      startFancybox: function () {
+        $('[data-fancybox="gallery"]').fancybox({
+          loop: true,
+          animationEffect: 'fade',
+          animationDuration: 300,
+          buttons: [
+            "zoom",
+            "slideShow",
+            "fullScreen",
+            "thumbs",
+            "close"
+          ]
+        });
       }
     }
   });
