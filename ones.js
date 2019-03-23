@@ -71,6 +71,7 @@ domReady(function () {
     },
     updated: function () {
       this.startFancybox();
+      this.triggerFancyboxHash()
     },
     methods: {
       buildLastUpdated: function (data) {
@@ -94,6 +95,13 @@ domReady(function () {
             "close"
           ]
         });
+      },
+      triggerFancyboxHash: function () {
+        let hash = window.location.hash;
+        if (hash.includes('gallery')) {
+          let imgIndex = hash.replace(/^\D+/g, '');
+          $('#pageContainer').find('[data-fancybox="gallery"] img').eq(imgIndex - 1).trigger('click')
+        }
       }
     }
   });
