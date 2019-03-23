@@ -21,7 +21,7 @@ domReady(function () {
         <figcaption class="figure-list__caption">
           <span>{{buildCardString(card)}}</span>
         </figcaption>
-        <a v-if="card.img_src != ''" aria-label="Open Image in Gallery" data-fancybox="gallery" :data-caption="buildCardString(card)" :href="card.img_src">
+        <a v-if="card.img_src != ''" aria-label="Open Image in Gallery" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="card.img_src">
           <img :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']">
         </a>
         <div v-else class="image-unavailable">
@@ -49,6 +49,9 @@ domReady(function () {
           baseString += ' ' + card.grade;
         }
         return baseString;
+      },
+      buildHashData: function (card) {
+        return card.year + '-' + card.set.replace(/\s+/g, '-').toLowerCase();
       }
     }
   });
@@ -83,6 +86,7 @@ domReady(function () {
         return allCards[0].year + ' - ' + allCards[allCards.length - 1].year;
       },
       startFancybox: function () {
+        // TODO: possibly find a way to remove the appended index number in the custom `data-hash`
         $('[data-fancybox="gallery"]').fancybox({
           loop: true,
           animationEffect: 'fade',
@@ -97,10 +101,13 @@ domReady(function () {
         });
       },
       triggerFancyboxHash: function () {
-        let hash = window.location.hash;
-        if (hash.includes('gallery')) {
-          let imgIndex = hash.replace(/^\D+/g, '');
-          $('#pageContainer').find('[data-fancybox="gallery"] img').eq(imgIndex - 1).trigger('click');
+        let hash = window.location.hash
+        if (hash != '') {
+          hash = hash.replace(hash, hash.substr(1));
+          parts = hash.split('-');
+          parts.pop();
+          hash = parts.join('-');
+          $('a[data-hash=' + hash + ']').trigger('click');
         }
       }
     }
