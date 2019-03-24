@@ -62,6 +62,12 @@ domReady(function () {
 				this.initialTotals = snapshot.data()['totals'];
 				this.overallTotals = this.initialTotals;
 			});
+		},
+		methods: {
+			toggleMenuButton: function (event) {
+        $(event.target).toggleClass('menu-is-open');
+		    $('#primary-nav').toggleClass('primary-nav--is-visible');
+      }
 		}
 	});
 	var circleRight = document.getElementById('arrowRight');
@@ -144,15 +150,4 @@ domReady(function () {
 		}
 		return strValue;
 	}
-
-	var primaryNav = $("#primary-nav")
-	$("#menu-button").on("click", function () {
-		$(this).toggleClass("menu-is-open");
-		primaryNav.on("transitionend").toggleClass("primary-nav--is-visible")
-	});
-	$(".arrow-up2").click(function () {
-		$('html, body').animate({
-			scrollTop: 0
-		}, 700, 'easeInOutCubic');
-	});
 });

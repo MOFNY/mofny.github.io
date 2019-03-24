@@ -59,14 +59,14 @@ domReady(function () {
   window.app = new Vue({
     el: '#wrapper',
     data: {
-      onesAllCards: [],
+      allCards: [],
       yearsRange: 'loading...',
       overallTotal: 'loading...',
       lastUpdated: 'loading...'
     },
     created: function () {
       db.collection('cards/cards_document/cards_subcollection').doc('ones').get().then((snapshot) => {
-        this.onesAllCards = snapshot.data()['all_cards'];
+        this.allCards = snapshot.data()['all_cards'];
         this.overallTotal = snapshot.data()['overall_total'];
         this.lastUpdated = this.buildLastUpdated(snapshot.data()['last_updated']);
         this.yearsRange = this.buildYearsRange();
@@ -83,7 +83,7 @@ domReady(function () {
           { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
       },
       buildYearsRange: function () {
-        let allCards = this.onesAllCards;
+        let allCards = this.allCards;
         return allCards[0].year + ' - ' + allCards[allCards.length - 1].year;
       },
       startFancybox: function () {

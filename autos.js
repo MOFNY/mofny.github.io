@@ -29,10 +29,10 @@ domReady(function () {
               width="4" y="-32" x="-22" stroke-width="0" fill="#206287"></rect>
           </g>
         </svg>
-        <h2 class="details-year__summary-header">{{Object.values(detail)[0].total}}</h2>
+        <h2 class="details-year__summary-header">{{Object.values(card)[0].total}}</h2>
       </summary>
       <ol class="yearGroup figure-list">
-        <li v-for="card in Object.values(detail)[0].all_cards">
+        <li v-for="card in Object.values(card)[0].all_cards">
           <figure class="figure-list__figure">
             <figcaption class="figure-list__caption">
               <span>{{buildCardString(card)}}</span>
@@ -52,7 +52,7 @@ domReady(function () {
     </details>
     `,
     props: {
-      detail: {}
+      card: {}
     },
     methods: {
       toggleIndividual: function (event) {
@@ -83,14 +83,14 @@ domReady(function () {
   window.app = new Vue({
     el: '#wrapper',
     data: {
-      autosAllCards: [],
+      allCards: [],
       yearsRange: 'loading...',
       overallTotal: 'loading...',
       lastUpdated: 'loading...'
     },
     created: function () {
       db.collection('cards/cards_document/cards_subcollection').doc('autos').get().then((snapshot) => {
-        this.autosAllCards = snapshot.data()['all_cards_by_years'];
+        this.allCards = snapshot.data()['all_cards_by_years'];
         this.overallTotal = snapshot.data()['overall_total'];
         this.lastUpdated = this.buildLastUpdated(snapshot.data()['last_updated']);
         this.yearsRange = this.buildYearsRange();
@@ -107,7 +107,7 @@ domReady(function () {
           { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
       },
       buildYearsRange: function () {
-        let allCards = this.autosAllCards;
+        let allCards = this.allCards;
         return Object.keys(allCards[0])[0] + ' - ' + Object.keys(allCards[allCards.length - 1])[0];
       },
       startFancybox: function () {
