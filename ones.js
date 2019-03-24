@@ -111,6 +111,10 @@ domReady(function () {
           hash = parts.join('-');
           $('a[data-hash=' + hash + ']').trigger('click');
         }
+      },
+      toggleMenuButton: function (event) {
+        $(event.target).toggleClass('menu-is-open');
+		    $('#primary-nav').toggleClass('primary-nav--is-visible');
       }
     }
   });
