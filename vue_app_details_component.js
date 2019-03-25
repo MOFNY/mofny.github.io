@@ -42,7 +42,7 @@ domReady(function () {
     },
     openFirstLink: function (event) {
       event.preventDefault();
-			$('a[data-caption="' + '' + event.target.alt + '"]:first').trigger('click');
+			$('a[data-caption="' + event.target.alt + '"]').trigger('click');
     }
   }
 
@@ -125,10 +125,10 @@ domReady(function () {
         </ol>
         <ul class="imgColumn">
           <li v-for="card in Object.values(card)[0].all_cards.filter((card) => {return card.img_src != ''})">
-            <a v-if="card.img_src != '' && !Array.isArray(card.img_src)" @click="openFirstLink" aria-label="Open Image in Gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="card.img_src">
+            <a v-if="card.img_src != '' && !Array.isArray(card.img_src)" @click="openFirstLink" aria-label="Open Image in Gallery" :href="card.img_src">
               <img :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']" :alt="buildCardString(card)">
             </a>
-            <a v-else-if="card.img_src != '' && Array.isArray(card.img_src)" @click="openFirstLink" class="activate-gallery" aria-label="Open Image in Gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="card.img_src[0]">
+            <a v-else-if="card.img_src != '' && Array.isArray(card.img_src)" @click="openFirstLink" class="activate-gallery" aria-label="Open Image in Gallery" :href="card.img_src[0]">
               <img :data-src="card.img_src[0]" :class="[card.img_size, 'lazyload', 'thumbnail']" :alt="buildCardString(card)">
             </a>
           </li>
