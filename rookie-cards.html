@@ -7,23 +7,25 @@
 	<meta name="author" content="Christopher Schuck">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name='description'
-		content='The entire Roy Oswalt rookie card directory.  There are multiple copies, including PSA & BGS graded.' />
+	<meta name='description' content='The largest collection of Roy Oswalt rookie cards.' />
 	<meta property="og:type" content="website" />
 	<meta property='og:site_name' content='the Definitive Roy Oswalt Collection' />
 	<meta property='og:title' content='Roy Oswalt Rookie Cards' />
-	<meta property='og:description'
-		content='The entire Roy Oswalt rookie card directory.  There are multiple copies, including PSA & BGS graded.' />
+	<meta property='og:description' content='The largest collection of Roy Oswalt rookie cards.' />
 	<meta property='og:url' content='https://royoswalt44.com/rookie-cards.html' />
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
 	<link rel="stylesheet" type="text/css" href="stylesMini.css">
 	<link href="https://fonts.googleapis.com/css?family=Cabin:500|Oswald:300,400" rel="stylesheet">
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css' rel='stylesheet'>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.5/lazysizes.min.js"></script>
-	<script src="allJsMini2.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.min.js"></script>
+	<script src="vue_app_show_all_component.js"></script>
 	<script>
 		(function (i, s, o, g, r, a, m) {
 			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
@@ -37,7 +39,7 @@
 </head>
 
 <body>
-	<div id="wrapper">
+	<div id="wrapper" data-category="rcs">
 		<div class="arrow-up2"></div>
 		<header>
 			<button class="menu-button" id="menu-button">open menu navigation<span></span></button>
@@ -54,13 +56,14 @@
 					<li class="primary-nav__list-item"><a class="primary-nav__anchor" href="/1of1.html">1 / 1</a></li>
 				</ul>
 			</nav>
-			<h1 class="site-title-header"><a class="site-title-header__anchor" href="/">The Definitive Roy Oswalt
-					Collection</a></h1>
+			<div class="site-title-header"><a class="site-title-header__anchor" href="/">The Definitive Roy Oswalt
+					Collection</a></div>
 			<div id="below"></div>
 		</header>
 		<main>
 			<div id="pageSection">
 				<article class="card-list-intro">
+					<h1 class="card-list-intro__header">Roy Oswalt Rookie Cards &#8226; 2000</h1>
 					<p class="card-list-intro__paragraph">Rookie cards are a classic part of any player collection. The standout
 						cards: 5 copies of the elusive Retro
 						Future Refactor. The lowest numbered card is the Bowman Gold at /99. Even though I own at least one
@@ -78,253 +81,14 @@
 						</svg>
 						<span class="card-list-intro__text">
 							<span class="card-list-intro__completion">Completion Stats</span><span
-								class="overallTotalGroup card-list-intro__numbers">loading...</span>
+								class="overallTotalGroup card-list-intro__numbers">{{overallTotal}}</span>
 						</span>
 					</h2>
+					<h3 class="card-list-intro__header card-list-intro__header--sub">Updated: {{lastUpdated}}</h3>
 				</article>
 				<div id="pageContainer">
 					<ol id="group2000" class="yearGroup figure-list" data-value="10">
-						<li>
-							<figure class="figure-list__figure">
-								<figcaption class="figure-list__caption">
-									<span>2000 Black Diamond Rookie Edition #145 USA RC--3 ungraded</span>
-								</figcaption>
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00diamond1.jpg"
-									class="lazyload wide thumbnailEndLeft" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00diamond2.jpg"
-									class="lazyload wide thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00diamond3.jpg"
-									class="lazyload wide thumbnailEndRight" />
-							</figure>
-						</li>
-						<li>
-							<figure class="figure-list__figure">
-								<figcaption class="figure-list__caption">
-									<span>2000 Bowman #395 RC--1 BGS 9.5 & 1 ungraded</span>
-								</figcaption>
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bowman2.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bowmangem.jpg"
-									class="lazyload tall thumbnail" />
-							</figure>
-						</li>
-						<li>
-							<figure class="figure-list__figure">
-								<figcaption class="figure-list__caption">
-									<span>2000 Bowman Chrome #395 RC--1 BGS 9.5, 1 PSA 10, & 5 ungraded</span>
-								</figcaption>
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bc.jpg"
-									class="lazyload tall thumbnailEndLeft" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bc2.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bc3.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bc4.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bcgem2.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bcpsa10.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bc5.jpg"
-									class="lazyload tall thumbnailEndRight" />
-							</figure>
-						</li>
-						<li>
-							<figure class="figure-list__figure">
-								<figcaption class="figure-list__caption">
-									<span>2000 Bowman Chrome Refractors #395--3 ungraded & 2 BGS 9</span>
-								</figcaption>
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bcref.jpg"
-									class="lazyload tall thumbnailEndLeft" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/2000bcref5.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bcref6.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bcrefbgs.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bcrefbgs2.jpg"
-									class="lazyload tall thumbnailEndRight" />
-							</figure>
-						</li>
-						<li>
-							<figure class="figure-list__figure">
-								<figcaption class="figure-list__caption">
-									<span>2000 Bowman Chrome Retro/Future #395--1 SGC 96 & 1 ungraded</span>
-								</figcaption>
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bcretro2.jpg"
-									class="lazyload wide thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bcretro.jpg"
-									class="lazyload wide thumbnail" />
-							</figure>
-						</li>
-						<li>
-							<figure class="figure-list__figure">
-								<figcaption class="figure-list__caption">
-									<span>2000 Bowman Chrome Retro/Future Refractors #395--1 BGS 9.5, 2 BGS 9, 1 PSA 9, & 1
-										ungraded</span>
-								</figcaption>
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/retrofuturebgs9.jpg"
-									class="lazyload wide thumbnailEndLeft" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bcretroref6.jpg"
-									class="lazyload wide thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/retrofuturepsa9.jpg"
-									class="lazyload wide thumbnailEndRight" />
-							</figure>
-							<figure class="figure-list__figure">
-								<figcaption class="figure-list__caption screen-reader-text">
-									<span>2000 Bowman Chrome Retro/Future Refractors #395--1 BGS 9.5, 2 BGS 9, 1 PSA 9, & 1
-										ungraded</span>
-								</figcaption>
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bcretroref7.jpg"
-									class="lazyload wide thumbnail" />
-								<img data-src="https://c1.staticflickr.com/3/2656/32271626904_33f09b4e49_c.jpg"
-									class="lazyload wide thumbnail" />
-							</figure>
-						</li>
-						<li>
-							<figure class="figure-list__figure">
-								<figcaption class="figure-list__caption">
-									<span>2000 Bowman Gold #395 37 & 85/99</span>
-								</figcaption>
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bowmangold.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bowmangold2.jpg"
-									class="lazyload tall thumbnail" />
-							</figure>
-						</li>
-						<li>
-							<figure class="figure-list__figure">
-								<figcaption class="figure-list__caption">
-									<span>2000 Bowman Retro/Future #395</span>
-								</figcaption>
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00bowmanretro.jpg"
-									class="lazyload wide thumbnail" />
-							</figure>
-						</li>
-						<li>
-							<figure class="figure-list__figure">
-								<figcaption class="figure-list__caption">
-									<span>2000 SPx #122 RC--1 PSA 10, 13 BGS 9, 4 PSA 9, & 9 ungraded</span>
-								</figcaption>
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/spxbgs3.jpg"
-									class="lazyload tall thumbnailEndLeft" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/spxbgs10.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/spxbgs8.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/spxbgs9.jpg"
-									class="lazyload tall thumbnail" />
-								<img data-src="https://c1.staticflickr.com/5/4257/34374526304_fed8ddc90d_c.jpg"
-									class="lazyload tall thumbnailEndRight" />
-							</figure>
-							<figure class="figure-list__figure">
-								<figcaption class="figure-list__caption screen-reader-text">
-									<span>2000 SPx #122 RC--1 PSA 10, 13 BGS 9, 4 PSA 9, & 9 ungraded</span>
-								</figcaption>
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/spxbgs5.jpg"
-									class="lazyload tall thumbnailEndLeft" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/spxbgs12.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/spxbgs7.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/spxbgs6.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/spxbgs11.jpg"
-									class="lazyload tall thumbnailEndRight" />
-							</figure>
-							<figure class="figure-list__figure">
-								<figcaption class="figure-list__caption screen-reader-text">
-									<span>2000 SPx #122 RC--1 PSA 10, 13 BGS 9, 4 PSA 9, & 9 ungraded</span>
-								</figcaption>
-								<img data-src="https://farm4.staticflickr.com/3750/13605377513_61d4f3607f_o.jpg"
-									class="lazyload tall thumbnailEndLeft" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/2000spxpsa4.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/spxbgs14.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/spxbgs2.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/spxbgs13.jpg"
-									class="lazyload tall thumbnailEndRight" />
-							</figure>
-							<figure class="figure-list__figure">
-								<figcaption class="figure-list__caption screen-reader-text">
-									<span>2000 SPx #122 RC--1 PSA 10, 13 BGS 9, 4 PSA 9, & 9 ungraded</span>
-								</figcaption>
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/spx1372.jpg"
-									class="lazyload tall thumbnailEndLeft" />
-								<img data-src="https://c1.staticflickr.com/4/3780/32285640934_5bb96c2f8b_c.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/2000spxpsa3.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/2000spxpsa2.jpg"
-									class="lazyload tall thumbnail" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/2000spxpsa5.jpg"
-									class="lazyload tall thumbnailEndRight" />
-							</figure>
-						</li>
-						<li>
-							<figure class="figure-list__figure">
-								<figcaption class="figure-list__caption">
-									<span>2000 Upper Deck Victory #456 USA RC--1 PSA 10 & 1 SGC 98 & 2 ungraded</span>
-								</figcaption>
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00victory2.jpg"
-									class="lazyload tall thumbnailEndBottom" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/00victory.jpg"
-									class="lazyload tall thumbnailEndBottom" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/sgc98victory.jpg"
-									class="lazyload tall thumbnailEndBottom" />
-								<img
-									data-src="https://i22.photobucket.com/albums/b302/marinersfanfromny/Roy%20Oswalt%20collection/Roy%20Oswalt%20rookie%20cards/psa10victory.jpg"
-									class="lazyload tall thumbnailEndBottom" />
-							</figure>
-						</li>
+						<card-component v-for="card in allCards" :card="card" />
 					</ol>
 				</div>
 			</div>
@@ -333,7 +97,7 @@
 			<article>
 				<h3>About the site creator</h3>
 				<p>
-					My primary collecting habits revolve around Roy Oswalt. The first card was purchased in 2003. I'm always
+					Since 2003, my personal collection has revolved around Roy Oswalt. I'm always
 					looking to acquire
 					new cards from 2000 to 2019. Please use the contact form, or send a message via
 					<a href="https://www.ebay.com/usr/marinersfanfromny" target="_blank" rel="noopener"
@@ -349,9 +113,7 @@
 						href="https://github.com/MOFNY/mofny.github.io" target="_blank" rel="noopener" class="footerLink">Github
 						repository</a>. Outside of collecting,
 					my passion is web development and design. Check out my <a href="https://codepen.io/mofny/" target="_blank"
-						rel="noopener" class="footerLink">Codepen</a> for more details. I also collect Tim Hudson, Jordan
-					Zimmermann, and Dan
-					Haren.
+						rel="noopener" class="footerLink">Codepen</a> for more details.
 				</p>
 			</article>
 			<article>
@@ -398,6 +160,18 @@
 					<button class="footer-form__button" type="submit">Send</button>
 				</form>
 			</article>
+			<svg display="none" role="presentation" class="image-unavailable__svg" viewBox="0 0 32 32">
+				<defs>
+					<g id="image-unavailable__svg">
+						<path class="image-unavailable__svg-border"
+							d="M31 3H1c-.552 0-1 .448-1 1v24c0 .553.448 1 1 1h30c.553 0 1-.447 1-1V4c0-.552-.447-1-1-1zm0 25H1V4h30v24z" />
+						<path class="image-unavailable__svg-landscape"
+							d="M29 6H3v20h26V6zM4 7h24v8.817l-3.743-2.246c-.175-.104-.4-.09-.563.035l-6.416 4.99c-.02-.014-.032-.032-.054-.043l-4-2c-.164-.08-.36-.067-.51.038L4 22.69V7zm0 18v-1.09l9.043-6.33 3.372 1.687-1.722 1.34c-.218.168-.257.482-.087.7.098.127.246.193.394.193.107 0 .215-.034.307-.105l8.73-6.79L28 16.982V25H4z" />
+						<path class="image-unavailable__svg-sun"
+							d="M8 8.5c-1.378 0-2.5 1.12-2.5 2.5s1.122 2.5 2.5 2.5 2.5-1.12 2.5-2.5S9.378 8.5 8 8.5zm0 4c-.828 0-1.5-.672-1.5-1.5S7.172 9.5 8 9.5s1.5.67 1.5 1.5-.672 1.5-1.5 1.5z" />
+					</g>
+				</defs>
+			</svg>
 		</footer>
 	</div>
 </body>

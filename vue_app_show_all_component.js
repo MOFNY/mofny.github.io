@@ -21,15 +21,18 @@ domReady(function () {
         <figcaption class="figure-list__caption">
           <span>{{buildCardString(card)}}</span>
         </figcaption>
-        <a v-if="card.img_src != ''" aria-label="Open Image in Gallery" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="card.img_src">
-          <img :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']">
-        </a>
-        <div v-else class="image-unavailable">
+        <div v-if="card.img_src === ''" class="image-unavailable">
           <svg role="presentation" class="image-unavailable__svg" viewBox="0 0 32 32">
             <use xlink:href="#image-unavailable__svg" />
           </svg>
           <strong class="image-unavailable__caption">Image available eventually</strong>
         </div>
+        <a v-else-if="card.img_src != '' && !Array.isArray(card.img_src)" aria-label="Open Image in Gallery" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="card.img_src">
+          <img :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']">
+        </a>
+        <a v-else v-for="img in card.img_src" aria-label="Open Image in Gallery" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="img">
+          <img :data-src="img" :class="[card.img_size, 'lazyload', 'thumbnail']">
+        </a>
       </figure>
     </li>
     `,
@@ -44,6 +47,9 @@ domReady(function () {
         }
         if (card.other_players != '') {
           baseString += ' w/' + card.other_players;
+        }
+        if (card.serial_numbered != '') {
+          baseString += ' ' + card.serial_numbered;
         }
         if (card.grade != '') {
           baseString += ' ' + card.grade;
@@ -65,7 +71,8 @@ domReady(function () {
       lastUpdated: 'loading...'
     },
     created: function () {
-      db.collection('cards/cards_document/cards_subcollection').doc('ones').get().then((snapshot) => {
+      category = document.getElementById('wrapper').dataset.category;
+      db.collection('cards/cards_document/cards_subcollection').doc(category).get().then((snapshot) => {
         this.allCards = snapshot.data()['all_cards'];
         this.overallTotal = snapshot.data()['overall_total'];
         this.lastUpdated = this.buildLastUpdated(snapshot.data()['last_updated']);
@@ -83,8 +90,10 @@ domReady(function () {
           { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
       },
       buildYearsRange: function () {
-        let allCards = this.allCards;
-        return allCards[0].year + ' - ' + allCards[allCards.length - 1].year;
+        if (this.allCards.length > 1) {
+          let allCards = this.allCards;
+          return allCards[0].year + ' - ' + allCards[allCards.length - 1].year;
+        }
       },
       startFancybox: function () {
         // TODO: Possibly find a way to remove the appended index number in the custom `data-hash`
