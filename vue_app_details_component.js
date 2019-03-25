@@ -37,15 +37,18 @@ domReady(function () {
             <figcaption class="figure-list__caption">
               <span>{{buildCardString(card)}}</span>
             </figcaption>
-            <a v-if="card.img_src != ''" aria-label="Open Image in Gallery" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="card.img_src">
-              <img :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']">
-            </a>
-            <div v-else class="image-unavailable">
+            <div v-if="card.img_src === ''" class="image-unavailable">
               <svg role="presentation" class="image-unavailable__svg" viewBox="0 0 32 32">
                 <use xlink:href="#image-unavailable__svg" />
               </svg>
               <strong class="image-unavailable__caption">Image available eventually</strong>
             </div>
+            <a v-else-if="card.img_src != '' && !Array.isArray(card.img_src)" aria-label="Open Image in Gallery" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="card.img_src">
+              <img :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']">
+            </a>
+            <a v-else v-for="img in card.img_src" aria-label="Open Image in Gallery" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="img">
+              <img :data-src="img" :class="[card.img_size, 'lazyload', 'thumbnail']">
+            </a>
           </figure>
         </li>
       </ol>
@@ -69,6 +72,9 @@ domReady(function () {
         if (card.other_players != '') {
           baseString += ' w/' + card.other_players;
         }
+        if (card.serial_numbered != '') {
+          baseString += ' ' + card.serial_numbered;
+        }
         if (card.grade != '') {
           baseString += ' ' + card.grade;
         }
@@ -89,7 +95,8 @@ domReady(function () {
       lastUpdated: 'loading...'
     },
     created: function () {
-      db.collection('cards/cards_document/cards_subcollection').doc('autos').get().then((snapshot) => {
+      category = document.getElementById('wrapper').dataset.category;
+      db.collection('cards/cards_document/cards_subcollection').doc(category).get().then((snapshot) => {
         this.allCards = snapshot.data()['all_cards_by_years'];
         this.overallTotal = snapshot.data()['overall_total'];
         this.lastUpdated = this.buildLastUpdated(snapshot.data()['last_updated']);
@@ -142,7 +149,7 @@ domReady(function () {
           localStorage.setItem('isOpen', options.open);
         }
         else {
-          localStorage.removeItem('isOpen')
+          localStorage.removeItem('isOpen');
         }
       },
       toggleMenuButton: function (event) {
