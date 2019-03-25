@@ -848,17 +848,13 @@ ol, x:-moz-any-link, x:default {
   align-items: flex-end;
   list-style-type: none;
 }
+.imgColumn > li:not(:first-child) {
+  margin-top: 50px;
+}
 .imgColumn img {
   width: 180px;
   transition: all 0.3s cubic-bezier(0.785,0.135,0.150,0.860);
   position: relative;
-}
-.imgColumn img:hover {
-  box-shadow: 0 0 12px 1px rgba(0,0,0,.7);
-  transform: scale(2,2);
-  transform-origin: 80% 30%;
-  background: rgba(63,107,169,0.7);
-  z-index: 4;
 }
 .inserts {
   transition: all 0.3s ease-in-out;
