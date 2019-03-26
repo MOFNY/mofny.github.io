@@ -57,7 +57,11 @@ domReady(function () {
         return baseString;
       },
       buildHashData: function (card) {
-        return card.year + '-' + card.set.replace(/\s+/g, '-').toLowerCase();
+        let cardSet = card.set;
+        if (cardSet.indexOf('/') > 0) {
+          cardSet = cardSet.replace(/\//g, '-');
+        }
+        return card.year + '-' + cardSet.replace(/\s+/g, '-').toLowerCase();
       }
     }
   });
