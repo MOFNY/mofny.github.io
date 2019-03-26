@@ -39,7 +39,7 @@ domReady(function () {
     },
     buildHashData: function (card) {
       let cardSet = card.set;
-      if (newProductCode.indexOf('/') > 0) {
+      if (cardSet.indexOf('/') > 0) {
         cardSet = cardSet.replace(/\//g, '');
       }
       return card.year + '-' + cardSet.replace(/\s+/g, '-').toLowerCase();
