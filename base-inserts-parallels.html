@@ -42,8 +42,9 @@
 
 	<div id="wrapper" data-category="base_inserts_parallels">
 		<header>
-			<button class="menu-button" @click="toggleMenuButton">open menu navigation<span></span></button>
-			<nav id="primary-nav" class="primary-nav">
+			<button class="menu-button" :class="{'menu-is-open': menuIsOpen}" @click="toggleMenuButton">open menu
+				navigation<span></span></button>
+			<nav class="primary-nav" :class="{'primary-nav--is-visible': menuIsOpen}">
 				<ul class="primary-nav__list">
 					<li class="primary-nav__list-item"><a class="primary-nav__anchor" href="/#updates">Updates</a></li>
 					<li class="primary-nav__list-item"><a class="primary-nav__anchor" href="/autographs.html">Autographs</a></li>

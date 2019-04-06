@@ -72,7 +72,8 @@ domReady(function () {
       allCards: [],
       yearsRange: 'loading...',
       overallTotal: 'loading...',
-      lastUpdated: 'loading...'
+      lastUpdated: 'loading...',
+      menuIsOpen: false
     },
     created: function () {
       category = document.getElementById('wrapper').dataset.category;
@@ -125,9 +126,11 @@ domReady(function () {
           $('a[data-hash=' + hash + ']').trigger('click');
         }
       },
-      toggleMenuButton: function (event) {
-        $(event.target).toggleClass('menu-is-open');
-		    $('#primary-nav').toggleClass('primary-nav--is-visible');
+      toggleMenuButton: function () {
+        if (this.menuIsOpen) {
+          return this.menuIsOpen = false
+        }
+        return this.menuIsOpen = true;
       }
     }
   });

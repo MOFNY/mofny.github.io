@@ -55,7 +55,8 @@ domReady(function () {
 						total: ''
 					}
 				}
-			]
+			],
+			menuIsOpen: false
 		},
 		created: function () {
 			db.collection('cards/cards_document/cards_subcollection').doc('overall_totals').get().then((snapshot) => {
@@ -64,9 +65,11 @@ domReady(function () {
 			});
 		},
 		methods: {
-			toggleMenuButton: function (event) {
-        $(event.target).toggleClass('menu-is-open');
-		    $('#primary-nav').toggleClass('primary-nav--is-visible');
+			toggleMenuButton: function () {
+        if (this.menuIsOpen) {
+          return this.menuIsOpen = false
+        }
+        return this.menuIsOpen = true;
       }
 		}
 	});
