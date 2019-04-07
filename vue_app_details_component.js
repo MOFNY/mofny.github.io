@@ -18,7 +18,7 @@ domReady(function () {
     toggleIndividual: function (event) {
       target = event.target;
       if (!event.target.open) {
-        $('html, body').animate({scrollTop: $(target).offset().top - 75}, 0);
+        $('html, body').animate({ scrollTop: $(target).offset().top - 75 }, 0);
       }
     },
     buildCardString: function (card) {
@@ -30,10 +30,20 @@ domReady(function () {
         baseString += ' w/' + card.other_players;
       }
       if (card.serial_numbered != '') {
-        baseString += ' ' + card.serial_numbered;
+        let serialNumbered = card.serial_numbered;
+        if (Array.isArray(serialNumbered)) {
+          serialNumbered = serialNumbered.join(', ');
+          let lastCommma = serialNumbered.lastIndexOf(', ');
+          serialNumbered = serialNumbered.substring(0, lastCommma) + '' + serialNumbered.substring(lastCommma + 2);
+        }
+        baseString += ' ' + serialNumbered;
       }
       if (card.grade != '') {
-        baseString += ' ' + card.grade;
+        let grade = card.grade;
+        if (Array.isArray(grade)) {
+          grade = grade.join(', ');
+        }
+        baseString += ' ' + grade;
       }
       return baseString;
     },
@@ -46,7 +56,7 @@ domReady(function () {
     },
     openFirstLink: function (event) {
       event.preventDefault();
-			$('a[data-caption="' + event.target.alt + '"]').trigger('click');
+      $('a[data-caption="' + event.target.alt + '"]').trigger('click');
     }
   }
 
@@ -204,7 +214,7 @@ domReady(function () {
           $('a[data-hash=' + hash + ']').trigger('click');
         }
       },
-      toggleAllYears: function (options = {open: true}) {
+      toggleAllYears: function (options = { open: true }) {
         $('.details-year').prop('open', options.open);
         if (options.open) {
           localStorage.setItem('isOpen', options.open);

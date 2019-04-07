@@ -49,10 +49,20 @@ domReady(function () {
           baseString += ' w/' + card.other_players;
         }
         if (card.serial_numbered != '') {
-          baseString += ' ' + card.serial_numbered;
+          let serialNumbered = card.serial_numbered;
+          if (Array.isArray(serialNumbered)) {
+            serialNumbered = serialNumbered.join(', ');
+            let lastCommma = serialNumbered.lastIndexOf(', ');
+            serialNumbered = serialNumbered.substring(0, lastCommma) + '' + serialNumbered.substring(lastCommma+2);
+          }
+          baseString += ' ' + serialNumbered;
         }
         if (card.grade != '') {
-          baseString += ' ' + card.grade;
+          let grade = card.grade;
+          if (Array.isArray(grade)) {
+            grade = grade.join(', ');
+          }
+          baseString += ' ' + grade;
         }
         return baseString;
       },
