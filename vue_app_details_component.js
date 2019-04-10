@@ -17,8 +17,8 @@ domReady(function () {
   const sharedMethods = {
     toggleIndividual: function (event) {
       target = event.target;
-      if (!event.target.open) {
-        $('html, body').animate({ scrollTop: $(target).offset().top - 75 }, 0);
+      if (!target.open) {
+        window.scrollTo(0, $(target).offset().top - 75);
       }
     },
     buildCardString: function (card) {
