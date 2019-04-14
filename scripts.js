@@ -14,6 +14,60 @@ domReady(function () {
 	firebase.initializeApp(config);
 	const db = firebase.firestore();
 
+	Vue.component('card-component', {
+		template: `
+    <li>
+      <figure class="figure-list__figure">
+        <figcaption class="figure-list__caption">
+					<span>{{buildCardString(card)}}</span>
+					<div class="card-list-intro__header card-list-intro__header--sub">Updated: {{buildLastUpdated(card.date_updated)}}</div>
+				</figcaption>
+				<a v-if="card.img_src != '' && !Array.isArray(card.img_src)" aria-label="Open Image in Gallery" data-fancybox="recently-added" data-hash="recently-added" :data-caption="buildCardString(card)" :href="card.img_src">
+					<img :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']">
+				</a>
+				<a v-else aria-label="Open Image in Gallery" data-fancybox="recently-added" data-hash="recently-added" :data-caption="buildCardString(card)" :href="card.img_src[card.img_src.length - 1]">
+					<img :data-src="card.img_src[card.img_src.length - 1]" :class="[card.img_size, 'lazyload', 'thumbnail']">
+				</a>
+      </figure>
+    </li>
+    `,
+		props: {
+			card: {}
+		},
+		methods: {
+			buildCardString: function (card) {
+				let baseString = card.year + ' ' + card.set + ' #' + card.number;
+				if (card.other_info != '') {
+					baseString += ' ' + card.other_info;
+				}
+				if (card.other_players != '') {
+					baseString += ' w/' + card.other_players;
+				}
+				if (card.serial_numbered != '') {
+					let serialNumbered = card.serial_numbered;
+					if (Array.isArray(serialNumbered)) {
+						serialNumbered = serialNumbered.join(', ');
+						let lastCommma = serialNumbered.lastIndexOf(', ');
+						serialNumbered = serialNumbered.substring(0, lastCommma) + '' + serialNumbered.substring(lastCommma + 2);
+					}
+					baseString += ' ' + serialNumbered;
+				}
+				if (card.grade != '') {
+					let grade = card.grade;
+					if (Array.isArray(grade)) {
+						grade = grade.join(', ');
+					}
+					baseString += ' ' + grade;
+				}
+				return baseString;
+			},
+			buildLastUpdated: function (data) {
+				return data.toDate().toLocaleDateString('en-US',
+					{ weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
+			}
+		}
+	});
+
 	window.app = new Vue({
 		el: '#wrapper',
 		data: {
@@ -56,21 +110,56 @@ domReady(function () {
 					}
 				}
 			],
-			menuIsOpen: false
+			menuIsOpen: false,
+			recentlyUpdated: []
 		},
 		created: function () {
 			db.collection('cards/cards_document/cards_subcollection').doc('overall_totals').get().then((snapshot) => {
 				this.initialTotals = snapshot.data()['totals'];
 				this.overallTotals = this.initialTotals;
 			});
+			db.collection('cards/cards_document/cards_subcollection').doc('recently_updated').get().then((snapshot) => {
+				this.recentlyUpdated = snapshot.data()['cards'];
+			});
+		},
+		updated: function () {
+			this.startFancybox();
+			this.triggerFancyboxHash();
+			$(window).on('hashchange', this.triggerFancyboxHash);
 		},
 		methods: {
+			startFancybox: function () {
+				// TODO: Possibly find a way to remove the appended index number in the custom `data-hash`
+				// without messing up the back button and history.
+				$('[data-fancybox="recently-added"]').fancybox({
+					loop: true,
+					animationEffect: 'fade',
+					animationDuration: 300,
+					buttons: [
+						"zoom",
+						"slideShow",
+						"fullScreen",
+						"thumbs",
+						"close"
+					]
+				});
+			},
+			triggerFancyboxHash: function () {
+				let hash = window.location.hash
+				let allRecentlyAdded = $('a[data-hash]');
+				if (hash != '') {
+					hash = hash.replace(hash, hash.substr(1));
+					let parts = hash.split('-');
+          let lastPart = Number(parts.pop());
+					allRecentlyAdded.eq(lastPart - 1).trigger('click');
+				}
+			},
 			toggleMenuButton: function () {
-        if (this.menuIsOpen) {
-          return this.menuIsOpen = false
-        }
-        return this.menuIsOpen = true;
-      }
+				if (this.menuIsOpen) {
+					return this.menuIsOpen = false
+				}
+				return this.menuIsOpen = true;
+			}
 		}
 	});
 	var circleRight = document.getElementById('arrowRight');

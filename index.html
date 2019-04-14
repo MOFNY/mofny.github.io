@@ -19,7 +19,10 @@
 	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
 	<link rel="stylesheet" type="text/css" href="stylesMini.css">
 	<link href="https://fonts.googleapis.com/css?family=Cabin:500|Oswald:300,400|Karla" rel="stylesheet">
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css' rel='stylesheet'>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.5/lazysizes.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.min.js"></script>
@@ -112,10 +115,11 @@
 						Hello fellow collectors, my name is Chris. This site is dedicated to displaying my Roy Oswalt collection.
 						I've collected Oswalt for over 15 years, amassing <span v-text="overallTotals[5].overall.total"></span>
 						uniquely different cards. Put simply, this is
-						the greatest resource for collectors of Roy Oswalt. Please use the <strong class="maroon">contact
-							form</strong> in the footer to inquire about anything.
-						I also collect Tim Hudson and Jordan Zimmermann. The collection
-						is <a class="inserts" href="#updates">updated often</a>, with highlights listed below.
+						the greatest resource for collectors of Roy Oswalt baseball cards. Please use the <strong
+							class="maroon">contact
+							form</strong> in the footer to inquire about anything. The collection
+						is <a class="inserts" href="#updates">updated often</a>, with recently added cards and highlights listed
+						below.
 					</p>
 				</article>
 				<article class="intro-section__article">
@@ -124,14 +128,31 @@
 						Intrigued by the statistics above? They are the number of uniquely different cards in each category.
 						<strong class="maroon">Hover over</strong> or tap each category to see the individual completion statistics.
 						How did I estimate such lavish ratios? Beckett is the first step. Then I eliminate the cards I presume
-						undesirable: oversized, minor league issues, show stamped and numbered (such as Hawaii or Chicago), and
+						undesirable: oversized, minor league issues, show stamped (such as Hawaii or Chicago), and
 						certain
-						aftermarket cards. Each page contains high quality scans.
+						aftermarket cards. All pages contain high quality scans.
 					</p>
 				</article>
 			</section>
+			<section id="pageSection">
+				<article class="card-list-intro">
+					<h2 class="card-list-intro__header">Recently Added & Updated Cards</h2>
+				</article>
+				<div id="pageContainer">
+					<ol class="yearGroup figure-list">
+						<card-component v-for="card in recentlyUpdated" :card="card" />
+					</ol>
+					<p class="card-list-intro__paragraph">Check out more &#8226;&nbsp;
+						<a class="inserts" href="/autographs.html">Autographs</a> &nbsp;&#8226;&nbsp;
+						<a class="inserts" href="/base-inserts-parallels.html">Base, Inserts, Parallels</a> &nbsp;&#8226;&nbsp;
+						<a class="inserts" href="/game-used.html">Game Used & Patches</a> &nbsp;&#8226;&nbsp;
+						<a class="inserts" href="/1of1.html">1/1</a> &nbsp;&#8226;&nbsp;
+						<a class="inserts" href="/rookie-cards.html">Rookie Cards</a>
+					</p>
+				</div>
+			</section>
 			<section id="container">
-				<h3 class="screen-reader-text">Image carousel for 9 superfractors</h3>
+				<h2 class="screen-reader-text">9 Topps Superfractors &#8226; 2005 - 2011</h2>
 				<button disabled aria-label="cycle through previous 3 images" id="circleLeft"
 					class="carousel__arrow carousel__arrow--left"><svg role="presentation" class="carousel__arrow-icon"
 						xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 62.376834 37.1139">
@@ -340,8 +361,6 @@
 						repository</a>. Outside of collecting,
 					my passion is web development and design. Check out my <a href="https://codepen.io/mofny/" target="_blank"
 						rel="noopener" class="footerLink">Codepen</a> for more details.
-
-
 				</p>
 			</article>
 			<article>

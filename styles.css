@@ -537,6 +537,7 @@ footer em::after {
 p {
   padding: 10px 0;
   color: rgb(75,75,75);
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .menu-button {
   display: none;
@@ -843,10 +844,10 @@ ol, x:-moz-any-link, x:default {
 .inserts:visited {
   color: rgb(79, 150, 190);
 }
-.inserts:hover {
+.inserts:hover,
+.inserts:focus {
   background: rgba(63,137,169,0.4);
   box-shadow: 0 10px 8px -10px rgba(0,0,0,.9);
-  padding: 8px;
   color: rgb(41, 83, 54);
 }
 .overlap, .overlap2 {
