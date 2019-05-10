@@ -670,6 +670,7 @@ p {
 }
 .details-year[open] > .details-year__summary {
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
   z-index: 4;
   background: rgb(0,50,64);
