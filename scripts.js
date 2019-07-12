@@ -1,9 +1,9 @@
-var domReady = function (callback) {
+const domReady = function (callback) {
 	document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
 };
 
 domReady(function () {
-	var config = {
+	const config = {
 		apiKey: "AIzaSyDMn-sNlJ5lIF1YVeLqujt_JXCL_Ac8tO8",
 		authDomain: "roy-oswalt-collection.firebaseapp.com",
 		databaseURL: "https://roy-oswalt-collection.firebaseio.com",
