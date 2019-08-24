@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://royoswalt44.com/sitemap.xml
