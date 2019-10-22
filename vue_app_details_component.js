@@ -90,10 +90,10 @@ domReady(function () {
               <strong class="image-unavailable__caption">Image available eventually</strong>
             </div>
             <a v-else-if="card.img_src != '' && !Array.isArray(card.img_src)" aria-label="Open Image in Gallery" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="card.img_src">
-              <img :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']">
+              <img alt="" :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']">
             </a>
             <a v-else v-for="img in card.img_src" aria-label="Open Image in Gallery" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="img">
-              <img :data-src="img" :class="[card.img_size, 'lazyload', 'thumbnail']">
+              <img alt="" :data-src="img" :class="[card.img_size, 'lazyload', 'thumbnail']">
             </a>
           </figure>
         </li>
@@ -140,10 +140,10 @@ domReady(function () {
         <ul class="imgColumn">
           <li v-for="card in Object.values(card)[0].all_cards.filter((card) => {return card.img_src != ''})">
             <a v-if="card.img_src != '' && !Array.isArray(card.img_src)" @click="openFirstLink" aria-label="Open Image in Gallery" :href="card.img_src">
-              <img :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']" :alt="buildCardString(card)">
+              <img alt="" :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']" :alt="buildCardString(card)">
             </a>
             <a v-else-if="card.img_src != '' && Array.isArray(card.img_src)" @click="openFirstLink" class="activate-gallery" aria-label="Open Image in Gallery" :href="card.img_src[0]">
-              <img :data-src="card.img_src[0]" :class="[card.img_size, 'lazyload', 'thumbnail']" :alt="buildCardString(card)">
+              <img alt="" :data-src="card.img_src[0]" :class="[card.img_size, 'lazyload', 'thumbnail']" :alt="buildCardString(card)">
             </a>
           </li>
         </ul>

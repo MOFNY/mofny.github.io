@@ -28,10 +28,10 @@ domReady(function () {
           <strong class="image-unavailable__caption">Image available eventually</strong>
         </div>
         <a v-else-if="card.img_src != '' && !Array.isArray(card.img_src)" aria-label="Open Image in Gallery" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="card.img_src">
-          <img :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']">
+          <img alt="" :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']">
         </a>
         <a v-else v-for="img in card.img_src" aria-label="Open Image in Gallery" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="img">
-          <img :data-src="img" :class="[card.img_size, 'lazyload', 'thumbnail']">
+          <img alt="" :data-src="img" :class="[card.img_size, 'lazyload', 'thumbnail']">
         </a>
       </figure>
     </li>

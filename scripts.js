@@ -23,10 +23,10 @@ domReady(function () {
 					<div class="card-list-intro__header card-list-intro__header--sub">Updated: {{buildLastUpdated(card.date_updated)}}</div>
 				</figcaption>
 				<a v-if="card.img_src != '' && !Array.isArray(card.img_src)" aria-label="Open Image in Gallery" data-fancybox="recently-added" data-hash="recently-added" :data-caption="buildCardString(card)" :href="card.img_src">
-					<img :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']">
+					<img alt="" :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']">
 				</a>
 				<a v-else aria-label="Open Image in Gallery" data-fancybox="recently-added" data-hash="recently-added" :data-caption="buildCardString(card)" :href="card.img_src[card.img_src.length - 1]">
-					<img :data-src="card.img_src[card.img_src.length - 1]" :class="[card.img_size, 'lazyload', 'thumbnail']">
+					<img alt="" :data-src="card.img_src[card.img_src.length - 1]" :class="[card.img_size, 'lazyload', 'thumbnail']">
 				</a>
       </figure>
     </li>
