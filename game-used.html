@@ -42,8 +42,7 @@
 
 	<div id="wrapper" data-category="gu">
 		<header>
-			<button :class="menuIsOpen ? 'menu-button menu-is-open' : 'menu-button'" :aria-expanded="menuIsOpen ? 'true' : 'false'" aria-controls="primary-nav" @click="toggleMenuButton">open menu
-				navigation<span></span></button>
+			<button :class="menuIsOpen ? 'menu-button menu-is-open' : 'menu-button'" :aria-label="menuIsOpen ? 'close menu navigation' : 'open menu navigation'" :aria-expanded="menuIsOpen ? 'true' : 'false'" aria-controls="primary-nav" @click="toggleMenuButton"><span></span></button>
 			<nav id="primary-nav" :class="menuIsOpen ? 'primary-nav primary-nav--is-visible' : 'primary-nav'">
 				<ul class="primary-nav__list">
 					<li class="primary-nav__list-item"><a class="primary-nav__anchor" href="/#updates">Updates</a></li>
