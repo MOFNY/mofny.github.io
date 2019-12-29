@@ -83,6 +83,7 @@ domReady(function () {
       yearsRange: 'loading...',
       overallTotal: 'loading...',
       lastUpdated: 'loading...',
+      ISODate: '',
       menuIsOpen: false
     },
     created: function () {
@@ -90,7 +91,9 @@ domReady(function () {
       db.collection('cards/cards_document/cards_subcollection').doc(category).get().then((snapshot) => {
         this.allCards = snapshot.data()['all_cards'];
         this.overallTotal = snapshot.data()['overall_total'];
-        this.lastUpdated = this.buildLastUpdated(snapshot.data()['last_updated']);
+        const date = snapshot.data()['last_updated'].toDate();
+        this.ISODate = date.toISOString();
+        this.lastUpdated = this.buildLastUpdated(date);
         this.yearsRange = this.buildYearsRange();
       });
     },
@@ -101,7 +104,7 @@ domReady(function () {
     },
     methods: {
       buildLastUpdated: function (data) {
-        return data.toDate().toLocaleDateString('en-US',
+        return data.toLocaleDateString('en-US',
           { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
       },
       buildYearsRange: function () {
