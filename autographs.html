@@ -39,7 +39,10 @@
 
 	<div id="wrapper" data-category="autos">
 		<header>
-			<button :class="menuIsOpen ? 'menu-button menu-is-open' : 'menu-button'" :aria-label="menuIsOpen ? 'close menu navigation' : 'open menu navigation'" :aria-expanded="menuIsOpen ? 'true' : 'false'" aria-controls="primary-nav" @click="toggleMenuButton"><span></span></button>
+			<button :class="menuIsOpen ? 'menu-button menu-is-open' : 'menu-button'"
+				:aria-label="menuIsOpen ? 'close menu navigation' : 'open menu navigation'"
+				:aria-expanded="menuIsOpen ? 'true' : 'false'" aria-controls="primary-nav"
+				@click="toggleMenuButton"><span></span></button>
 			<nav id="primary-nav" :class="menuIsOpen ? 'primary-nav primary-nav--is-visible' : 'primary-nav'">
 				<ul class="primary-nav__list">
 					<li class="primary-nav__list-item"><a class="primary-nav__anchor" href="/#updates">Updates</a></li>
@@ -87,16 +90,20 @@
 				</article>
 				<div id="pageContainer">
 					<div>
-						<section class="toggle-all">
+						<div role="group" aria-labelledby="toggle-all-legend" class="toggle-all">
+							<div id="toggle-all-legend" class="screen-reader-text">control the ability to show or hide all year lists
+								by default</div>
 							<div class="toggle-all__section toggle-all__section--close">
 								<p id="close-all-description" class="toggle-all__label-text">- Easily scroll to an exact year -</p>
-								<button aria-describedby="close-all-description" class="revealButtons" @click="toggleAllYears({open: null})">Close All Years</button>
+								<button aria-describedby="close-all-description" class="revealButtons"
+									@click="toggleAllYears({open: null})">Close All Years</button>
 							</div>
 							<div class="toggle-all__section">
 								<p id="open-all-description" class="toggle-all__label-text">- Resume furious scrolling! -</p>
-								<button aria-describedby="open-all-description" class="revealButtons" @click="toggleAllYears()">Open All Years</button>
+								<button aria-describedby="open-all-description" class="revealButtons" @click="toggleAllYears()">Open All
+									Years</button>
 							</div>
-						</section>
+						</div>
 						<details-component v-for="card in allCards" :card="card" />
 					</div>
 				</div>

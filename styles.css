@@ -283,7 +283,7 @@ footer em::after {
   line-height: 1.6;
 }
 .card-list-intro {
-  padding: 0.625em 0.3125em;
+  padding: 0.625em;
 }
 .card-list-intro__paragraph, .card-list-intro__header {
   display: flex;
@@ -1330,7 +1330,7 @@ ul span .red2 {
   }
   .toggle-all__section--close {
     border-right: none;
-    border-bottom: 2px solid rgb(204,204,204);
+    border-bottom: none;
     padding-right: 0;
     padding-bottom: 0.625em;
     margin-bottom: 0.625em;
