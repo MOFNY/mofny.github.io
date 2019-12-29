@@ -310,6 +310,7 @@ footer em::after {
   align-items: center;
 }
 .card-list-intro__header--sub {
+  display: block;
   color: rgb(58, 117, 76);
   font-size: 16px;
   padding-top: 1.25em;
