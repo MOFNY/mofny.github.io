@@ -88,19 +88,15 @@
 					<h3 class="card-list-intro__header card-list-intro__header--sub">Updated: {{lastUpdated}}</h3>
 				</article>
 				<div id="pageContainer">
-					<div id="closeArea">
+					<div>
 						<section class="toggle-all">
 							<div class="toggle-all__section toggle-all__section--close">
-								<label class="toggle-all__label">
-									<div class="toggle-all__label-text">- Easily skip to an exact year -</div>
-									<button class="revealButtons" @click="toggleAllYears({open: null})">Close All</button>
-								</label>
+								<p id="close-all-description" class="toggle-all__label-text">- Easily scroll to an exact year -</p>
+								<button aria-describedby="close-all-description" class="revealButtons" @click="toggleAllYears({open: null})">Close All Years</button>
 							</div>
 							<div class="toggle-all__section">
-								<label class="toggle-all__label">
-									<div class="toggle-all__label-text">- Resume furious scrolling! -</div>
-									<button class="revealButtons" @click="toggleAllYears()">Open All</button>
-								</label>
+								<p id="open-all-description" class="toggle-all__label-text">- Resume furious scrolling! -</p>
+								<button aria-describedby="open-all-description" class="revealButtons" @click="toggleAllYears()">Open All Years</button>
 							</div>
 						</section>
 						<details-no-thumbnails-component v-for="card in allCards" :card="card" />

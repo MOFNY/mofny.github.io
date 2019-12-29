@@ -650,13 +650,9 @@ p {
 .toggle-all__section--open {
   padding-left: 1.25em;
 }
-.toggle-all__label {
-  display: inline-block;
-}
 .toggle-all__label-text {
   font: 1em/1.5 'Georgia', sans-serif;
   color: rgb(41, 83, 54);
-  margin-bottom: 0.75em;
 }
 .details-year {
   position: relative;
