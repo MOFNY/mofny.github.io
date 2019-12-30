@@ -46,14 +46,14 @@
 			<nav id="primary-nav" :class="menuIsOpen ? 'primary-nav primary-nav--is-visible' : 'primary-nav'">
 				<ul class="primary-nav__list">
 					<li class="primary-nav__list-item"><a class="primary-nav__anchor" href="/#updates">Updates</a></li>
-					<li class="primary-nav__list-item"><a class="primary-nav__anchor" href="/autographs.html">Autographs</a></li>
-					<li class="primary-nav__list-item"><a class="primary-nav__anchor" href="/game-used.html">Game Used &
+					<li class="primary-nav__list-item"><a class="primary-nav__anchor" href="/autographs">Autographs</a></li>
+					<li class="primary-nav__list-item"><a class="primary-nav__anchor" href="/game-used">Game Used &
 							Patches</a></li>
-					<li class="primary-nav__list-item"><a class="primary-nav__anchor" href="/rookie-cards.html">Rookie Cards</a>
+					<li class="primary-nav__list-item"><a class="primary-nav__anchor" href="/rookie-cards">Rookie Cards</a>
 					</li>
-					<li class="primary-nav__list-item"><a class="primary-nav__anchor" href="/base-inserts-parallels.html">Base,
+					<li class="primary-nav__list-item"><a class="primary-nav__anchor" href="/base-inserts-parallels">Base,
 							Inserts, Parallels</a></li>
-					<li class="primary-nav__list-item"><a class="primary-nav__anchor" href="/1of1.html">1 / 1</a></li>
+					<li class="primary-nav__list-item"><a class="primary-nav__anchor" href="/1of1">1 / 1</a></li>
 				</ul>
 			</nav>
 			<h1 class="site-title-header"><a class="site-title-header__anchor" href="/">The Definitive Roy Oswalt
@@ -62,7 +62,7 @@
 		<main>
 			<ol class="totals-list">
 				<li class="totals-list__item">
-					<a class="totals-list__anchor tooltip" href="/autographs.html"
+					<a class="totals-list__anchor tooltip" href="/autographs"
 						:data-title="overallTotals[0].autos.overall_total">
 						<span class="totals-list__category">Autographs:
 							<span class="count">{{ overallTotals[0].autos.total }}</span>
@@ -70,7 +70,7 @@
 					</a>
 				</li>
 				<li class="totals-list__item">
-					<a class="totals-list__anchor tooltip" href="/base-inserts-parallels.html"
+					<a class="totals-list__anchor tooltip" href="/base-inserts-parallels"
 						:data-title="overallTotals[1].base_inserts_parallels.overall_total">
 						<span class="totals-list__category">Base, Inserts, Parallels:
 							<span class="count">{{ overallTotals[1].base_inserts_parallels.total }}</span>
@@ -78,21 +78,21 @@
 					</a>
 				</li>
 				<li class="totals-list__item">
-					<a class="totals-list__anchor tooltip" href="/game-used.html" :data-title="overallTotals[2].gu.overall_total">
+					<a class="totals-list__anchor tooltip" href="/game-used" :data-title="overallTotals[2].gu.overall_total">
 						<span class="totals-list__category">Game Used:
 							<span class="count">{{ overallTotals[2].gu.total }}</span>
 						</span>
 					</a>
 				</li>
 				<li class="totals-list__item">
-					<a class="totals-list__anchor tooltip" href="/1of1.html" :data-title="overallTotals[3].ones.overall_total">
+					<a class="totals-list__anchor tooltip" href="/1of1" :data-title="overallTotals[3].ones.overall_total">
 						<span class="totals-list__category">1 of 1:
 							<span class="count">{{ overallTotals[3].ones.total }}</span>
 						</span>
 					</a>
 				</li>
 				<li class="totals-list__item">
-					<a class="totals-list__anchor tooltip" href="/rookie-cards.html"
+					<a class="totals-list__anchor tooltip" href="/rookie-cards"
 						:data-title="overallTotals[4].rcs.overall_total">
 						<span class="totals-list__category">Rookie Cards:
 							<span class="count">{{ overallTotals[4].rcs.total }}</span>
@@ -141,11 +141,11 @@
 						<card-component v-for="card in recentlyUpdated" :card="card" />
 					</ol>
 					<p class="card-list-intro__paragraph">Check out more &#8226;&nbsp;
-						<a class="inserts" href="/autographs.html">Autographs</a> &nbsp;&#8226;&nbsp;
-						<a class="inserts" href="/base-inserts-parallels.html">Base, Inserts, Parallels</a> &nbsp;&#8226;&nbsp;
-						<a class="inserts" href="/game-used.html">Game Used & Patches</a> &nbsp;&#8226;&nbsp;
-						<a class="inserts" href="/1of1.html">1/1</a> &nbsp;&#8226;&nbsp;
-						<a class="inserts" href="/rookie-cards.html">Rookie Cards</a>
+						<a class="inserts" href="/autographs">Autographs</a> &nbsp;&#8226;&nbsp;
+						<a class="inserts" href="/base-inserts-parallels">Base, Inserts, Parallels</a> &nbsp;&#8226;&nbsp;
+						<a class="inserts" href="/game-used">Game Used & Patches</a> &nbsp;&#8226;&nbsp;
+						<a class="inserts" href="/1of1">1/1</a> &nbsp;&#8226;&nbsp;
+						<a class="inserts" href="/rookie-cards">Rookie Cards</a>
 					</p>
 				</div>
 			</section>
@@ -362,31 +362,31 @@
 			</article>
 			<article>
 				<h3>About the collection</h3>
-				<p><a href="/rookie-cards.html" class="footerLink">Rookie Cards</a><br />
+				<p><a href="/rookie-cards" class="footerLink">Rookie Cards</a><br />
 					<em>Favorite card(s)</em> BGS 9.5 Retro Refractor.
 					<br />
 					<em>Most copies of a single card</em> 27 of the SPX.
 					<br />
-					<a href="/base-inserts-parallels.html" class="footerLink">Base, Inserts, Parallels</a><br />
+					<a href="/base-inserts-parallels" class="footerLink">Base, Inserts, Parallels</a><br />
 					<em>Favorite card(s)</em> 2001 Donruss Elite, 2003 Leaf Certified Materials, 2005 Bowman Chrome Refractors,
 					& 2006 Special F/X.
 					<br />
 					<em>Most copies of a single card</em> 5 of the 2001 Elite.
 					<br />
-					<a href="/autographs.html" class="footerLink">Autographs</a>
+					<a href="/autographs" class="footerLink">Autographs</a>
 					<br />
 					<em>Favorite card(s)</em> 2001 Bowman, 2001 Donruss Elite, 2002 Topps Ten, 2005 Absolute Tools, 2005
 					Reflections Fabric, & 2006 Turkey Red Black.
 					<br />
 					<em>Most copies of a single card</em> 8 of the 2001 Donruss Elite.
 					<br />
-					<a href="/game-used.html" class="footerLink">Game Used</a>
+					<a href="/game-used" class="footerLink">Game Used</a>
 					<br />
 					<em>Favorite card(s)</em> 2003 Upper Deck Classic Portraits.
 					<br />
 					<em>Most copies of a single card</em> 2 of the 2002 Sweet Spot USA.
 					<br />
-					<a href="/1of1.html" class="footerLink">1/1</a>
+					<a href="/1of1" class="footerLink">1/1</a>
 					<br />
 					<em>Favorite card(s)</em> 2003 Mirror Black, 2005 Bowman Chrome Superfractor, & 2005 Turkey Red Suede.
 					<br />
