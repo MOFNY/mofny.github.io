@@ -105,7 +105,7 @@ domReady(function () {
     methods: {
       buildLastUpdated: function (data) {
         return data.toLocaleDateString('en-US',
-          { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
+          { year: 'numeric', month: 'short', day: 'numeric' });
       },
       buildYearsRange: function () {
         if (this.allCards.length > 1) {

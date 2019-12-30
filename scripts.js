@@ -63,7 +63,7 @@ domReady(function () {
 			},
 			buildLastUpdated: function (data) {
 				return data.toDate().toLocaleDateString('en-US',
-					{ weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
+					{ year: 'numeric', month: 'short', day: 'numeric' });
 			}
 		}
 	});
