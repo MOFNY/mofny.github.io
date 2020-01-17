@@ -15,10 +15,13 @@ domReady(function () {
   const db = firebase.firestore();
 
   const sharedMethods = {
+    // FIXME: I would prefer this to be a `toggle` event listener on the <details>,
+    // but I don't want this to fire if `toggleAllYears` is used.
     toggleIndividual: function (event) {
-      target = event.target;
-      if (!target.open) {
-        window.scrollTo(0, $(target).offset().top - 75);
+      const parentNode = event.target.parentNode;
+      const offsetGap = 50;
+      if (parentNode.open) {
+        window.scrollTo(0, $(parentNode).offset().top - offsetGap);
       }
     },
     buildCardString: function (card) {
@@ -62,8 +65,8 @@ domReady(function () {
 
   const DetailsComponent = {
     template: `
-    <details class="details-year" :open="localStorage.isOpen" @toggle="toggleIndividual">
-      <summary class="details-year__summary">
+    <details class="details-year" :open="localStorage.isOpen">
+      <summary class="details-year__summary" @click="toggleIndividual">
         <svg role="presentation" class="details-year__toggle" xmlns="http://www.w3.org/2000/svg" height="40"
           width="40" viewBox="0 0 40 40">
           <rect class="details-year__toggle-border" stroke-linejoin="round" height="40" width="40"
@@ -108,8 +111,8 @@ domReady(function () {
 
   const DetailsNoThumbnailsComponent = {
     template: `
-    <details class="details-year" :open="localStorage.isOpen" @toggle="toggleIndividual">
-      <summary class="details-year__summary">
+    <details class="details-year" :open="localStorage.isOpen">
+      <summary class="details-year__summary" @click="toggleIndividual">
         <svg role="presentation" class="details-year__toggle" xmlns="http://www.w3.org/2000/svg" height="40"
           width="40" viewBox="0 0 40 40">
           <rect class="details-year__toggle-border" stroke-linejoin="round" height="40" width="40"
