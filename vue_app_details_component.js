@@ -60,7 +60,7 @@ domReady(function () {
     }
   }
 
-  Vue.component('details-component', {
+  const DetailsComponent = {
     template: `
     <details class="details-year" :open="localStorage.isOpen" @toggle="toggleIndividual">
       <summary class="details-year__summary">
@@ -104,9 +104,9 @@ domReady(function () {
       card: {}
     },
     methods: sharedMethods
-  });
+  };
 
-  Vue.component('details-no-thumbnails-component', {
+  const DetailsNoThumbnailsComponent = {
     template: `
     <details class="details-year" :open="localStorage.isOpen" @toggle="toggleIndividual">
       <summary class="details-year__summary">
@@ -154,10 +154,14 @@ domReady(function () {
       card: {}
     },
     methods: sharedMethods
-  });
+  };
 
   window.app = new Vue({
     el: '#wrapper',
+    components: {
+      'details-component': DetailsComponent,
+      'details-no-thumbnails-component': DetailsNoThumbnailsComponent
+    },
     data: {
       allCards: [],
       yearsRange: 'loading...',
@@ -217,14 +221,12 @@ domReady(function () {
           $('a[data-hash=' + hash + ']').trigger('click');
         }
       },
-      toggleAllYears: function (options = { open: true }) {
-        $('.details-year').prop('open', options.open);
-        if (options.open) {
-          localStorage.setItem('isOpen', options.open);
+      toggleAllYears: function (open) {
+        $('.details-year').prop('open', open);
+        if (open) {
+          return localStorage.setItem('isOpen', open);
         }
-        else {
-          localStorage.removeItem('isOpen');
-        }
+          return localStorage.removeItem('isOpen');
       },
       toggleMenuButton: function () {
         if (this.menuIsOpen) {

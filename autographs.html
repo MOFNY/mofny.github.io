@@ -96,11 +96,11 @@
 							<div class="toggle-all__section toggle-all__section--close">
 								<p id="close-all-description" class="toggle-all__label-text">- Easily scroll to an exact year -</p>
 								<button aria-describedby="close-all-description" class="revealButtons"
-									@click="toggleAllYears({open: null})">Close All Years</button>
+									@click="toggleAllYears(open = false)">Close All Years</button>
 							</div>
 							<div class="toggle-all__section">
 								<p id="open-all-description" class="toggle-all__label-text">- Resume furious scrolling! -</p>
-								<button aria-describedby="open-all-description" class="revealButtons" @click="toggleAllYears()">Open All
+								<button aria-describedby="open-all-description" class="revealButtons" @click="toggleAllYears(open = true)">Open All
 									Years</button>
 							</div>
 						</div>
