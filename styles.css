@@ -1246,9 +1246,6 @@ ul span .red2 {
       background-position-x: 100%;
     }
   }
-  .site-title-header__anchor {
-    font-size: 0.6em;
-  }
   #container {
     min-height: 70vmin;
   }
@@ -1262,7 +1259,6 @@ ul span .red2 {
   .totals-list__item {
     flex: 50%;
     border-bottom: 1px solid rgb(204,204,204);
-    font-size: 0.85em;
   }
   .totals-list__item:nth-child(2n) {
     border-right: none;
