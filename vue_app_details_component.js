@@ -187,9 +187,10 @@ domReady(function () {
     created: function () {
       category = document.getElementById('wrapper').dataset.category;
       db.collection('cards/cards_document/cards_subcollection').doc(category).get().then((snapshot) => {
-        this.allCards = snapshot.data()['all_cards_by_years'];
-        this.overallTotal = snapshot.data()['overall_total'];
-        const date = snapshot.data()['last_updated'].toDate();
+        const data = snapshot.data();
+        this.allCards = data['all_cards_by_years'];
+        this.overallTotal = data['overall_total'];
+        const date = data['last_updated'].toDate();
         this.ISODate = date.toISOString();
         this.lastUpdated = this.buildLastUpdated(date);
         this.yearsRange = this.buildYearsRange();
