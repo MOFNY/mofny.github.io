@@ -65,7 +65,7 @@ domReady(function () {
 
   const DetailsComponent = {
     template: `
-    <details class="details-year" :open="localStorage.isOpen">
+    <details class="details-year" :open="open">
       <summary class="details-year__summary" @click="toggleIndividual">
         <svg role="presentation" class="details-year__toggle" xmlns="http://www.w3.org/2000/svg" height="40"
           width="40" viewBox="0 0 40 40">
@@ -104,14 +104,15 @@ domReady(function () {
     </details>
     `,
     props: {
-      card: {}
+      card: {},
+      open: localStorage.isOpen
     },
     methods: sharedMethods
   };
 
   const DetailsNoThumbnailsComponent = {
     template: `
-    <details class="details-year" :open="localStorage.isOpen">
+    <details class="details-year" :open="open">
       <summary class="details-year__summary" @click="toggleIndividual">
         <svg role="presentation" class="details-year__toggle" xmlns="http://www.w3.org/2000/svg" height="40"
           width="40" viewBox="0 0 40 40">
@@ -138,6 +139,10 @@ domReady(function () {
             <a v-else aria-label="Open Image in Gallery" class="inserts" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="card.img_src[0]">
               {{buildCardString(card)}}
             </a>
+            <details @toggle="testClick(card, $event)">
+              <summary>More Stats</summary>
+              <article></article>
+            </details>
           </li>
         </ol>
         <ul class="imgColumn">
@@ -154,7 +159,11 @@ domReady(function () {
     </details>
     `,
     props: {
-      card: {}
+      card: {},
+      testClick: {
+        type: Function
+      },
+      open: localStorage.isOpen
     },
     methods: sharedMethods
   };
@@ -171,7 +180,9 @@ domReady(function () {
       overallTotal: 'loading...',
       lastUpdated: 'loading...',
       ISODate: '',
-      menuIsOpen: false
+      menuIsOpen: false,
+      open: localStorage.isOpen,
+      stats: ''
     },
     created: function () {
       category = document.getElementById('wrapper').dataset.category;
@@ -236,6 +247,14 @@ domReady(function () {
           return this.menuIsOpen = false
         }
         return this.menuIsOpen = true;
+      },
+      testClick (card, event) {
+        const target = event.target;
+        const article = target.querySelector('article');
+        if (target.open) {
+          return article.insertAdjacentHTML('beforeend', `<div>${card}</div>`);
+        }
+          return article.innerHTML = '';
       }
     }
   });

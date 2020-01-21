@@ -109,7 +109,7 @@
 									Years</button>
 							</div>
 						</div>
-						<details-component v-for="card in allCards" :card="card" />
+						<details-component v-for="card in allCards" v-bind="{card, open}" />
 					</div>
 				</div>
 			</div>
