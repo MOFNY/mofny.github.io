@@ -115,7 +115,7 @@ header, #home {
   color: rgb(41, 83, 54);
 }
 .spinner {
-  background-color:rgb(63,137,169);
+  background-color:rgb(56,124,153);
   width: 80px;
   height: 80px;
   display: inline-block;
@@ -126,7 +126,7 @@ header, #home {
   animation: scaleout 1.5s infinite ease-in-out;
 }
 .count {
-  color: rgb(63,137,169);
+  color: rgb(56,124,153);
   max-width: 0;
 }
 .expand {
@@ -136,7 +136,7 @@ header, #home {
 #countLastAfter {
   transform: translateX(-200%);
   transition: transform 1s ease-in-out !important;
-  color: rgb(63,137,169) !important;
+  color: rgb(56,124,153) !important;
   /*padding-left: 5px;*/
 }
 .move-count-last-after {
