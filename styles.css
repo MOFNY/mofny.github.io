@@ -210,7 +210,7 @@ footer article {
   position: relative;
   padding: 20px
 }
-h3 {
+.footer__header {
   color: rgb(122, 204, 200);
   font: 1.6em 'Oswald', sans-serif;
 }
