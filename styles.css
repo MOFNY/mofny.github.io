@@ -815,16 +815,11 @@ p {
   word-spacing: 0.1em;
   letter-spacing: -0.06em;
 }
-/*Fixes Firefox bug where all numbers are zero*/
-ol, x:-moz-any-link, x:default {
-  counter-reset: section;
-  list-style-type: none;
-  list-style-position: inside;
-}
-.numbered-list > li:before, x:-moz-any-link, x:default {
-  line-height: 1.5;
-  counter-increment: section;
-  content: counters(section,"") ". ";
+.numbered-list > li::marker {
+  font-weight: 600;
+  color: rgb(41 83 54);
+  font-size: 1.05em;
+  letter-spacing: normal;
 }
 .red, .red2 {
   color: rgb(178,34,34)
