@@ -1135,12 +1135,13 @@ ul span .red2 {
     font-size: 0.9em;
   }
   .site-title-header__anchor {
-    font-size: 0.75em;
+    font-size: 0.85em;
   }
   #above {
     display: none
   }
   .intro-section {
+    margin-top: 1em;
     flex-wrap: wrap;
   }
   .intro-section__article {
@@ -1334,8 +1335,8 @@ ul span .red2 {
     margin-bottom: 0.625em;
   }
   .numbered-list > li {
-    font-size: 1em;
-    line-height: 1.45;
+    font-size: 1.25em;
+    line-height: 1.75;
   }
   .image-unavailable {
     font-size: 14px;
