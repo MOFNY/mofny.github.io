@@ -20,7 +20,7 @@ domReady(function () {
       <figure class="figure-list__figure">
         <figcaption class="figure-list__caption">
 					<span>{{buildCardString(card)}}</span>
-					<div class="card-list-intro__header card-list-intro__header--sub">Updated: <time :datetime="card.date_updated.toDate().toISOString()">{{buildLastUpdated(card.date_updated)}}</time></div>
+					<div class="card-list-intro__header card-list-intro__header--sub">Updated: <time :datetime="card.date_updated.toDate().toISOString()" :title="card.date_updated.toDate().toISOString()">{{buildLastUpdated(card.date_updated)}}</time></div>
 				</figcaption>
 				<a v-if="card.img_src != '' && !Array.isArray(card.img_src)" aria-label="Open Image in Gallery" data-fancybox="recently-added" data-hash="recently-added" :data-caption="buildCardString(card)" :href="card.img_src">
 					<img alt="" :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']">
