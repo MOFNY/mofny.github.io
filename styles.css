@@ -8,7 +8,7 @@ html {
 }
 html, body {
   height: 100%;
-  scroll-padding-top: 30px;
+  scroll-padding-top: 36px;
 }
 body {
   background: url('photography.png');
@@ -41,7 +41,7 @@ button {
   position: fixed;
   top: 0;
   background: rgba(0,50,64,0.8);
-  font: 1em/1 'Cabin', sans-serif;
+  font: 1em/1 'Archivo Narrow', sans-serif;
 }
 .primary-nav--float-bar-is-open {
   position: relative;
@@ -64,7 +64,7 @@ button {
 .primary-nav__anchor {
   display: block;
   padding: 0.625em 0;
-  font-size: 0.875em;
+  font-size: 1em;
   text-align: center;
   transition: all 0.3s ease-in-out;
 }
@@ -104,7 +104,7 @@ header, #home {
   border-bottom: 1px solid rgb(204,204,204);
 }
 .totals-list__item {
-  font: 0.95em 'Cabin', sans-serif;
+  font: 1em 'Archivo Narrow', sans-serif;
   flex: 1 1 auto;
   border-right: 1px solid rgb(204,204,204);
 }
@@ -185,7 +185,7 @@ main {
   line-height: 1;
 }
 .updates__article {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Karla', sans-serif;
 }
 .updates__date {
   color: rgb(127, 49, 125);
@@ -193,7 +193,7 @@ main {
   line-height: 1;
 }
 .updates__article .updates__content {
-  font: 16px Georgia, sans-serif;
+  font: 16px 'Karla', sans-serif;
   line-height: 1.7;
   text-align: left;
   padding-bottom: 0;
@@ -216,7 +216,7 @@ footer article {
 }
 footer p {
   color: rgb(255,255,255);
-  font: 100 0.9em/180% Georgia !important;
+  font: 100 0.9em/180% Karla !important;
   text-align: left !important;
 }
 .footerLink {
@@ -234,7 +234,7 @@ footer em::after {
 }
 .footer-form {
   padding-top: 0.625em;
-  font: 1em/1 Georgia;
+  font: 1em/1 Karla;
 }
 .footer-form__label {
   display: block;
@@ -262,7 +262,7 @@ footer em::after {
   color: rgb(44, 44, 76);
   background: rgb(255,255,255);
   padding: 0.25em;
-  font-size: 1.5em;
+  font: 20px/1 'Archivo Narrow', sans-serif;
   border: 2px solid rgb(189, 183, 107);
 }
 .intro-section, #pageSection {
@@ -292,7 +292,7 @@ footer em::after {
 }
 .card-list-intro__paragraph {
   text-align: left;
-  font: 16px 'Georgia', sans-serif;
+  font: 16px 'Karla', sans-serif;
   line-height: 1.5;
   max-width: 65ch;
   margin: 10px auto 0 auto;
@@ -313,7 +313,7 @@ footer em::after {
   display: block;
   color: rgb(58, 117, 76);
   font-size: 16px;
-  padding-top: 1.25em;
+  font-family: 'Karla', sans-serif;
 }
 .card-list-intro__icon--graph {
   width: 1.5em;
@@ -539,15 +539,15 @@ footer em::after {
 p {
   padding: 10px 0;
   color: rgb(75,75,75);
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Karla', sans-serif;
 }
 .menu-button {
   display: none;
   position: fixed;
   top: 10px;
   right: 10px;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   background: rgb(32, 98, 135);
   border-radius: 0.25em;
   overflow: hidden;
@@ -618,7 +618,7 @@ p {
 .revealButtons {
   transition: all 0.8s ease-in-out;
   border: 2px solid rgb(32, 98, 135);
-  font: 1.5em/1 'Oswald', sans-serif;
+  font: 1.5em/1 'Archivo Narrow', sans-serif;
   color: rgb(44, 44, 76);
   background: rgb(255,255,255);
   line-height: 1;
@@ -637,7 +637,7 @@ p {
 .toggle-all {
   display: flex;
   justify-content: center;
-  margin-bottom: 1.25em;
+  margin-bottom: 2em;
 }
 .toggle-all__section {
   text-align: center;
@@ -652,7 +652,7 @@ p {
   padding-left: 1.25em;
 }
 .toggle-all__label-text {
-  font: 1em/1.5 'Georgia', sans-serif;
+  font: 1em/1.5 'Karla', sans-serif;
   color: rgb(41, 83, 54);
 }
 .details-year {
@@ -683,6 +683,7 @@ p {
   z-index: 4;
   background: rgb(0,50,64);
   color: rgb(255,255,255);
+  box-shadow: 0px 5px 4px -2px rgba(0, 0, 0, 0.5);
 }
 .details-year__toggle {
   width: 2em;
@@ -723,7 +724,7 @@ p {
   transform: translateY(0.25em)
 }
 .details-year__summary-header {
-  font: 400 20px/1.3 "Oswald", sans-serif;
+  font: 400 20px/1.3 'Archivo Narrow', sans-serif;
   color: inherit;
   pointer-events: none;
 }
@@ -774,7 +775,7 @@ p {
 .image-unavailable__caption {
   color: rgb(75,75,75);
   text-align: left;
-  font: 1.1em 'Georgia', sans-serif;
+  font: 1.1em 'Karla', sans-serif;
   line-height: 1.5;
 }
 .figure-list img, .imgColumn img {
@@ -1065,10 +1066,6 @@ ul span .red2 {
   }
 }
 @media only screen and (max-width: 1024px) {
-  .numbered-list > li {
-    font-size: 1em;
-    line-height: 1.7;
-  }
   .imgColumn img {
     width: 160px;
   }
@@ -1114,7 +1111,7 @@ ul span .red2 {
   .primary-nav__anchor {
     display: block;
     padding: 0.5em;
-    font-size: 1.1em;
+    font-size: 1em;
     text-align: left;
     border-bottom: 1px solid rgb(204,204,204);
   }
@@ -1265,6 +1262,7 @@ ul span .red2 {
   .card-list-intro__header {
     flex-wrap: nowrap;
     align-items: initial;
+    font-size: 18px;
   }
   .card-list-intro__icon--graph {
     width: 3em;
@@ -1317,7 +1315,11 @@ ul span .red2 {
     right: -12px;
   }
   .details-year__summary {
-    padding: 0.625em;
+    padding: 0.75em 0.5em;
+  }
+  .details-year__toggle {
+    width: 1.75em;
+    margin-right: 0.75em;
   }
   .details-year__summary-header {
     font-size: 16px;
