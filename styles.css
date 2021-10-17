@@ -1123,9 +1123,6 @@ ul span .red2 {
     height: 40vw;
     z-index: 1;
   }
-  .totals-list__item {
-    font-size: 0.9em;
-  }
   .site-title-header__anchor {
     font-size: 0.85em;
   }
@@ -1322,7 +1319,7 @@ ul span .red2 {
     margin-right: 0.75em;
   }
   .details-year__summary-header {
-    font-size: 16px;
+    font-size: 18px;
   }
   .toggle-all__section--close {
     border-right: none;
