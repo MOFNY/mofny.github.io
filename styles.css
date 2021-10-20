@@ -623,6 +623,7 @@ p {
   background: rgb(255,255,255);
   line-height: 1;
   padding: 0.25em;
+  margin-top: 0.5em;
 }
 .revealButtons:hover,
 .revealButtons:focus {
@@ -654,6 +655,8 @@ p {
 .toggle-all__label-text {
   font: 1em/1.5 'Karla', sans-serif;
   color: rgb(41, 83, 54);
+  line-height: 1;
+  padding: 0;
 }
 .details-year {
   position: relative;
