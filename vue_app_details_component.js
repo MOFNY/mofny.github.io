@@ -24,8 +24,14 @@ domReady(function () {
         window.scrollTo(0, $(parentNode).offset().top - offsetGap);
       }
     },
-    buildCardString: function (card, inlineStyles = false) {
-      let baseString = card.year + ' ' + card.set + ' #' + card.number;
+    buildCardString: function (card, inlineStyles = false, startAtCardNumber = false) {
+      let baseString = '';
+      if (startAtCardNumber) {
+        baseString = '#' + card.number;
+      }
+      else {
+        baseString = card.year + ' ' + card.set + ' #' + card.number;
+      }
       if (card.other_info != '') {
         baseString += ' ' + card.other_info;
       }
@@ -134,15 +140,15 @@ domReady(function () {
       <div class="p">
 				<ol class="yearGroup numbered-list">
           <li v-for="card in Object.values(card)[0].all_cards">
-            <span v-if="card.img_src === ''">
-              {{buildCardString(card)}}
+            <span v-if="card.img_src === ''" v-html="buildCardString(card, inlineStyles = true)"></span>
+            <span v-else-if="card.img_src != '' && !Array.isArray(card.img_src)">
+              <a data-fancybox="gallery" class="inserts" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="card.img_src">{{card.year + ' ' + card.set}}</a>
+              <span v-html="buildCardString(card, inlineStyles = true, startAtCardNumber = true)"></span>
             </span>
-            <a v-else-if="card.img_src != '' && !Array.isArray(card.img_src)" data-fancybox="gallery" class="inserts" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="card.img_src">
-              {{buildCardString(card)}}
-            </a>
-            <a v-else aria-label="Open Image in Gallery" class="inserts" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="card.img_src[0]">
-              {{buildCardString(card)}}
-            </a>
+            <span v-else>
+              <a aria-label="Open Image in Gallery" class="inserts" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="card.img_src[0]">{{card.year + ' ' + card.set}}</a>
+              <span v-html="buildCardString(card, inlineStyles = true, startAtCardNumber = true)"></span>
+            </span>
           </li>
         </ol>
         <ul class="imgColumn">

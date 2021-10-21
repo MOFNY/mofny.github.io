@@ -803,12 +803,13 @@ p {
 .p {
   padding: 20px;
   display: flex;
+  gap: 40px;
   position: relative;
 }
 .numbered-list {
   position: relative;
   margin-right: auto;
-  max-width: 65ch;
+  max-width: 70ch;
 }
 .numbered-list > li {
   font: 20px/1.5 'Karla', sans-serif;
@@ -849,15 +850,19 @@ p {
   box-shadow: none;
   position: relative;
   color: rgb(32, 98, 135);
+  text-decoration: underline;
+  text-decoration-color: rgb(133 176 201);
 }
 .inserts:visited {
-  color: rgb(79, 150, 190);
+  color: rgb(32, 98, 135);
+  text-decoration-color: rgb(133 176 201);
 }
 .inserts:hover,
 .inserts:focus {
   background: rgba(63,137,169,0.4);
   box-shadow: 0 10px 8px -10px rgba(0,0,0,.9);
   color: rgb(41, 83, 54);
+  text-decoration: none;
 }
 .overlap, .overlap2 {
   white-space: nowrap;
@@ -1170,6 +1175,7 @@ ul span .red2 {
   }
   .p {
     padding: 20px 10px;
+    gap: 0;
   }
   .numbered-list {
     flex: 100%;
