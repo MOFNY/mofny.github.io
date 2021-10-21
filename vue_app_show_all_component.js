@@ -19,7 +19,7 @@ domReady(function () {
     <li>
       <figure class="figure-list__figure">
         <figcaption class="figure-list__caption">
-          <span>{{buildCardString(card)}}</span>
+          <span v-html="buildCardString(card, inlineStyles = true)"></span>
         </figcaption>
         <div v-if="card.img_src === ''" class="image-unavailable">
           <svg role="presentation" class="image-unavailable__svg" viewBox="0 0 32 32">
@@ -40,7 +40,7 @@ domReady(function () {
       card: {}
     },
     methods: {
-      buildCardString: function (card) {
+      buildCardString: function (card, inlineStyles = false) {
         let baseString = card.year + ' ' + card.set + ' #' + card.number;
         if (card.other_info != '') {
           baseString += ' ' + card.other_info;
@@ -53,9 +53,14 @@ domReady(function () {
           if (Array.isArray(serialNumbered)) {
             serialNumbered = serialNumbered.join(', ');
             let lastCommma = serialNumbered.lastIndexOf(', ');
-            serialNumbered = serialNumbered.substring(0, lastCommma) + '' + serialNumbered.substring(lastCommma+2);
+            serialNumbered = serialNumbered.substring(0, lastCommma) + serialNumbered.substring(lastCommma+2);
           }
-          baseString += ' ' + serialNumbered;
+          if (inlineStyles) {
+            baseString += ' <span class="figure-list__caption--serial" title="serial numbered">' + serialNumbered + '</span>';
+          }
+          else {
+            baseString += ' ' + serialNumbered;
+          }
         }
         if (card.grade != '') {
           let grade = card.grade;

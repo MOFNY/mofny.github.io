@@ -985,11 +985,15 @@ h4 {
 }
 .figure-list__caption > span {
   display: inline-block;
+  max-width: 65ch;
   font: 300 1.25em 'Oswald', sans-serif;
   border-top: 4px solid rgb(204,204,204);
   border-bottom: 4px solid rgb(204,204,204);
   padding: 0.5em;
   color: rgb(41, 83, 54);
+}
+.figure-list__caption--serial {
+  color: rgb(157 76 27);
 }
 ul span .red2 {
   border: none;

@@ -19,7 +19,7 @@ domReady(function () {
     <li>
       <figure class="figure-list__figure">
         <figcaption class="figure-list__caption">
-					<span>{{buildCardString(card)}}</span>
+					<span v-html="buildCardString(card, inlineStyles = true)"></span>
 					<div class="card-list-intro__header card-list-intro__header--sub">Updated: <time :datetime="card.date_updated.toDate().toISOString()" :title="card.date_updated.toDate().toISOString()">{{buildLastUpdated(card.date_updated)}}</time></div>
 				</figcaption>
 				<a v-if="card.img_src != '' && !Array.isArray(card.img_src)" aria-label="Open Image in Gallery" data-fancybox="recently-added" data-hash="recently-added" :data-caption="buildCardString(card)" :href="card.img_src">
@@ -35,7 +35,7 @@ domReady(function () {
 			card: {}
 		},
 		methods: {
-			buildCardString: function (card) {
+			buildCardString: function (card, inlineStyles = false) {
 				let baseString = card.year + ' ' + card.set + ' #' + card.number;
 				if (card.other_info != '') {
 					baseString += ' ' + card.other_info;
@@ -48,9 +48,14 @@ domReady(function () {
 					if (Array.isArray(serialNumbered)) {
 						serialNumbered = serialNumbered.join(', ');
 						let lastCommma = serialNumbered.lastIndexOf(', ');
-						serialNumbered = serialNumbered.substring(0, lastCommma) + '' + serialNumbered.substring(lastCommma + 2);
+						serialNumbered = serialNumbered.substring(0, lastCommma) + serialNumbered.substring(lastCommma + 2);
 					}
-					baseString += ' ' + serialNumbered;
+					if (inlineStyles) {
+						baseString += ' <span class="figure-list__caption--serial" title="serial numbered">' + serialNumbered + '</span>';
+					}
+					else {
+						baseString += ' ' + serialNumbered;
+					}
 				}
 				if (card.grade != '') {
 					let grade = card.grade;
