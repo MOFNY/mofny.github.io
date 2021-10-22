@@ -815,7 +815,7 @@ p {
   font: 20px/1.5 'Karla', sans-serif;
   list-style-position: inside;
   padding-top: 0.25em;
-  color: #4b4b4b;
+  color: rgb(75,75,75);
   line-height: 1.5;
   word-spacing: 0.1em;
   letter-spacing: -0.06em;
@@ -995,7 +995,7 @@ h4 {
   border-top: 4px solid rgb(204,204,204);
   border-bottom: 4px solid rgb(204,204,204);
   padding: 0.5em;
-  color: rgb(41, 83, 54);
+  color: rgb(75,75,75);
 }
 .figure-list__caption--serial {
   color: rgb(157 76 27);
