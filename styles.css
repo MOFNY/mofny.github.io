@@ -840,7 +840,7 @@ p {
   margin-top: 50px;
 }
 .imgColumn img {
-  width: 180px;
+  width: 150px;
   transition: all 0.3s cubic-bezier(0.785,0.135,0.150,0.860);
   position: relative;
 }
@@ -882,7 +882,7 @@ p {
 .gap {
   margin-left: 5px;
 }
-.wider{
+.wider {
   width: 280px !important
 }
 .fancybox-caption,
@@ -1079,7 +1079,7 @@ ul span .red2 {
 }
 @media only screen and (max-width: 1024px) {
   .imgColumn img {
-    width: 160px;
+    width: 125px;
   }
   .wider {
     width: 220px !important
