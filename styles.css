@@ -81,14 +81,16 @@ header, #home {
 }
 .site-title-header {
   margin: auto;
-  font-size: 30px;
+  font: 30px/1 'Oswald', sans-serif;
+  padding: 0.166em;
+  border: 0.166em solid rgba(255,255,255,0.5);
 }
 .site-title-header__anchor, .site-title-header__anchor:visited {
   color: rgb(255,255,255);
 }
 .site-title-header__anchor {
-  padding: 0.5em;
-  font: 1em/1 'Oswald', sans-serif;
+  display: block;
+  padding: 0.333em;
   background: rgba(0,50,64,0.8);
   transition: all 0.3s ease-in-out;
 }
@@ -1135,8 +1137,8 @@ ul span .red2 {
     height: 40vw;
     z-index: 1;
   }
-  .site-title-header__anchor {
-    font-size: 0.85em;
+  .site-title-header {
+    font-size: 24px;
   }
   #above {
     display: none
