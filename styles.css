@@ -176,15 +176,20 @@ main {
   margin: 20px auto 0 auto;
 }
 .updates__title {
+  display: flex;
+  align-items: center;
   font: 20px Oswald, sans-serif;
   color: rgb(41, 83, 54);
   margin-top: 0;
+  gap: 0.5em;
 }
 .updates__icon-link {
-  display: inline-block;
-  vertical-align: text-bottom;
-  width: 1.25em;
-  line-height: 1;
+  display: inline-flex;
+}
+.updates__github-icon {
+  width: 1.5em;
+  height: 1.5em;
+  overflow: visible;
 }
 .updates__article {
   font-family: 'Karla', sans-serif;
