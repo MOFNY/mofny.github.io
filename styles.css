@@ -1201,14 +1201,6 @@ ul span .red2 {
   .imgColumn img {
     border: none;
   }
-  .inserts:hover {
-    text-decoration: none;
-    background: rgba(0,0,0,0);
-    box-shadow: none;
-    border-radius: 0;
-    padding: 0;
-    color: rgb(41, 83, 54);
-  }
   .wider {
     width: 280px !important
   }
