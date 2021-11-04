@@ -22,7 +22,7 @@ domReady(function () {
 					<span v-html="buildCardString(card, inlineStyles = true)"></span>
 					<div class="card-list-intro__header card-list-intro__header--sub">Updated: <time :datetime="card.date_updated.toDate().toISOString()" :title="card.date_updated.toDate().toISOString()">{{buildLastUpdated(card.date_updated)}}</time></div>
 				</figcaption>
-				<a v-if="card.img_src != '' && !Array.isArray(card.img_src)" aria-label="Open Image in Gallery" data-fancybox="recently-added" data-hash="recently-added" :data-caption="buildCardString(card)" :href="card.img_src">
+				<a v-if="card.img_src && !Array.isArray(card.img_src)" aria-label="Open Image in Gallery" data-fancybox="recently-added" data-hash="recently-added" :data-caption="buildCardString(card)" :href="card.img_src">
 					<img alt="" :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']">
 				</a>
 				<a v-else aria-label="Open Image in Gallery" data-fancybox="recently-added" data-hash="recently-added" :data-caption="buildCardString(card)" :href="card.img_src[card.img_src.length - 1]">
@@ -37,13 +37,13 @@ domReady(function () {
 		methods: {
 			buildCardString: function (card, inlineStyles = false) {
 				let baseString = card.year + ' ' + card.set + ' #' + card.number;
-				if (card.other_info != '') {
+				if (card.other_info) {
 					baseString += ' ' + card.other_info;
 				}
-				if (card.other_players != '') {
+				if (card.other_players) {
 					baseString += ' w/' + card.other_players;
 				}
-				if (card.serial_numbered != '') {
+				if (card.serial_numbered) {
 					let serialNumbered = card.serial_numbered;
 					if (Array.isArray(serialNumbered)) {
 						serialNumbered = serialNumbered.join(', ');
@@ -57,7 +57,7 @@ domReady(function () {
 						baseString += ' ' + serialNumbered;
 					}
 				}
-				if (card.grade != '') {
+				if (card.grade) {
 					let grade = card.grade;
 					if (Array.isArray(grade)) {
 						grade = grade.join(', ');

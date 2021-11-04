@@ -21,13 +21,13 @@ domReady(function () {
         <figcaption class="figure-list__caption">
           <span v-html="buildCardString(card, inlineStyles = true)"></span>
         </figcaption>
-        <div v-if="card.img_src === ''" class="image-unavailable">
+        <div v-if="!card.img_src" class="image-unavailable">
           <svg role="presentation" class="image-unavailable__svg" viewBox="0 0 32 32">
             <use xlink:href="#image-unavailable__svg" />
           </svg>
           <strong class="image-unavailable__caption">Image available eventually</strong>
         </div>
-        <a v-else-if="card.img_src != '' && !Array.isArray(card.img_src)" aria-label="Open Image in Gallery" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="card.img_src">
+        <a v-else-if="card.img_src && !Array.isArray(card.img_src)" aria-label="Open Image in Gallery" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="card.img_src">
           <img alt="" :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']">
         </a>
         <a v-else v-for="img in card.img_src" aria-label="Open Image in Gallery" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="img">
@@ -42,13 +42,13 @@ domReady(function () {
     methods: {
       buildCardString: function (card, inlineStyles = false) {
         let baseString = card.year + ' ' + card.set + ' #' + card.number;
-        if (card.other_info != '') {
+        if (card.other_info) {
           baseString += ' ' + card.other_info;
         }
-        if (card.other_players != '') {
+        if (card.other_players) {
           baseString += ' w/' + card.other_players;
         }
-        if (card.serial_numbered != '') {
+        if (card.serial_numbered) {
           let serialNumbered = card.serial_numbered;
           if (Array.isArray(serialNumbered)) {
             serialNumbered = serialNumbered.join(', ');
@@ -62,7 +62,7 @@ domReady(function () {
             baseString += ' ' + serialNumbered;
           }
         }
-        if (card.grade != '') {
+        if (card.grade) {
           let grade = card.grade;
           if (Array.isArray(grade)) {
             grade = grade.join(', ');

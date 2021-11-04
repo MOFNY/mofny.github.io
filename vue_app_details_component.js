@@ -32,13 +32,13 @@ domReady(function () {
       else {
         baseString = card.year + ' ' + card.set + ' #' + card.number;
       }
-      if (card.other_info != '') {
+      if (card.other_info) {
         baseString += ' ' + card.other_info;
       }
-      if (card.other_players != '') {
+      if (card.other_players) {
         baseString += ' w/' + card.other_players;
       }
-      if (card.serial_numbered != '') {
+      if (card.serial_numbered) {
         let serialNumbered = card.serial_numbered;
         if (Array.isArray(serialNumbered)) {
           serialNumbered = serialNumbered.join(', ');
@@ -52,7 +52,7 @@ domReady(function () {
           baseString += ' ' + serialNumbered;
         }
       }
-      if (card.grade != '') {
+      if (card.grade) {
         let grade = card.grade;
         if (Array.isArray(grade)) {
           grade = grade.join(', ');
@@ -97,13 +97,13 @@ domReady(function () {
             <figcaption class="figure-list__caption">
               <span v-html="buildCardString(card, inlineStyles = true)"></span>
             </figcaption>
-            <div v-if="card.img_src === ''" class="image-unavailable">
+            <div v-if="!card.img_src" class="image-unavailable">
               <svg role="presentation" class="image-unavailable__svg" viewBox="0 0 32 32">
                 <use xlink:href="#image-unavailable__svg" />
               </svg>
               <strong class="image-unavailable__caption">Image available eventually</strong>
             </div>
-            <a v-else-if="card.img_src != '' && !Array.isArray(card.img_src)" aria-label="Open Image in Gallery" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="card.img_src">
+            <a v-else-if="card.img_src && !Array.isArray(card.img_src)" aria-label="Open Image in Gallery" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="card.img_src">
               <img alt="" :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']">
             </a>
             <a v-else v-for="img in card.img_src" aria-label="Open Image in Gallery" data-fancybox="gallery" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="img">
@@ -140,8 +140,8 @@ domReady(function () {
       <div class="p">
 				<ol class="yearGroup numbered-list">
           <li v-for="card in Object.values(card)[0].all_cards">
-            <span v-if="card.img_src === ''" v-html="buildCardString(card, inlineStyles = true)"></span>
-            <span v-else-if="card.img_src != '' && !Array.isArray(card.img_src)">
+            <span v-if="!card.img_src" v-html="buildCardString(card, inlineStyles = true)"></span>
+            <span v-else-if="card.img_src && !Array.isArray(card.img_src)">
               <a data-fancybox="gallery" class="inserts" :data-hash="buildHashData(card)" :data-caption="buildCardString(card)" :href="card.img_src">{{card.year + ' ' + card.set}}</a>
               <span v-html="buildCardString(card, inlineStyles = true, startAtCardNumber = true)"></span>
             </span>
@@ -152,11 +152,11 @@ domReady(function () {
           </li>
         </ol>
         <ul class="imgColumn">
-          <li v-for="card in Object.values(card)[0].all_cards.filter((card) => {return card.img_src != ''})">
-            <a v-if="card.img_src != '' && !Array.isArray(card.img_src)" @click="openFirstLink" aria-label="Open Image in Gallery" :href="card.img_src">
+          <li v-for="card in Object.values(card)[0].all_cards.filter((card) => {return card.img_src})">
+            <a v-if="card.img_src && !Array.isArray(card.img_src)" @click="openFirstLink" aria-label="Open Image in Gallery" :href="card.img_src">
               <img alt="" :data-src="card.img_src" :class="[card.img_size, 'lazyload', 'thumbnail']" :alt="buildCardString(card)">
             </a>
-            <a v-else-if="card.img_src != '' && Array.isArray(card.img_src)" @click="openFirstLink" class="activate-gallery" aria-label="Open Image in Gallery" :href="card.img_src[0]">
+            <a v-else-if="card.img_src && Array.isArray(card.img_src)" @click="openFirstLink" class="activate-gallery" aria-label="Open Image in Gallery" :href="card.img_src[0]">
               <img alt="" :data-src="card.img_src[0]" :class="[card.img_size, 'lazyload', 'thumbnail']" :alt="buildCardString(card)">
             </a>
           </li>
