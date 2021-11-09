@@ -797,7 +797,7 @@ p {
   transition: all 0.5s cubic-bezier(0.785,0.135,0.150,0.860);
 }
 .figure-list {
-  margin-top: 1.25em;
+  margin-top: 3em;
   text-align: center;
 }
 .figure-list > li {
