@@ -350,7 +350,7 @@ footer em::after {
   position: relative;
   padding-bottom: 3em;
   padding-top: 3em;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 #pageContainer {
   width: 100%;
