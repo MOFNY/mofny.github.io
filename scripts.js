@@ -167,6 +167,7 @@ domReady(function () {
 			}
 		}
 	});
+	var container = document.getElementById('container');
 	var circleRight = document.getElementById('arrowRight');
 	var circleLeft = document.getElementById("circleLeft");
 	var i = 0;
@@ -199,11 +200,13 @@ domReady(function () {
 		for (i = 0, len = imageGroupArray.length; i < len; i++) {
 			changeImagesUp(i, i + 1);
 		}
+		container.style.height = `${container.clientHeight}px`;
 		if (imageGroupArray[imageGroupArray.length - 2].offsetWidth > 2) {
 			circleRight.setAttribute('disabled', '');
 			circleLeft.focus();
 		}
 		setTimeout(function () {
+			container.style = '';
 			circleRight.addEventListener('click', clickEvent);
 		}, transitionDelay);
 	}
@@ -220,11 +223,13 @@ domReady(function () {
 		for (i = 0, len = imageGroupArray.length; i < len; i++) {
 			changeImagesUp(i, i - 1);
 		}
+		container.style.height = `${container.clientHeight}px`;
 		if (imageGroupArray[1].offsetWidth > 2) {
 			circleLeft.setAttribute('disabled', '');
 			circleRight.focus();
 		}
 		setTimeout(function () {
+			container.style = '';
 			circleLeft.addEventListener("click", clickEvent2)
 		}, transitionDelay);
 	}

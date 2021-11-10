@@ -342,15 +342,14 @@ footer em::after {
 }
 #container {
   width: 100%;
-  min-height: 90vmin;
   display: flex;
   align-items: center;
   position: relative;
   justify-content: center;
   flex-flow: row nowrap;
   position: relative;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-bottom: 3em;
+  padding-top: 3em;
   overflow-x: hidden;
 }
 #pageContainer {
@@ -1248,9 +1247,6 @@ ul span .red2 {
     100% {
       background-position-x: 100%;
     }
-  }
-  #container {
-    min-height: 70vmin;
   }
   .carousel__arrow {
     font-size: 0.4em;
