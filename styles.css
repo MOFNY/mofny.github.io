@@ -827,6 +827,7 @@ p {
   line-height: 1.5;
   word-spacing: 0.1em;
   letter-spacing: -0.06em;
+  text-wrap: pretty;
 }
 .numbered-list > li::marker {
   font-weight: 600;
@@ -1004,6 +1005,7 @@ h4 {
   border-bottom: 4px solid rgb(204,204,204);
   padding: 0.5em;
   color: rgb(75,75,75);
+  text-wrap: pretty;
 }
 .figure-list__caption--serial {
   color: rgb(157 76 27);
